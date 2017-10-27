@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <meta charset="utf-8">
+        <title>Wild About Pilates</title>
+    </head>
+    <body>
+        <a id="skip_to_content" href="#main_content">Skip to main content</a>
+        <nav aria-label="Main Navigation">
+            <ul>
+                <li aria-current="page">Pilates classes</li>
+                <li><a href="#">About me</a></li>
+                <li><a href="#">Testimonials</a></li>
+                <li><a href="#">Get in touch</a></li>
+            </ul>
+        </nav>
+        <section id="main_content">
+            {{ content }}
+        </section>
+        <footer>
+            <address>
+                <a href="mailto:{{ site.email | uri_escape }}" aria-label="email address {{ site.email }}">{{ site.email }}</a>
+                <a href="tel:{{ site.tel | slugify }}" aria-label="telephone number {{ site.tel }}">{{ site.tel }}</a>
+            </address>
+        </footer>
+    </body>
+</html>
