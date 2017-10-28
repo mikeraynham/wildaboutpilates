@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wild About Physio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.4.1/snap.svg-min.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        var SVGCmd = (function() {
+            function SVGCmd() {
+                this.commands = [];
+            };
+
+            var functions = [
+                'M', 'L', 'H', 'V', 'C', 'S', 'Q', 'T', 'A', 'R',
+                'm', 'l', 'h', 'v', 'c', 's', 'q', 't', 'a', 'r'
+            ];
+            
+            for (var i = 0; i < functions.length; i++) {
+                let f = functions[i];
+                SVGCmd.prototype[f] = function() {
+                    this.commands.push(
+                        f + Array.prototype.slice.call(arguments).join(' ')
+                    );
+                    return this;
+                };
+            }
+
+            SVGCmd.prototype.z = SVGCmd.prototype.Z = function() {
+                this.commands.push('Z');
+                return this;
+            };
+
+            SVGCmd.prototype.toString = function() {
+                console.log(this.commands.join(''));
+                return this.commands.join('');
+            };
+
+            SVGCmd.prototype.clear = function() {
+                this.commands = [];
+                return this;
+            };
+
+            return SVGCmd;
+        }());
+
+        var Point = (function() {
+            function Point(x, y) {
+                this.x = x;
+                this.y = y;
+            };
+
+            Point.prototype.toString = function() {
+                return this.x + ' ' + this.y;
+            };
+
+            return Point;
+        }());
+
+        var Coord = (function() {
+            function Coord() {};
+
+            Coord.prototype.scaleTo = function(s) {
+                return function(v) { return v * s; };
+            }
+
+            Coord.prototype.polar = function(p, r, t) {
+                var x = p.x + r * Math.cos(Math.PI * t / 180.0);
+                var y = p.y - r * Math.sin(Math.PI * t / 180.0);
+                return new Point(x, y);
+            };
+
+            /* Given the angle in degrees between two intersecting vectors,
+                * and the radius of a circle to which the vectors must be
+                * tangent, return the distance between the apex and the centre
+                * of the circle.
+                */
+            Coord.circleCentreTTR = function(degrees, radius) {
+                var radians = degrees * Math.PI / 180;
+                var segment = radius / (Math.tan(radians / 2));
+                return Math.sqrt(radius ** 2 + segment ** 2);
+            };
+
+            Coord.fillet = function(vx, vy, p1x, p1y, p2x, p2y, r) {
+                // Vector 1
+                var dx1 = vx - p1x;
+                var dy1 = vy - p1y;
+
+                // Vector 2
+                var dx2 = vx - p2x;
+                var dy2 = vy - p2y;
+
+                // Bisect vector angle.
+                var angle = (Math.atan2(dy1, dx1) - Math.atan2(dy2, dx2)) / 2;
+
+                // The distance between the vertex and the tangent of the
+                // circle.
+                var tan = Math.abs(Math.ran(angle));
+                var segment = radius / tan;
+            }
+
+            Coord.intersection = function(x1, y1, x2, y2, x3, y3, x4, y4) {
+                var x = (
+                    (x1 * y2  -  y1 * x2) *
+                    (x3 - x4) - (x1 - x2) * 
+                    (x3 * y4  -  y3 * x4)
+                ) / (
+                    (x1 - x2) * (y3 - y4) -
+                    (y1 - y2) * (x3 - x4)
+                );
+                var y = (
+                    (x1 * y2  -  y1 * x2) *
+                    (y3 - y4) - (y1 - y2) *
+                    (x3 * y4  -  y3 * x4)
+                ) / (
+                    (x1 - x2) * (y3 - y4) -
+                    (y1 - y2) * (x3 - x4)
+                );
+                return {x: x, y: y};
+            };
+
+            return Coord;
+        }());
+
+        var palette = {
+            dark_blue:  '#2d4a5c',
+            dusky_pink: '#e29bb5',
+            mint_green: '#70c5a0',
+            light_blue: '#96c2d9',
+            lilac:      '#a08dc2',
+            coral:      '#f58c7b'
+        };
+
+        var colours = {
+            head:       palette.dusky_pink,
+            torso:      palette.dusky_pink,
+            upper_legs: palette.dark_blue,
+            lower_legs: palette.mint_green,
+            feet:       palette.mint_green
+        };
+
+        function limb(s, centres, colour) {
+            var t1, t2;
+            if (centres[0].y < centres[1].y) {
+                t1 = 30;
+                t2 = 210;
+            }
+            else {
+                t1 = 150;
+                t2 = 330;
+            }
+
+            var svg = new SVGCmd;
+
+            return s.path(
+                svg.
+                clear().
+                M(coord.polar(centres[0], radius, t1)).
+                A(radius, radius, t2, 0, 0, coord.polar(centres[0], radius, t2)).
+                L(coord.polar(centres[1], radius, t2)).
+                A(radius, radius, t1, 0, 0, coord.polar(centres[1], radius, t1)).
+                z().
+                toString()
+            ).attr({fill: colour});
+        }
+
+        var s          = Snap(1000,600);
+        var svg        = new SVGCmd();
+        var coord      = new Coord();
+        var scale      = coord.scaleTo(1);
+        var ox         = scale(  0);
+        var oy         = scale(300);
+        var radius     = scale( 44);
+        var dia        = radius * 2;
+        var long_limb  = scale(147);
+        var short_limb = scale(100);
+        var head_torso = short_limb;
+
+        // The SVG coordinate system has 0,0 at the top left.  The positive X
+        // axis points right, and the positive Y axis points down.
+
+        var height = function() {
+            // The canvas height is the vertical distance between the centre of the
+            // head and the centre of the torso base after having rotated it 300°,
+            // plus the radius of the head and the radius of the torso base.
+            var p = coord.polar(new Point(0, 0), head_torso + long_limb, 300);
+            return p.y + dia;
+        }();
+
+        var centre = {};
+
+        // The centre of the head is distance radius from the top left.
+        centre.head = new Point(0 + radius, 0 + radius);
+
+        centre.torso = [];
+        centre.torso[0] = coord.polar(centre.head, head_torso, 300);
+        centre.torso[1] = coord.polar(centre.head, head_torso + long_limb, 300);
+
+        centre.upper_legs = [];
+        centre.upper_legs[0] = centre.torso[1];
+        centre.upper_legs[1] = coord.polar(centre.torso[1], long_limb, 60);
+
+        centre.lower_legs = [];
+        centre.lower_legs[0] = centre.upper_legs[1];
+        centre.lower_legs[1] = coord.polar(centre.upper_legs[1], long_limb, 300);
+
+        centre.feet = [];
+        centre.feet[0] = centre.lower_legs[1];
+        centre.feet[1] = coord.polar(centre.lower_legs[1], short_limb, 60);
+
+        var head = s.circle(
+            centre.head.x,
+            centre.head.y,
+            radius
+        ).attr({fill: colours.head});
+
+        var torso      = limb(s, centre.torso, colours.torso);
+        var lower_legs = limb(s, centre.lower_legs, colours.lower_legs);
+        var upper_legs = limb(s, centre.upper_legs, colours.upper_legs);
+        var feet       = limb(s, centre.feet, colours.feet);
+        var shorts_top = s.path(
+            svg.
+            clear().
+            M(centre.lower_legs[0]),
+        ).attr({fill: colours.feet});
+
+    </script>
+</body>
+</html>
