@@ -76,13 +76,21 @@
                 * tangent, return the distance between the apex and the centre
                 * of the circle.
                 */
-            Coord.circleCentreTTR = function(degrees, radius) {
-                var radians = degrees * Math.PI / 180;
+            Coord.prototype.circleCentreTTR = function(degrees, radius) {
+                var radians = this.toRadians(degrees);
                 var segment = radius / (Math.tan(radians / 2));
                 return Math.sqrt(radius ** 2 + segment ** 2);
             };
 
-            Coord.fillet = function(vx, vy, p1x, p1y, p2x, p2y, r) {
+            Coord.prototype.toDegrees = function(radians) {
+                return radians * (180 / Math.PI);
+            };
+
+            Coord.prototype.toRadians = function(degrees) {
+                return degrees * (Math.PI / 180);
+            };
+
+            Coord.prototype.fillet = function(vx, vy, p1x, p1y, p2x, p2y, r) {
                 // Vector 1
                 var dx1 = vx - p1x;
                 var dy1 = vy - p1y;
@@ -94,30 +102,35 @@
                 // Bisect vector angle.
                 var angle = (Math.atan2(dy1, dx1) - Math.atan2(dy2, dx2)) / 2;
 
+                console.log('Angle: ' + this.toDegrees(angle));
+
                 // The distance between the vertex and the tangent of the
                 // circle.
-                var tan = Math.abs(Math.ran(angle));
-                var segment = radius / tan;
+                var segment = radius / Math.abs(Math.tan(angle));
+
+                console.log('Segment: ' + segment);
+
+                return segment;
             }
 
-            Coord.intersection = function(x1, y1, x2, y2, x3, y3, x4, y4) {
+            Coord.prototype.intersection = function(p1, p2, p3, p4) {
                 var x = (
-                    (x1 * y2  -  y1 * x2) *
-                    (x3 - x4) - (x1 - x2) * 
-                    (x3 * y4  -  y3 * x4)
+                    (p1.x * p2.y  -  p1.y * p2.x) *
+                    (p3.x - p4.x) - (p1.x - p2.x) * 
+                    (p3.x * p4.y  -  p3.y * p4.x)
                 ) / (
-                    (x1 - x2) * (y3 - y4) -
-                    (y1 - y2) * (x3 - x4)
+                    (p1.x - p2.x) * (p3.y - p4.y) -
+                    (p1.y - p2.y) * (p3.x - p4.x)
                 );
                 var y = (
-                    (x1 * y2  -  y1 * x2) *
-                    (y3 - y4) - (y1 - y2) *
-                    (x3 * y4  -  y3 * x4)
+                    (p1.x * p2.y  -  p1.y * p2.x) *
+                    (p3.y - p4.y) - (p1.y - p2.y) *
+                    (p3.x * p4.y  -  p3.y * p4.x)
                 ) / (
-                    (x1 - x2) * (y3 - y4) -
-                    (y1 - y2) * (x3 - x4)
+                    (p1.x - p2.x) * (p3.y - p4.y) -
+                    (p1.y - p2.y) * (p3.x - p4.x)
                 );
-                return {x: x, y: y};
+                return new Point(x, y);
             };
 
             return Coord;
@@ -219,11 +232,43 @@
         var lower_legs = limb(s, centre.lower_legs, colours.lower_legs);
         var upper_legs = limb(s, centre.upper_legs, colours.upper_legs);
         var feet       = limb(s, centre.feet, colours.feet);
-        var shorts_top = s.path(
+        
+        var v1 = {
+            p1: coord.polar(centre.torso[0], radius, 210),
+            p2: coord.polar(centre.torso[1], radius, 210)
+        };
+
+        var v2 = {
+            p1: coord.polar(centre.upper_legs[0], radius, 150),
+            p2: coord.polar(centre.upper_legs[1], radius, 150)
+        };
+
+        var i = coord.intersection(v1.p1, v1.p2, v2.p1, v2.p2);
+
+        s.path(
             svg.
             clear().
-            M(centre.lower_legs[0]),
-        ).attr({fill: colours.feet});
+            M(v1.p1).
+            L(i).
+            L(v2.p2).
+            toString()
+        ).attr({stroke: "black", fill: "none"});
+
+        s.circle(i.x, i.y, 5);
+
+        var offset = coord.circleCentreTTR(60, radius);
+        console.log('Offset: ' + offset);
+        var c = coord.polar(i, offset, 90);
+
+        s.circle(c.x, c.y, radius).attr({opacity: 0.25});
+
+        s.circle(i.x, i.y, offset).attr({stroke: "black", fill: "none"});
+
+        var segment = coord.fillet(i.x, i.y, v1.p1.x, v1.p1.y, v2.p1.x, v2.p1.y, radius);
+
+        var c1 = coord.polar(i, segment, 120);
+
+        s.circle(c1.x, c1.y, 5);
 
     </script>
 </body>
