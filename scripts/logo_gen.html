@@ -58,6 +58,45 @@
             return Point;
         }());
 
+        var Vector = (function() {
+            function Vector(p1, p2) {
+                var _vx  = p2.x - p1.x;
+                var _vy  = p2.y - p1.y;
+                var _mag = Math.sqrt( Math.pow(_vx, 2) + Math.pow(_vy, 2) );
+
+                Object.defineProperties(this, {
+                    'p1':  {get: function() {return p1}},
+                    'p2':  {get: function() {return p2}},
+                    'vx':  {get: function() {return _vx}},
+                    'vy':  {get: function() {return _vy}},
+                    'mag': {get: function() {return _mag}},
+                });
+            };
+
+            Vector.prototype.intersection = function(v2) {
+                var v1 = this;
+                var x = (
+                    (v1.p1.x * v1.p2.y  -  v1.p1.y * v1.p2.x) *
+                    (v2.p1.x - v2.p2.x) - (v1.p1.x - v1.p2.x) * 
+                    (v2.p1.x * v2.p2.y  -  v2.p1.y * v2.p2.x)
+                ) / (
+                    (v1.p1.x - v1.p2.x) * (v2.p1.y - v2.p2.y) -
+                    (v1.p1.y - v1.p2.y) * (v2.p1.x - v2.p2.x)
+                );
+                var y = (
+                    (v1.p1.x * v1.p2.y  -  v1.p1.y * v1.p2.x) *
+                    (v2.p1.y - v2.p2.y) - (v1.p1.y - v1.p2.y) *
+                    (v2.p1.x * v2.p2.y  -  v2.p1.y * v2.p2.x)
+                ) / (
+                    (v1.p1.x - v1.p2.x) * (v2.p1.y - v2.p2.y) -
+                    (v1.p1.y - v1.p2.y) * (v2.p1.x - v2.p2.x)
+                );
+                return new Point(x, y);
+            };
+
+            return Vector;
+        }());
+
         var Coord = (function() {
             function Coord() {};
 
@@ -90,17 +129,12 @@
                 return degrees * (Math.PI / 180);
             };
 
-            Coord.prototype.fillet = function(vx, vy, p1x, p1y, p2x, p2y, r) {
-                // Vector 1
-                var dx1 = vx - p1x;
-                var dy1 = vy - p1y;
-
-                // Vector 2
-                var dx2 = vx - p2x;
-                var dy2 = vy - p2y;
+            Coord.prototype.fillet = function(p0, p1, p2, r) {
+                var v1 = new Vector(p0, p1);
+                var v2 = new Vector(p0, p2);
 
                 // Bisect vector angle.
-                var angle = (Math.atan2(dy1, dx1) - Math.atan2(dy2, dx2)) / 2;
+                var angle = (Math.atan2(v1.vy, v1.vx) - Math.atan2(v2.vy, v2.vx)) / 2;
 
                 console.log('Angle: ' + this.toDegrees(angle));
 
@@ -113,22 +147,22 @@
                 return segment;
             }
 
-            Coord.prototype.intersection = function(p1, p2, p3, p4) {
+            Coord.prototype.intersection = function(v1, v2) {
                 var x = (
-                    (p1.x * p2.y  -  p1.y * p2.x) *
-                    (p3.x - p4.x) - (p1.x - p2.x) * 
-                    (p3.x * p4.y  -  p3.y * p4.x)
+                    (v1.p1.x * v1.p2.y  -  v1.p1.y * v1.p2.x) *
+                    (v2.p1.x - v2.p2.x) - (v1.p1.x - v1.p2.x) * 
+                    (v2.p1.x * v2.p2.y  -  v2.p1.y * v2.p2.x)
                 ) / (
-                    (p1.x - p2.x) * (p3.y - p4.y) -
-                    (p1.y - p2.y) * (p3.x - p4.x)
+                    (v1.p1.x - v1.p2.x) * (v2.p1.y - v2.p2.y) -
+                    (v1.p1.y - v1.p2.y) * (v2.p1.x - v2.p2.x)
                 );
                 var y = (
-                    (p1.x * p2.y  -  p1.y * p2.x) *
-                    (p3.y - p4.y) - (p1.y - p2.y) *
-                    (p3.x * p4.y  -  p3.y * p4.x)
+                    (v1.p1.x * v1.p2.y  -  v1.p1.y * v1.p2.x) *
+                    (v2.p1.y - v2.p2.y) - (v1.p1.y - v1.p2.y) *
+                    (v2.p1.x * v2.p2.y  -  v2.p1.y * v2.p2.x)
                 ) / (
-                    (p1.x - p2.x) * (p3.y - p4.y) -
-                    (p1.y - p2.y) * (p3.x - p4.x)
+                    (v1.p1.x - v1.p2.x) * (v2.p1.y - v2.p2.y) -
+                    (v1.p1.y - v1.p2.y) * (v2.p1.x - v2.p2.x)
                 );
                 return new Point(x, y);
             };
@@ -233,17 +267,18 @@
         var upper_legs = limb(s, centre.upper_legs, colours.upper_legs);
         var feet       = limb(s, centre.feet, colours.feet);
         
-        var v1 = {
-            p1: coord.polar(centre.torso[0], radius, 210),
-            p2: coord.polar(centre.torso[1], radius, 210)
-        };
+        var v1 = new Vector(
+            coord.polar(centre.torso[0], radius, 210),
+            coord.polar(centre.torso[1], radius, 210)
+        );
 
-        var v2 = {
-            p1: coord.polar(centre.upper_legs[0], radius, 150),
-            p2: coord.polar(centre.upper_legs[1], radius, 150)
-        };
+        var v2 = new Vector(
+            coord.polar(centre.upper_legs[0], radius, 150),
+            coord.polar(centre.upper_legs[1], radius, 150)
+        );
 
-        var i = coord.intersection(v1.p1, v1.p2, v2.p1, v2.p2);
+        // var i = coord.intersection(v1, v2);
+        var i = v1.intersection(v2);
 
         s.path(
             svg.
@@ -264,7 +299,7 @@
 
         s.circle(i.x, i.y, offset).attr({stroke: "black", fill: "none"});
 
-        var segment = coord.fillet(i.x, i.y, v1.p1.x, v1.p1.y, v2.p1.x, v2.p1.y, radius);
+        var segment = coord.fillet(i, v1.p1, v2.p1, radius);
 
         var c1 = coord.polar(i, segment, 120);
 
