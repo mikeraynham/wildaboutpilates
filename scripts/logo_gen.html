@@ -60,9 +60,10 @@
 
         var Vector = (function() {
             function Vector(p1, p2) {
-                var _vx  = p2.x - p1.x;
-                var _vy  = p2.y - p1.y;
+                var _vx  = p1.x - p2.x;
+                var _vy  = p1.y - p2.y;
                 var _mag = Math.sqrt( Math.pow(_vx, 2) + Math.pow(_vy, 2) );
+                var _rad = Math.atan2(_vy, _vx);
 
                 Object.defineProperties(this, {
                     'p1':  {get: function() {return p1}},
@@ -70,6 +71,7 @@
                     'vx':  {get: function() {return _vx}},
                     'vy':  {get: function() {return _vy}},
                     'mag': {get: function() {return _mag}},
+                    'rad': {get: function() {return _rad}},
                 });
             };
 
@@ -77,19 +79,19 @@
                 var v1 = this;
                 var x = (
                     (v1.p1.x * v1.p2.y  -  v1.p1.y * v1.p2.x) *
-                    (v2.p1.x - v2.p2.x) - (v1.p1.x - v1.p2.x) * 
+                     v2.vx              -  v1.vx              * 
                     (v2.p1.x * v2.p2.y  -  v2.p1.y * v2.p2.x)
                 ) / (
-                    (v1.p1.x - v1.p2.x) * (v2.p1.y - v2.p2.y) -
-                    (v1.p1.y - v1.p2.y) * (v2.p1.x - v2.p2.x)
+                     v1.vx              *  v2.vy              -
+                     v1.vy              *  v2.vx 
                 );
                 var y = (
                     (v1.p1.x * v1.p2.y  -  v1.p1.y * v1.p2.x) *
-                    (v2.p1.y - v2.p2.y) - (v1.p1.y - v1.p2.y) *
+                     v2.vy              -  v1.vy              *
                     (v2.p1.x * v2.p2.y  -  v2.p1.y * v2.p2.x)
                 ) / (
-                    (v1.p1.x - v1.p2.x) * (v2.p1.y - v2.p2.y) -
-                    (v1.p1.y - v1.p2.y) * (v2.p1.x - v2.p2.x)
+                     v1.vx              *  v2.vy  -
+                     v1.vy              *  v2.vx
                 );
                 return new Point(x, y);
             };
@@ -134,7 +136,7 @@
                 var v2 = new Vector(p0, p2);
 
                 // Bisect vector angle.
-                var angle = (Math.atan2(v1.vy, v1.vx) - Math.atan2(v2.vy, v2.vx)) / 2;
+                var angle = (v1.rad - v2.rad) / 2;
 
                 console.log('Angle: ' + this.toDegrees(angle));
 
@@ -146,26 +148,6 @@
 
                 return segment;
             }
-
-            Coord.prototype.intersection = function(v1, v2) {
-                var x = (
-                    (v1.p1.x * v1.p2.y  -  v1.p1.y * v1.p2.x) *
-                    (v2.p1.x - v2.p2.x) - (v1.p1.x - v1.p2.x) * 
-                    (v2.p1.x * v2.p2.y  -  v2.p1.y * v2.p2.x)
-                ) / (
-                    (v1.p1.x - v1.p2.x) * (v2.p1.y - v2.p2.y) -
-                    (v1.p1.y - v1.p2.y) * (v2.p1.x - v2.p2.x)
-                );
-                var y = (
-                    (v1.p1.x * v1.p2.y  -  v1.p1.y * v1.p2.x) *
-                    (v2.p1.y - v2.p2.y) - (v1.p1.y - v1.p2.y) *
-                    (v2.p1.x * v2.p2.y  -  v2.p1.y * v2.p2.x)
-                ) / (
-                    (v1.p1.x - v1.p2.x) * (v2.p1.y - v2.p2.y) -
-                    (v1.p1.y - v1.p2.y) * (v2.p1.x - v2.p2.x)
-                );
-                return new Point(x, y);
-            };
 
             return Coord;
         }());
@@ -277,7 +259,6 @@
             coord.polar(centre.upper_legs[1], radius, 150)
         );
 
-        // var i = coord.intersection(v1, v2);
         var i = v1.intersection(v2);
 
         s.path(
