@@ -242,7 +242,7 @@
 
             var torso      = limb(s, centre.torso, colours.torso);
             var lower_legs = limb(s, centre.lower_legs, colours.lower_legs);
-            var upper_legs = limb(s, centre.upper_legs, colours.upper_legs);
+            // var upper_legs = limb(s, centre.upper_legs, colours.upper_legs);
             var feet       = limb(s, centre.feet, colours.feet);
             
             var f1 = (function() {
@@ -261,7 +261,7 @@
             }());
 
             var f2 = (function() {
-                var p1 = svg.
+                var path1 = svg.
                     clear().
                     M(coord.polar(centre.upper_legs[0], dia, 330)).
                     L(coord.polar(centre.upper_legs[1], dia, 330)).
@@ -277,21 +277,38 @@
                     coord.polar(centre.feet[1], radius, 150)
                 );
 
-                s.path(svg.clear().M(v1.p1).L(v1.p2).toString()).attr({stroke: "black"});
-                s.path(svg.clear().M(v2.p1).L(v2.p2).toString()).attr({stroke: "black"});
+                var i1 = v1.intersection(v2);
 
-                s.path(p1).attr({stroke: "red"});
+
+                var path2 = svg.
+                    clear().
+                    M(coord.polar(i1, radius, 300)).
+                    A(radius, radius, 0, 0, 1, coord.polar(i1, radius, 120)).
+                    toString();
+
+                var i2 = Snap.path.intersection(path1, path2);
+
+                return new Vector(
+                    coord.polar(new Point(i2[0].x, i2[0].y), radius, 150),
+                    i1
+                );
+
             }());
 
-            s.path(
+            var upper_legs = s.path(
                 svg.
                 clear().
                 M(f1.p1).
                 A(radius, radius, 0, 0, 1, f1.p2).
                 L(coord.polar(centre.upper_legs[0], radius, 210)).
                 A(radius, radius, 0, 0, 0, coord.polar(centre.upper_legs[0], radius, 330)).
+                L(f2.p1).
+                A(radius, radius, 0, 0, 1, f2.p2).
+                L(coord.polar(centre.upper_legs[1], radius, 30)).
+                A(radius, radius, 0, 0, 0, coord.polar(centre.upper_legs[1], radius, 150)).
+                Z().
                 toString()
-            ).attr({fill: colours.upper_legs, stroke: "red"});
+            ).attr({fill: colours.upper_legs});
         }());
     </script>
 </body>
