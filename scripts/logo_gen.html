@@ -166,7 +166,7 @@
 
             function limb(s, centres, colour) {
                 var t1, t2;
-                if (centres[0].y < centres[1].y) {
+                if (centres.p1.y < centres.p2.y) {
                     t1 = 30;
                     t2 = 210;
                 }
@@ -180,10 +180,10 @@
                 return s.path(
                     svg.
                     clear().
-                    M(centres[0].polar(radius, t1)).
-                    A(radius, radius, t2, 0, 0, centres[0].polar(radius, t2)).
-                    L(centres[1].polar(radius, t2)).
-                    A(radius, radius, t1, 0, 0, centres[1].polar(radius, t1)).
+                    M(centres.p1.polar(radius, t1)).
+                    A(radius, radius, t2, 0, 0, centres.p1.polar(radius, t2)).
+                    L(centres.p2.polar(radius, t2)).
+                    A(radius, radius, t1, 0, 0, centres.p2.polar(radius, t1)).
                     z().
                     toString()
                 ).attr({fill: colour});
@@ -207,32 +207,36 @@
             // The centre of the head is distance radius from the top left.
             centre.head = new Point(0 + radius, 0 + radius);
 
-            centre.torso = [];
-            centre.torso[0] = centre.head.polar(head_torso, 300);
-            centre.torso[1] = centre.head.polar(head_torso + long_limb, 300);
+            centre.torso = new Vector(
+                centre.head.polar(head_torso, 300),
+                centre.head.polar(head_torso + long_limb, 300)
+            );
 
-            centre.upper_legs = [];
-            centre.upper_legs[0] = centre.torso[1];
-            centre.upper_legs[1] = centre.torso[1].polar(long_limb, 60);
+            centre.upper_legs = new Vector(
+                centre.torso.p2,
+                centre.torso.p2.polar(long_limb, 60)
+            );
 
-            centre.lower_legs = [];
-            centre.lower_legs[0] = centre.upper_legs[1];
-            centre.lower_legs[1] = centre.upper_legs[1].polar(long_limb, 300);
+            centre.lower_legs = new Vector(
+                centre.upper_legs.p2,
+                centre.upper_legs.p2.polar(long_limb, 300)
+            );
 
-            centre.feet = [];
-            centre.feet[0] = centre.lower_legs[1];
-            centre.feet[1] = centre.lower_legs[1].polar(short_limb, 60);
+            centre.feet = new Vector(
+                centre.lower_legs.p2,
+                centre.lower_legs.p2.polar(short_limb, 60)
+            );
             
             // Points of tangency for the fillet between torso and upper legs.
             var f1 = (function() {
                 var v1 = new Vector(
-                    centre.upper_legs[0].polar(radius, 150),
-                    centre.upper_legs[1].polar(radius, 150)
+                    centre.upper_legs.p1.polar(radius, 150),
+                    centre.upper_legs.p2.polar(radius, 150)
                 );
 
                 var v2 = new Vector(
-                    centre.torso[0].polar(radius, 210),
-                    centre.torso[1].polar(radius, 210)
+                    centre.torso.p1.polar(radius, 210),
+                    centre.torso.p2.polar(radius, 210)
                 );
 
                 var i = v1.intersection(v2);
@@ -242,21 +246,21 @@
             // Points of tangency for the fillet between upper and lower legs.
             var f2 = (function() {
                 var v1 = new Vector(
-                    centre.lower_legs[0].polar(radius, 30),
-                    centre.lower_legs[1].polar(radius, 30)
+                    centre.lower_legs.p1.polar(radius, 30),
+                    centre.lower_legs.p2.polar(radius, 30)
                 );
 
                 var v2 = new Vector(
-                    centre.feet[0].polar(radius, 150),
-                    centre.feet[1].polar(radius, 150)
+                    centre.feet.p1.polar(radius, 150),
+                    centre.feet.p2.polar(radius, 150)
                 );
 
                 var i1 = v1.intersection(v2);
 
                 var path1 = svg.
                     clear().
-                    M(centre.upper_legs[0].polar(dia, 330)).
-                    L(centre.upper_legs[1].polar(dia, 330)).
+                    M(centre.upper_legs.p1.polar(dia, 330)).
+                    L(centre.upper_legs.p2.polar(dia, 330)).
                     toString();
 
                 var path2 = svg.
@@ -289,12 +293,12 @@
                 clear().
                 M(f1.p1).
                 A(radius, radius, 0, 0, 1, f1.p2).
-                L(centre.upper_legs[0].polar(radius, 210)).
-                A(radius, radius, 0, 0, 0, centre.upper_legs[0].polar(radius, 330)).
+                L(centre.upper_legs.p1.polar(radius, 210)).
+                A(radius, radius, 0, 0, 0, centre.upper_legs.p1.polar(radius, 330)).
                 L(f2.p1).
                 A(radius, radius, 0, 0, 1, f2.p2).
-                L(centre.upper_legs[1].polar(radius, 30)).
-                A(radius, radius, 0, 0, 0, centre.upper_legs[1].polar(radius, 150)).
+                L(centre.upper_legs.p2.polar(radius, 30)).
+                A(radius, radius, 0, 0, 0, centre.upper_legs.p2.polar(radius, 150)).
                 Z().
                 toString()
             ).attr({fill: colours.upper_legs});
