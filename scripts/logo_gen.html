@@ -147,20 +147,22 @@
                     Math.pow(p0tan, 2)
                 );
 
-                var c1 = new Point(
+                // The tangent intersection on v1.
+                var v1tan = new Point(
                     v1.p1.x - v1.vx * p0tan / v1.len,
                     v1.p1.y - v1.vy * p0tan / v1.len
                 );
 
-                var c2 = new Point(
+                // The tangent intersection on v2.
+                var v2tan = new Point(
                     v2.p1.x - v2.vx * p0tan / v2.len,
                     v2.p1.y - v2.vy * p0tan / v2.len
                 );
 
-                s.circle(c1.x, c1.y, 3);
-                s.circle(c2.x, c2.y, 3);
-
-                return p0tan;
+                return {
+                    v1tan: v1tan,
+                    v2tan: v2tan,
+                };
             }
 
             return Coord;
@@ -292,12 +294,18 @@
 
         s.circle(c.x, c.y, radius).attr({opacity: 0.25});
 
-        var segment = coord.fillet(i, v1.p1, v2.p2, radius);
+        var tangents = coord.fillet(i, v1.p1, v2.p2, radius);
 
-        // var c1 = coord.polar(i, segment, 120);
+        s.circle(tangents.v1tan.x, tangents.v1tan.y, 3);
+        s.circle(tangents.v2tan.x, tangents.v2tan.y, 3);
 
-        // s.circle(c1.x, c1.y, 5);
-
+        s.path(
+            svg.
+            clear().
+            M(tangents.v2tan).
+            A(radius, radius, 0, 0, 1, tangents.v1tan).
+            toString()
+        ).attr({stroke: "black", fill: "none"});
     </script>
 </body>
 </html>
