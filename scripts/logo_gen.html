@@ -64,6 +64,7 @@
                 var _vy  = p1.y - p2.y;
                 var _len = Math.sqrt( Math.pow(_vx, 2) + Math.pow(_vy, 2) );
                 var _rad = Math.atan2(_vy, _vx);
+                var _deg = _rad * (180 / Math.PI);
 
                 Object.defineProperties(this, {
                     'p1':  {get: function() {return p1}},
@@ -112,25 +113,6 @@
                 return new Point(x, y);
             };
 
-            /* Given the angle in degrees between two intersecting vectors,
-                * and the radius of a circle to which the vectors must be
-                * tangent, return the distance between the apex and the centre
-                * of the circle.
-                */
-            Coord.prototype.circleCentreTTR = function(degrees, radius) {
-                var radians = this.toRadians(degrees);
-                var segment = radius / (Math.tan(radians / 2));
-                return Math.sqrt(radius ** 2 + segment ** 2);
-            };
-
-            Coord.prototype.toDegrees = function(radians) {
-                return radians * (180 / Math.PI);
-            };
-
-            Coord.prototype.toRadians = function(degrees) {
-                return degrees * (Math.PI / 180);
-            };
-
             Coord.prototype.fillet = function(p0, p1, p2, r) {
                 var v1 = new Vector(p0, p1);
                 var v2 = new Vector(p0, p2);
@@ -147,165 +129,170 @@
                     Math.pow(p0tan, 2)
                 );
 
-                // The tangent intersection on v1.
-                var v1tan = new Point(
-                    v1.p1.x - v1.vx * p0tan / v1.len,
-                    v1.p1.y - v1.vy * p0tan / v1.len
+                return new Vector(
+                    // The tangent intersection on v1.
+                    new Point(
+                        v1.p1.x - v1.vx * p0tan / v1.len,
+                        v1.p1.y - v1.vy * p0tan / v1.len
+                    ),
+                    // The tangent intersection on v2.
+                    new Point(
+                        v2.p1.x - v2.vx * p0tan / v2.len,
+                        v2.p1.y - v2.vy * p0tan / v2.len
+                    )
                 );
-
-                // The tangent intersection on v2.
-                var v2tan = new Point(
-                    v2.p1.x - v2.vx * p0tan / v2.len,
-                    v2.p1.y - v2.vy * p0tan / v2.len
-                );
-
-                return {
-                    v1tan: v1tan,
-                    v2tan: v2tan,
-                };
             }
 
             return Coord;
         }());
 
-        var palette = {
-            dark_blue:  '#2d4a5c',
-            dusky_pink: '#e29bb5',
-            mint_green: '#70c5a0',
-            light_blue: '#96c2d9',
-            lilac:      '#a08dc2',
-            coral:      '#f58c7b'
-        };
+        (function() {
 
-        var colours = {
-            head:       palette.dusky_pink,
-            torso:      palette.dusky_pink,
-            upper_legs: palette.dark_blue,
-            lower_legs: palette.mint_green,
-            feet:       palette.mint_green
-        };
+            var palette = {
+                dark_blue:  '#2d4a5c',
+                dusky_pink: '#e29bb5',
+                mint_green: '#70c5a0',
+                light_blue: '#96c2d9',
+                lilac:      '#a08dc2',
+                coral:      '#f58c7b'
+            };
 
-        function limb(s, centres, colour) {
-            var t1, t2;
-            if (centres[0].y < centres[1].y) {
-                t1 = 30;
-                t2 = 210;
+            var colours = {
+                head:       palette.dusky_pink,
+                torso:      palette.dusky_pink,
+                upper_legs: palette.dark_blue,
+                lower_legs: palette.mint_green,
+                feet:       palette.mint_green
+            };
+
+            function limb(s, centres, colour) {
+                var t1, t2;
+                if (centres[0].y < centres[1].y) {
+                    t1 = 30;
+                    t2 = 210;
+                }
+                else {
+                    t1 = 150;
+                    t2 = 330;
+                }
+
+                var svg = new SVGCmd;
+
+                return s.path(
+                    svg.
+                    clear().
+                    M(coord.polar(centres[0], radius, t1)).
+                    A(radius, radius, t2, 0, 0, coord.polar(centres[0], radius, t2)).
+                    L(coord.polar(centres[1], radius, t2)).
+                    A(radius, radius, t1, 0, 0, coord.polar(centres[1], radius, t1)).
+                    z().
+                    toString()
+                ).attr({fill: colour});
             }
-            else {
-                t1 = 150;
-                t2 = 330;
-            }
 
-            var svg = new SVGCmd;
+            var s          = Snap(1000,600);
+            var svg        = new SVGCmd();
+            var coord      = new Coord();
+            var scale      = coord.scaleTo(1);
+            var ox         = scale(  0);
+            var oy         = scale(300);
+            var radius     = scale( 44);
+            var dia        = radius * 2;
+            var long_limb  = scale(147);
+            var short_limb = scale(100);
+            var head_torso = short_limb;
 
-            return s.path(
+            // The SVG coordinate system has 0,0 at the top left.  The positive X
+            // axis points right, and the positive Y axis points down.
+
+            var height = function() {
+                // The canvas height is the vertical distance between the centre of the
+                // head and the centre of the torso base after having rotated it 300°,
+                // plus the radius of the head and the radius of the torso base.
+                var p = coord.polar(new Point(0, 0), head_torso + long_limb, 300);
+                return p.y + dia;
+            }();
+
+            var centre = {};
+
+            // The centre of the head is distance radius from the top left.
+            centre.head = new Point(0 + radius, 0 + radius);
+
+            centre.torso = [];
+            centre.torso[0] = coord.polar(centre.head, head_torso, 300);
+            centre.torso[1] = coord.polar(centre.head, head_torso + long_limb, 300);
+
+            centre.upper_legs = [];
+            centre.upper_legs[0] = centre.torso[1];
+            centre.upper_legs[1] = coord.polar(centre.torso[1], long_limb, 60);
+
+            centre.lower_legs = [];
+            centre.lower_legs[0] = centre.upper_legs[1];
+            centre.lower_legs[1] = coord.polar(centre.upper_legs[1], long_limb, 300);
+
+            centre.feet = [];
+            centre.feet[0] = centre.lower_legs[1];
+            centre.feet[1] = coord.polar(centre.lower_legs[1], short_limb, 60);
+
+            var head = s.circle(
+                centre.head.x,
+                centre.head.y,
+                radius
+            ).attr({fill: colours.head});
+
+            var torso      = limb(s, centre.torso, colours.torso);
+            var lower_legs = limb(s, centre.lower_legs, colours.lower_legs);
+            var upper_legs = limb(s, centre.upper_legs, colours.upper_legs);
+            var feet       = limb(s, centre.feet, colours.feet);
+            
+            var f1 = (function() {
+                var v1 = new Vector(
+                    coord.polar(centre.upper_legs[0], radius, 150),
+                    coord.polar(centre.upper_legs[1], radius, 150)
+                );
+
+                var v2 = new Vector(
+                    coord.polar(centre.torso[0], radius, 210),
+                    coord.polar(centre.torso[1], radius, 210)
+                );
+
+                var i = v1.intersection(v2);
+                return coord.fillet(i, v1.p2, v2.p1, radius);
+            }());
+
+            var f2 = (function() {
+                var p1 = svg.
+                    clear().
+                    M(coord.polar(centre.upper_legs[0], dia, 330)).
+                    L(coord.polar(centre.upper_legs[1], dia, 330)).
+                    toString();
+
+                var v1 = new Vector(
+                    coord.polar(centre.lower_legs[0], radius, 30),
+                    coord.polar(centre.lower_legs[1], radius, 30)
+                );
+
+                var v2 = new Vector(
+                    coord.polar(centre.feet[0], radius, 150),
+                    coord.polar(centre.feet[1], radius, 150)
+                );
+
+                s.path(svg.clear().M(v1.p1).L(v1.p2).toString()).attr({stroke: "black"});
+                s.path(svg.clear().M(v2.p1).L(v2.p2).toString()).attr({stroke: "black"});
+
+                s.path(p1).attr({stroke: "red"});
+            }());
+
+            s.path(
                 svg.
                 clear().
-                M(coord.polar(centres[0], radius, t1)).
-                A(radius, radius, t2, 0, 0, coord.polar(centres[0], radius, t2)).
-                L(coord.polar(centres[1], radius, t2)).
-                A(radius, radius, t1, 0, 0, coord.polar(centres[1], radius, t1)).
-                z().
+                M(f1.p1).
+                A(radius, radius, 0, 0, 1, f1.p2).
+                L(coord.polar(centre.upper_legs[0], radius, 210)).
+                A(radius, radius, 0, 0, 0, coord.polar(centre.upper_legs[0], radius, 330)).
                 toString()
-            ).attr({fill: colour});
-        }
-
-        var s          = Snap(1000,600);
-        var svg        = new SVGCmd();
-        var coord      = new Coord();
-        var scale      = coord.scaleTo(1);
-        var ox         = scale(  0);
-        var oy         = scale(300);
-        var radius     = scale( 44);
-        var dia        = radius * 2;
-        var long_limb  = scale(147);
-        var short_limb = scale(100);
-        var head_torso = short_limb;
-
-        // The SVG coordinate system has 0,0 at the top left.  The positive X
-        // axis points right, and the positive Y axis points down.
-
-        var height = function() {
-            // The canvas height is the vertical distance between the centre of the
-            // head and the centre of the torso base after having rotated it 300°,
-            // plus the radius of the head and the radius of the torso base.
-            var p = coord.polar(new Point(0, 0), head_torso + long_limb, 300);
-            return p.y + dia;
-        }();
-
-        var centre = {};
-
-        // The centre of the head is distance radius from the top left.
-        centre.head = new Point(0 + radius, 0 + radius);
-
-        centre.torso = [];
-        centre.torso[0] = coord.polar(centre.head, head_torso, 300);
-        centre.torso[1] = coord.polar(centre.head, head_torso + long_limb, 300);
-
-        centre.upper_legs = [];
-        centre.upper_legs[0] = centre.torso[1];
-        centre.upper_legs[1] = coord.polar(centre.torso[1], long_limb, 60);
-
-        centre.lower_legs = [];
-        centre.lower_legs[0] = centre.upper_legs[1];
-        centre.lower_legs[1] = coord.polar(centre.upper_legs[1], long_limb, 300);
-
-        centre.feet = [];
-        centre.feet[0] = centre.lower_legs[1];
-        centre.feet[1] = coord.polar(centre.lower_legs[1], short_limb, 60);
-
-        var head = s.circle(
-            centre.head.x,
-            centre.head.y,
-            radius
-        ).attr({fill: colours.head});
-
-        var torso      = limb(s, centre.torso, colours.torso);
-        var lower_legs = limb(s, centre.lower_legs, colours.lower_legs);
-        var upper_legs = limb(s, centre.upper_legs, colours.upper_legs);
-        var feet       = limb(s, centre.feet, colours.feet);
-        
-        var v1 = new Vector(
-            coord.polar(centre.torso[0], radius, 210),
-            coord.polar(centre.torso[1], radius, 210)
-        );
-
-        var v2 = new Vector(
-            coord.polar(centre.upper_legs[0], radius, 150),
-            coord.polar(centre.upper_legs[1], radius, 150)
-        );
-
-        var i = v1.intersection(v2);
-
-        s.path(
-            svg.
-            clear().
-            M(v1.p1).
-            L(i).
-            L(v2.p2).
-            toString()
-        ).attr({stroke: "black", fill: "none"});
-
-        s.circle(i.x, i.y, 3);
-
-        var offset = coord.circleCentreTTR(60, radius);
-        console.log('Offset: ' + offset);
-        var c = coord.polar(i, offset, 90);
-
-        s.circle(c.x, c.y, radius).attr({opacity: 0.25});
-
-        var tangents = coord.fillet(i, v1.p1, v2.p2, radius);
-
-        s.circle(tangents.v1tan.x, tangents.v1tan.y, 3);
-        s.circle(tangents.v2tan.x, tangents.v2tan.y, 3);
-
-        s.path(
-            svg.
-            clear().
-            M(tangents.v2tan).
-            A(radius, radius, 0, 0, 1, tangents.v1tan).
-            toString()
-        ).attr({stroke: "black", fill: "none"});
+            ).attr({fill: colours.upper_legs, stroke: "red"});
+        }());
     </script>
 </body>
 </html>
