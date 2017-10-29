@@ -188,8 +188,6 @@
                 ).attr({fill: colour});
             }
 
-            var s          = Snap(1000,600);
-            var svg        = new SVGCmd();
             var coord      = new Coord();
             var scale      = coord.scaleTo(1);
             var radius     = scale( 44);
@@ -225,6 +223,13 @@
                 centre.lower_legs.p2,
                 centre.lower_legs.p2.polar(short_limb, 60)
             );
+
+            var svg = new SVGCmd();
+            var s   = new Snap(
+                centre.feet.p2.polar(radius, 0).x,
+                centre.feet.p1.polar(radius, 270).y
+            );
+
             
             // Points of tangency for the fillet between torso and upper legs.
             var f1 = (function() {
