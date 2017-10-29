@@ -102,19 +102,8 @@
                 return new Point(x, y);
             };
 
-            return Vector;
-        }());
-
-        var Coord = (function() {
-            function Coord() {};
-
-            Coord.prototype.scaleTo = function(s) {
-                return function(v) { return v * s; };
-            }
-
-            Coord.prototype.fillet = function(p0, p1, p2, r) {
-                var v1 = new Vector(p0, p1);
-                var v2 = new Vector(p0, p2);
+            Vector.prototype.fillet = function(v2, r) {
+                var v1 = this;
 
                 // Bisect vector angle.
                 var angle = (v1.rad - v2.rad) / 2;
@@ -140,6 +129,16 @@
                         v2.p1.y - v2.vy * p0tan / v2.len
                     )
                 );
+            }
+
+            return Vector;
+        }());
+
+        var Coord = (function() {
+            function Coord() {};
+
+            Coord.prototype.scaleTo = function(s) {
+                return function(v) { return v * s; };
             }
 
             return Coord;
@@ -240,7 +239,11 @@
                 );
 
                 var i = v1.intersection(v2);
-                return coord.fillet(i, v1.p2, v2.p1, radius);
+
+                var v1i = new Vector(i, v1.p2);
+                var v2i = new Vector(i, v2.p1);
+
+                return v1i.fillet(v2i, radius);
             }());
 
             // Points of tangency for the fillet between upper and lower legs.
