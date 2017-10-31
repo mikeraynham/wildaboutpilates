@@ -60,6 +60,52 @@ header > nav {
     transition: 300ms all ease;
 }
 
+header > nav > input {
+    opacity: 0;
+    position: absolute;;
+    right: 0.88em;
+    top: 0.88em;
+    height: 4em;
+    width: 4em;
+    z-index: 1000;
+}
+
+header > nav > label, header > nav > label::before, header > nav > label::after {
+    content: "";
+    display: block;
+    width: 2.35em;
+    height: 0.88em;
+    text-indent: -999999px;
+    border: none;
+    border-radius: 0.44em;
+    float: right;
+}
+
+header > nav > label {
+    right: 0.88em;
+    top: 0.88em;
+    position: relative;
+    background-color: palette('dusky_pink');
+}
+
+header > nav > label::before {
+    position: absolute;
+    top: 1.32em;
+    background-color: palette('dark_blue');
+}
+
+header > nav > label::after {
+    position: absolute;
+    top: 2.64em;
+    background-color: palette('mint_green');
+}
+
+header > nav > input:checked + label,
+header > nav > input:checked + label::after,
+header > nav > input:checked + label::before {
+    height: 0.44em;
+}
+
 header nav > ul {
     list-style-type: none;
 }
