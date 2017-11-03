@@ -9,6 +9,10 @@ $palette: (
     'coral':      #f58c7b
 );
 
+$bar_height: 0.88;
+$bar_width: 2.35;
+$bar_space: 0.22;
+
 @function palette($key) {
     @return map-get($palette, $key);
 }
@@ -46,83 +50,83 @@ body {
 }
 
 header {
-    background-color: rgb(255, 255, 255);
-    border-bottom: 1px solid rgba(0,0,0,.15);
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
+    nav {
+        background-color: white;
 
-header > nav {
-    background-color: white;
-    # display: none;
-    flex: 1;
-    transition: 300ms all ease;
-}
+        input {
+            opacity: 0;
+            position: absolute;;
+            right: 0.88em;
+            top: 0.88em;
+            height: 5.2em;
+            width: 4em;
+            z-index: 1000;
+        }
 
-header > nav > input {
-    opacity: 0;
-    position: absolute;;
-    right: 0.88em;
-    top: 0.88em;
-    height: 4em;
-    width: 4em;
-    z-index: 1000;
-}
+        label {
+            background-color: palette('dark_blue');
+            float: right;
+            margin: #{$bar_height + $bar_space}em 0 #{$bar_height + $bar_space}em 0;
+            position: relative;
+            right: #{$bar_height}em;
+            text-indent: -999999px;
+            top: #{$bar_height}em;
+        }
 
-header > nav > label, header > nav > label::before, header > nav > label::after {
-    content: "";
-    display: block;
-    width: 2.35em;
-    height: 0.88em;
-    text-indent: -999999px;
-    border: none;
-    border-radius: 0.44em;
-    float: right;
-}
+        label, label::before, label::after {
+            border-radius: #{$bar_height / 2}em;
+            border: none;
+            display: block;
+            height: #{$bar_height}em;
+            transition-duration: 0.5s;
+            width: #{$bar_width}em;
+        }
 
-header > nav > label {
-    right: 0.88em;
-    top: 0.88em;
-    position: relative;
-    background-color: palette('dusky_pink');
-}
+        label::before, label::after {
+            content: "";
+            position: absolute;
+        }
 
-header > nav > label::before {
-    position: absolute;
-    top: 1.32em;
-    background-color: palette('dark_blue');
-}
+        label::before {
+            background-color: palette('dusky_pink');
+            top: -#{$bar_height + $bar_space}em
+        }
 
-header > nav > label::after {
-    position: absolute;
-    top: 2.64em;
-    background-color: palette('mint_green');
-}
+        label::after {
+            background-color: palette('mint_green');
+            top: #{$bar_height + $bar_space}em
+        }
 
-header > nav > input:checked + label,
-header > nav > input:checked + label::after,
-header > nav > input:checked + label::before {
-    height: 0.44em;
-}
+        input:checked + label::before {
+            top: 0;
+            transform: rotate(-60deg);
+            transform-origin: #{$bar_height / 2}em;
+        }
 
-header nav > ul {
-    list-style-type: none;
-}
+        input:checked + label {
+            transform: rotate(-60deg);
+        }
 
-header nav > ul > li {
-    border-bottom: 1px dotted rgba(0,0,0,.1);
-    position: relative;
-}
+        input:checked + label::after {
+            top: 0;
+            transform: rotate(-60deg);
+            transform-origin: #{$bar_width - ($bar_height / 2)}em #{$bar_height / 2}em;
+        }
 
-header nav > ul > li {
-    display: block;
-    color: rgba(0,0,0,.65);
-    font-weight: 700;
-    padding: 1.5rem 0;
-    transition: 250ms all ease;
-}
+        input:checked ~ ul {
+            transform: translate(0, 0);
+        }
 
-header nav > ul > li > a {
-    text-decoration: none;
+        ul {
+            list-style-type: none;
+            transform-origin: 0% 0%;
+            transform: translate(0%, -100%);
+            transition: transform 0.5s;
+            li {
+                a {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
 }
