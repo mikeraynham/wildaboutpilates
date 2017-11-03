@@ -58,8 +58,8 @@ header {
         input {
             opacity: 0;
             position: absolute;;
-            right: #{$thickness - (($overall_width - $length) / 2)}rem;
-            top: 0.88rem;
+            right: #{$thickness + ($thickness - (($overall_width - $length) / 2))}rem;
+            top: #{$thickness}rem;
             height: #{$overall_height}rem;
             width: #{$overall_width}rem;
             z-index: 1;
@@ -69,7 +69,7 @@ header {
             background-color: palette('dark_blue');
             float: right;
             margin: #{$thickness + $gap}rem 0 #{$thickness + $gap}rem 0;
-            right: #{$thickness}rem;
+            right: #{$thickness * 2}rem;
             text-indent: -999999px;
             top: #{$thickness}rem;
         }
@@ -80,7 +80,7 @@ header {
             display: block;
             height: #{$thickness}rem;
             position: absolute;
-            transition-duration: 0.5s;
+            transition-duration: 0.2s;
             width: #{$length}rem;
         }
 
@@ -99,10 +99,11 @@ header {
         }
 
         input:checked {
+            $x_offset: 0.3675;
+            $y_offset: 0.4635;
+
             & + label::before {
-                top: 0;
-                transform: rotate(-60deg);
-                transform-origin: #{$thickness / 2}rem;
+                transform: translate(-#{$x_offset}rem, #{$y_offset}rem) rotate(-60deg);
             }
 
             & + label {
@@ -110,9 +111,7 @@ header {
             }
 
             & + label::after {
-                top: 0;
-                transform: rotate(-60deg);
-                transform-origin: #{$length - ($thickness / 2)}rem #{$thickness / 2}rem;
+                transform: translate(#{$x_offset}rem, -#{$y_offset}rem) rotate(-60deg);
             }
 
             & ~ ul {
