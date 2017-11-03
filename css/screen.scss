@@ -9,10 +9,6 @@ $palette: (
     'coral':      #f58c7b
 );
 
-$bar_height: 0.88;
-$bar_width: 2.35;
-$bar_space: 0.22;
-
 @function palette($key) {
     @return map-get($palette, $key);
 }
@@ -40,7 +36,7 @@ body {
 
 #skip_to_content {
     position: absolute;
-    top: -5em;
+    top: -5rem;
     left: 0;
 }
 
@@ -53,68 +49,75 @@ header {
     nav {
         background-color: white;
 
+        $thickness: 0.88;
+        $length: 2.35;
+        $gap: 0.22;
+        $overall_width: 2.20577 + $thickness;
+        $overall_height: $thickness * 3 + $gap * 2;
+
         input {
             opacity: 0;
             position: absolute;;
-            right: 0.88em;
-            top: 0.88em;
-            height: 5.2em;
-            width: 4em;
-            z-index: 1000;
+            right: #{$thickness - (($overall_width - $length) / 2)}rem;
+            top: 0.88rem;
+            height: #{$overall_height}rem;
+            width: #{$overall_width}rem;
+            z-index: 1;
         }
 
         label {
             background-color: palette('dark_blue');
             float: right;
-            margin: #{$bar_height + $bar_space}em 0 #{$bar_height + $bar_space}em 0;
-            position: relative;
-            right: #{$bar_height}em;
+            margin: #{$thickness + $gap}rem 0 #{$thickness + $gap}rem 0;
+            right: #{$thickness}rem;
             text-indent: -999999px;
-            top: #{$bar_height}em;
+            top: #{$thickness}rem;
         }
 
         label, label::before, label::after {
-            border-radius: #{$bar_height / 2}em;
+            border-radius: #{$thickness / 2}rem;
             border: none;
             display: block;
-            height: #{$bar_height}em;
+            height: #{$thickness}rem;
+            position: absolute;
             transition-duration: 0.5s;
-            width: #{$bar_width}em;
+            width: #{$length}rem;
         }
 
         label::before, label::after {
             content: "";
-            position: absolute;
         }
 
         label::before {
             background-color: palette('dusky_pink');
-            top: -#{$bar_height + $bar_space}em
+            top: -#{$thickness + $gap}rem
         }
 
         label::after {
             background-color: palette('mint_green');
-            top: #{$bar_height + $bar_space}em
+            top: #{$thickness + $gap}rem
         }
 
-        input:checked + label::before {
-            top: 0;
-            transform: rotate(-60deg);
-            transform-origin: #{$bar_height / 2}em;
-        }
+        input:checked {
+            & + label::before {
+                top: 0;
+                transform: rotate(-60deg);
+                transform-origin: #{$thickness / 2}rem;
+            }
 
-        input:checked + label {
-            transform: rotate(-60deg);
-        }
+            & + label {
+                transform: rotate(-60deg);
+            }
 
-        input:checked + label::after {
-            top: 0;
-            transform: rotate(-60deg);
-            transform-origin: #{$bar_width - ($bar_height / 2)}em #{$bar_height / 2}em;
-        }
+            & + label::after {
+                top: 0;
+                transform: rotate(-60deg);
+                transform-origin: #{$length - ($thickness / 2)}rem #{$thickness / 2}rem;
+            }
 
-        input:checked ~ ul {
-            transform: translate(0, 0);
+            & ~ ul {
+                transform: translate(0, 0);
+            }
         }
 
         ul {
