@@ -11,8 +11,8 @@
         <header>
             <a id="skip_to_content" href="#main_content">Skip to main content</a>
             <nav role="navigation" aria-label="Main Navigation">
-                <input type="checkbox" />
-                <label>Menu toggle</label>
+                <input id="menu-toggle" type="checkbox" />
+                <label for="menu-toggle">Menu toggle</label>
                 <ul>
                     <li aria-current="page">Pilates classes</li>
                     <li><a href="#">About me</a></li>
@@ -21,6 +21,7 @@
                 </ul>
             </nav>
         </header>
+        <!--
         <section id="main_content">
             {{ content }}
         </section>
@@ -30,5 +31,6 @@
                 <a href="tel:{{ site.tel | slugify }}" aria-label="telephone number {{ site.tel }}">{{ site.tel }}</a>
             </address>
         </footer>
+        -->
     </body>
 </html>

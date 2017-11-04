@@ -1,19 +1,13 @@
 ---
 ---
-$palette: (
-    'dark_blue':  #2d4a5c,
-    'dusky_pink': #e29bb5,
-    'mint_green': #70c5a0,
-    'light_blue': #96c2d9,
-    'lilac':      #a08dc2,
-    'coral':      #f58c7b
-);
-
-@function palette($key) {
-    @return map-get($palette, $key);
-}
+@import 'palette';
+@import 'trig';
 
 * {
+    /* transition: none !important; */
+    /* transform: none !important; */
+    /* animation: none !important; */
+
     margin: 0;
     padding: 0;
     outline: none;
@@ -23,8 +17,8 @@ $palette: (
 }
 
 html {
-    background: url(/images/background.png) no-repeat center center fixed;
-    background-size: cover;
+    /* background: url(/images/background.png) no-repeat center center fixed; */
+    /* background-size: cover; */
 }
 
 body {
@@ -49,39 +43,40 @@ header {
     nav {
         background-color: white;
 
-        $thickness: 0.88;
-        $length: 2.35;
         $gap: 0.22;
-        $overall_width: 2.20577 + $thickness;
-        $overall_height: $thickness * 3 + $gap * 2;
+        $rad: 0.22;
+        $dia: $rad * 2;
+        $inner_len: 1.47;
+        $outer_len: $inner_len + $dia;
+        $click_box_w: ($inner_len * 1.5) + $dia;
+        $click_box_h: $dia * 3 + $gap * 2;
 
         input {
             opacity: 0;
             position: absolute;;
-            right: #{$thickness + ($thickness - (($overall_width - $length) / 2))}rem;
-            top: #{$thickness}rem;
-            height: #{$overall_height}rem;
-            width: #{$overall_width}rem;
+            right: #{$dia}rem;
+            top: #{$dia}rem;
+            height: #{$click_box_h}rem;
+            width: #{$click_box_w}rem;
             z-index: 1;
         }
 
         label {
             background-color: palette('dark_blue');
-            float: right;
-            margin: #{$thickness + $gap}rem 0 #{$thickness + $gap}rem 0;
-            right: #{$thickness * 2}rem;
+            margin: #{$dia + $rad}rem 0 #{$dia + $rad}rem 0;
+            right: #{$dia + (($click_box_w - $outer_len) / 2)}rem;
             text-indent: -999999px;
-            top: #{$thickness}rem;
+            top: #{$dia}rem;
         }
 
         label, label::before, label::after {
-            border-radius: #{$thickness / 2}rem;
+            border-radius: #{$rad}rem;
             border: none;
             display: block;
-            height: #{$thickness}rem;
+            height: #{$dia}rem;
             position: absolute;
-            transition-duration: 0.2s;
-            width: #{$length}rem;
+            width: #{$outer_len}rem;
+            transition: transform 0.5s;
         }
 
         label::before, label::after {
@@ -90,20 +85,25 @@ header {
 
         label::before {
             background-color: palette('dusky_pink');
-            top: -#{$thickness + $gap}rem
+            top: -#{$dia + $gap}rem
         }
 
         label::after {
             background-color: palette('mint_green');
-            top: #{$thickness + $gap}rem
+            top: #{$dia + $gap}rem
         }
 
         input:checked {
-            $x_offset: 0.3675;
-            $y_offset: 0.4635;
+            $half_len: $inner_len / 2;
+            $offx: $half_len - abs(rotx($half_len, 0, 60));
+            $offy: ($gap + $dia) - abs(roty($half_len, 0, 60));
+
+            & + label, label::before, label::after {
+                transition-duration: 0.5s;
+            }
 
             & + label::before {
-                transform: translate(-#{$x_offset}rem, #{$y_offset}rem) rotate(-60deg);
+                transform: translate(#{- $offx}rem, #{$offy}rem) rotate(-60deg);
             }
 
             & + label {
@@ -111,7 +111,7 @@ header {
             }
 
             & + label::after {
-                transform: translate(#{$x_offset}rem, -#{$y_offset}rem) rotate(-60deg);
+                transform: translate(#{$offx}rem, #{- $offy}rem) rotate(-60deg);
             }
 
             & ~ ul {
