@@ -6,8 +6,7 @@
 @import 'nav';
 
 html {
-    /* background: url(/images/background.png) no-repeat center center fixed; */
-    /* background-size: cover; */
+    background: url(/images/background.png) no-repeat 50% 0 / auto 100%;
+    margin: 0 auto;
+    height: 100%;
 }
-
-

@@ -15,28 +15,40 @@ header {
     $gap: 0.22;
     $rad: 0.22;
     $dia: $rad * 2;
-    $inner_len: 1.47;
+    /* $inner_len: 1.47; */
+    $inner_len: 1;
     $outer_len: $inner_len + $dia;
     $click_box_w: ($inner_len * 1.5) + $dia;
     $click_box_h: $dia * 3 + $gap * 2;
     $header_height: $click_box_h + 2rem;
 
-    border-bottom: 1px solid gray;
+    background-color: white;
+    border-bottom: 1px solid palette('dark_blue');
     height: $header_height;
     line-height: #{$click_box_h}rem;
     padding: 1rem;
-
     .logo {
+        $logo_w: 408.5;
+        $logo_h: 301.90827473;
+        $logo_w_rem: ($logo_w / ($logo_h / ($click_box_h * 16))) / 16;
+
+        background: url(/images/wild-about-pilates-logo.svg) left center/auto #{$click_box_h}rem no-repeat;
+        display: block;
+        height: #{$click_box_h}rem;
+        text-decoration: none;
+        text-indent: #{$logo_w_rem + $dia}rem;
         vertical-align: middle;
     }
 
     nav {
         background-color: white;
+        float: right;
 
         input {
             opacity: 0;
             height: #{$click_box_h}rem;
-            left: #{1 - (($click_box_w - $outer_len) / 2)}rem;
+            margin-right: 1rem;
+            right: #{1 - (($click_box_w - $outer_len) / 2)}rem;
             position: absolute;
             width: #{$click_box_w}rem;
             z-index: 1;
@@ -46,7 +58,7 @@ header {
             background-color: palette('dark_blue');
             margin: #{$dia + $rad}rem 1rem #{$dia + $rad}rem 0;
             position: relative;
-            float: left;
+            float: right;
             text-indent: -999999px;
         }
 
@@ -100,20 +112,27 @@ header {
             }
 
             & ~ ul {
-                left: 0;
+                right: 0;
             }
         }
 
         ul {
-            left: -100%;
+            background-color: white;
             list-style-type: none;
+            margin-right: 1em;
             position: absolute;
+            right: -100%;
             top: $header_height;
-            transition: left 0.5s;
+            transition: right 0.5s;
             li {
+                border-bottom: 1px solid palette('light_blue');
+                padding: 0 0.5rem;
                 transform-origin: 0 0;
-                transform: translate(-100%, 0);
+                transform: translate(100%, 0);
                 transition: transform 0.5s;
+                &:hover {
+                    background: palette('light_blue');
+                }
                 a {
                     text-decoration: none;
                 }
