@@ -10,18 +10,18 @@
     <body>
         <header>
             <a id="skip_to_content" href="#main_content">Skip to main content</a>
-            <nav role="navigation" aria-label="Main Navigation">
-                <input id="menu-toggle" type="checkbox" />
-                <label for="menu-toggle">Menu toggle</label>
-                <ul>
-                    <li aria-current="page">Pilates classes</li>
-                    <li><a href="#">About me</a></li>
-                    <li><a href="#">Testimonials</a></li>
-                    <li><a href="#">Get in touch</a></li>
-                </ul>
-            </nav>
             <a class="logo" href="/">Wild About Pilates</a>
         </header>
+        <input id="menu-toggle" type="checkbox" />
+        <label for="menu-toggle">Menu toggle</label>
+        <nav role="navigation" aria-label="Main Navigation">
+            <ul id="menu" class="no-delay">
+                <li aria-current="page">Pilates classes</li>
+                <li><a href="#">About me</a></li>
+                <li><a href="#">Testimonials</a></li>
+                <li><a href="#">Get in touch</a></li>
+            </ul>
+        </nav>
         <!--
         <section id="main_content">
             {{ content }}
@@ -34,4 +34,7 @@
         </footer>
         -->
     </body>
+    <script>
+        document.getElementById('menu').classList.remove('no-delay');
+    </script>
 </html>
