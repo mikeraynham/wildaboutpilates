@@ -31,7 +31,7 @@ $header_height: $click_box_h + 2rem;
     border-bottom: 1px solid palette('dark_blue');
     border-radius: 0 0 0.5rem 0;
     border-right: 1px solid palette('dark_blue');
-    box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.2);
     list-style-type: none;
     padding: 0.5rem;
     position: absolute;
@@ -41,7 +41,7 @@ $header_height: $click_box_h + 2rem;
 header {
     background-color: white;
     border-bottom: 1px solid palette('dark_blue');
-    box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.2);
     height: $header_height;
     line-height: #{$click_box_h}rem;
     padding: 1rem;
@@ -133,6 +133,8 @@ input:checked {
 }
 
 nav {
+    background-color: palette('mint_green');
+    border-bottom: 1px solid palette('dark_blue');
     left: 0;
     line-height: 2;
     overflow: hidden;
@@ -145,18 +147,28 @@ nav {
     z-index: 0;
 
     ul {
-        border-bottom: 1px solid palette('dark_blue');
-        background-color: palette('mint_green');
         list-style-type: none;
         padding: 0.5rem;
         li {
-            color: white;
-            a {
+            padding-bottom: 0.1rem;
+
+            &:last-child {
+                padding-bottom: 0;
+            }
+
+            span, a {
                 color: white;
                 display: block;
+            }
+            span {
+                background-color: palette('dark_blue');
+                border-radius: 1rem;
+            }
+            a {
                 text-decoration: none;
                 &:hover {
-                    background: palette('light_blue');
+                    background-color: palette('dark_blue');
+                    border-radius: 1rem;
                 }
             }
         }

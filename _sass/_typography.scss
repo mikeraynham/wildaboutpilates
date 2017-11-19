@@ -29,7 +29,7 @@
 }
 
 body, caption, th, td, input, textarea, select, option, legend, fieldset,
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, p {
     font-family: 'Montserrat', sans-serif;
     font-size-adjust: 0.5;
     font-size: 100%;
@@ -45,124 +45,136 @@ body {
     line-height: $body_line_height;
 }
 
-h1 {
-    $font_size: h_size($body_size, 2);
-    font-size: $font_size;
-    letter-spacing: #{- $font_size / rem_to_px($font_size)};
-    line-height: h_line_height($font_size, 45px);
-    margin-bottom: h_margin_bottom($body_line_height, 32px);
-    margin-top: h_margin_top($body_line_height, 32px);
-}
+main {
+    p {
+        margin-bottom: 1rem;
+    }
 
-h2 {
-    $font_size: h_size($body_size, 1.625);
-    font-size: $font_size;
-    line-height: h_line_height($font_size, 30px);
-    margin-bottom: h_margin_bottom($body_line_height, 26px);
-    margin-top: h_margin_top($body_line_height, 26px);
-}
-
-h3 {
-    $font_size: h_size($body_size, 1.375);
-    font-size: $font_size;
-    line-height: h_line_height($font_size, 25px);
-    margin-bottom: h_margin_bottom($body_line_height, 22px);
-    margin-top: h_margin_top($body_line_height, 22px);
-}
-
-h4 {
-    $font_size: h_size($body_size, 1.125);
-    font-size: $font_size;
-    line-height: h_line_height($font_size, 20px);
-    margin-bottom: h_margin_bottom($body_line_height, 18px);
-    margin-top: h_margin_top($body_line_height, 18px);
-}
-
-@media (min-width: 43.75em) {
-    $body_size: 1rem;
-    $body_line_height: 1.375;
-
-    body {
-        $font_size: $body_size;
-        font-size: $font_size;
-        line-height: $body_line_height;
+    li, dd {
+        color: palette('mint_green');
+        margin-left: 1em;
+        list-style-type: disc;
+        display: list-item;
     }
 
     h1 {
-        $font_size: h_size($body_size, 2.5);
-        font-size: $font_size;
-        letter-spacing: normal;
-        line-height: h_line_height($font_size, 45px);
-        margin-bottom: h_margin_bottom($body_line_height, 45px);
-        margin-top: h_margin_top($body_line_height, 45px);
-    }
-
-    h2 {
         $font_size: h_size($body_size, 2);
         font-size: $font_size;
-        line-height: h_line_height($font_size, 40px);
-        margin-bottom: h_margin_bottom($body_line_height, 32px);
-        margin-top: h_margin_top($body_line_height, 32px);
-    }
-
-    h3 {
-        $font_size: h_size($body_size, 1.5);
-        font-size: $font_size;
-        line-height: h_line_height($font_size, 30px);
-        margin-bottom: h_margin_bottom($body_line_height, 24px);
-        margin-top: h_margin_top($body_line_height, 24px);
-    }
-
-    h4 {
-        $font_size: h_size($body_size, 1.125);
-        font-size: $font_size;
-        line-height: h_line_height($font_size, 22px);
-        margin-bottom: h_margin_bottom($body_line_height, 18px);
-        margin-top: h_margin_top($body_line_height, 18px);
-    }
-}
-
-@media (min-width: 56.25em) {
-    $body_size: 1rem;
-    $body_line_height: 1.375;
-
-    body {
-        $font_size: $body_size;
-        font-size: $font_size;
-        line-height: $body_line_height;
-    }
-
-    h1 {
-        $font_size: h_size($body_size, 3);
-        font-size: $font_size;
-        letter-spacing: normal;
-        line-height: h_line_height($font_size, 50px);
-        margin-bottom: h_margin_bottom($body_line_height, 48px);
-        margin-top: h_margin_top($body_line_height, 48px);
-    }
-
-    h2 {
-        $font_size: h_size($body_size, 2.25);
-        font-size: $font_size;
+        letter-spacing: #{- $font_size / rem_to_px($font_size)};
         line-height: h_line_height($font_size, 45px);
         margin-bottom: h_margin_bottom($body_line_height, 32px);
         margin-top: h_margin_top($body_line_height, 32px);
     }
 
-    h3 {
-        $font_size: h_size($body_size, 1.75);
+    h2 {
+        $font_size: h_size($body_size, 1.625);
         font-size: $font_size;
-        line-height: h_line_height($font_size, 35px);
-        margin-bottom: h_margin_bottom($body_line_height, 24px);
-        margin-top: h_margin_top($body_line_height, 24px);
+        line-height: h_line_height($font_size, 30px);
+        margin-bottom: h_margin_bottom($body_line_height, 26px);
+        margin-top: h_margin_top($body_line_height, 26px);
     }
 
-    h4 {
+    h3 {
+        $font_size: h_size($body_size, 1.375);
+        font-size: $font_size;
+        line-height: h_line_height($font_size, 25px);
+        margin-bottom: h_margin_bottom($body_line_height, 22px);
+        margin-top: h_margin_top($body_line_height, 22px);
+    }
+
+    h4, dt {
         $font_size: h_size($body_size, 1.125);
         font-size: $font_size;
-        line-height: h_line_height($font_size, 22px);
+        line-height: h_line_height($font_size, 20px);
         margin-bottom: h_margin_bottom($body_line_height, 18px);
         margin-top: h_margin_top($body_line_height, 18px);
     }
-}
 
+    @media (min-width: 43.75em) {
+        $body_size: 1rem;
+        $body_line_height: 1.375;
+
+        body {
+            $font_size: $body_size;
+            font-size: $font_size;
+            line-height: $body_line_height;
+        }
+
+        h1 {
+            $font_size: h_size($body_size, 2.5);
+            font-size: $font_size;
+            letter-spacing: normal;
+            line-height: h_line_height($font_size, 45px);
+            margin-bottom: h_margin_bottom($body_line_height, 45px);
+            margin-top: h_margin_top($body_line_height, 45px);
+        }
+
+        h2 {
+            $font_size: h_size($body_size, 2);
+            font-size: $font_size;
+            line-height: h_line_height($font_size, 40px);
+            margin-bottom: h_margin_bottom($body_line_height, 32px);
+            margin-top: h_margin_top($body_line_height, 32px);
+        }
+
+        h3 {
+            $font_size: h_size($body_size, 1.5);
+            font-size: $font_size;
+            line-height: h_line_height($font_size, 30px);
+            margin-bottom: h_margin_bottom($body_line_height, 24px);
+            margin-top: h_margin_top($body_line_height, 24px);
+        }
+
+        h4 {
+            $font_size: h_size($body_size, 1.125);
+            font-size: $font_size;
+            line-height: h_line_height($font_size, 22px);
+            margin-bottom: h_margin_bottom($body_line_height, 18px);
+            margin-top: h_margin_top($body_line_height, 18px);
+        }
+    }
+
+    @media (min-width: 56.25em) {
+        $body_size: 1rem;
+        $body_line_height: 1.375;
+
+        body {
+            $font_size: $body_size;
+            font-size: $font_size;
+            line-height: $body_line_height;
+        }
+
+        h1 {
+            $font_size: h_size($body_size, 3);
+            font-size: $font_size;
+            letter-spacing: normal;
+            line-height: h_line_height($font_size, 50px);
+            margin-bottom: h_margin_bottom($body_line_height, 48px);
+            margin-top: h_margin_top($body_line_height, 48px);
+        }
+
+        h2 {
+            $font_size: h_size($body_size, 2.25);
+            font-size: $font_size;
+            line-height: h_line_height($font_size, 45px);
+            margin-bottom: h_margin_bottom($body_line_height, 32px);
+            margin-top: h_margin_top($body_line_height, 32px);
+        }
+
+        h3 {
+            $font_size: h_size($body_size, 1.75);
+            font-size: $font_size;
+            line-height: h_line_height($font_size, 35px);
+            margin-bottom: h_margin_bottom($body_line_height, 24px);
+            margin-top: h_margin_top($body_line_height, 24px);
+        }
+
+        h4 {
+            $font_size: h_size($body_size, 1.125);
+            font-size: $font_size;
+            line-height: h_line_height($font_size, 22px);
+            margin-bottom: h_margin_bottom($body_line_height, 18px);
+            margin-top: h_margin_top($body_line_height, 18px);
+        }
+    }
+}
