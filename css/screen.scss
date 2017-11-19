@@ -4,6 +4,7 @@
 @import 'reset';
 @import 'typography';
 @import 'nav';
+@import 'footer';
 
 html {
     /* background: url(/images/background.png) no-repeat 50% 0 / auto 100%; */
@@ -15,4 +16,9 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+}
+
+main {
+    flex: 1;
+    margin: 0 0.5rem;
 }

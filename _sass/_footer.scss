@@ -1,0 +1,39 @@
+footer {
+
+    padding: 1rem;
+
+    address {
+        a {
+            background-color: palette('dark_blue');
+            color: white;
+            display: block;
+            padding: 0.5rem;
+            text-align: center;
+            text-decoration: none;
+            width: 100%;
+            margin-bottom: 0.5rem;
+        }
+
+        a:last-child {
+            margin-bottom: 0;
+        }
+
+        a.email {
+            border-radius: 0.5rem 0.5rem 0 0;
+        }
+
+        a.email::before {
+            content: "Email: ";
+            color: palette('mint_green');
+        }
+
+        a.tel {
+            border-radius: 0 0 0.5rem 0.5rem;
+        }
+
+        a.tel::before {
+            content: "Telephone: ";
+            color: palette('dusky_pink');
+        }
+    }
+}
