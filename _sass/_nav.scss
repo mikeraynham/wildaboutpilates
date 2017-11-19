@@ -1,12 +1,12 @@
 @import 'trig';
 
-#skip_to_content {
+#skip-to-content {
     position: absolute;
     top: -5rem;
     left: 0;
 }
 
-#skip_to_content:focus {
+#skip-to-content:focus {
     position: absolute;
     top: 0;
 }
@@ -14,7 +14,6 @@
 $gap: 0.22;
 $rad: 0.22;
 $dia: $rad * 2;
-/* $inner_len: 1.47; */
 $inner_len: 1;
 $outer_len: $inner_len + $dia;
 $click_box_w: ($inner_len * 1.5) + $dia;
