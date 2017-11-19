@@ -1,0 +1,18 @@
+[
+  {
+    "url": "/",
+    "name": "Welcome"
+  },
+  {
+    "url": "/about/",
+    "name": "About me"
+  },
+  {
+    "url": "/questions/",
+    "name": "Questions & answers"
+  },
+  {
+    "url": "/classes/",
+    "name": "Classes"
+  }
+]
