@@ -14,8 +14,8 @@
         </header>
         <input id="menu-toggle" type="checkbox" />
         <label for="menu-toggle">Menu toggle</label>
-        <nav role="navigation" aria-label="Main Navigation">
-            <ul id="menu" class="no-delay">
+        <nav id="main-nav" class="no-delay" role="navigation" aria-label="Main Navigation">
+            <ul id="menu">
             {%- for item in site.data.nav %}
                 {%- if page.url == item.url %}
                 <li aria-current="page"><span>{{ item.name }}<span></li>
@@ -36,6 +36,6 @@
         </footer>
     </body>
     <script>
-        document.getElementById('menu').classList.remove('no-delay');
+        document.getElementById('main-nav').classList.remove('no-delay');
     </script>
 </html>

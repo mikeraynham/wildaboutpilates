@@ -137,7 +137,6 @@ nav {
     border-bottom: 1px solid palette('dark_blue');
     left: 0;
     line-height: 2;
-    overflow: hidden;
     position: absolute;
     right: 0;
     text-align: center;
@@ -174,7 +173,7 @@ nav {
         }
     }
 
-    ul.no-delay {
+    &.no-delay {
         transition-duration: 0s;
     }
 }
