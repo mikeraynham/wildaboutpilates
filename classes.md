@@ -19,7 +19,7 @@ Bring a drink of water to keep you hydrated and a towel if you wish.
 
 All places must be booked in advance.
 
-## Classes
+### Classes
 
 Taster session
 
@@ -33,7 +33,7 @@ Ad-hoc sessions
 
 : Ad-hoc sessions are £12, and booking is essential. Please text me or email and I will get back to you to confirm your place.
 
-## One-to-one sessions
+### One-to-one sessions
 
 60 minute initial assessment: £50
 
