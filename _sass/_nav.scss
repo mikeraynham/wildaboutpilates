@@ -127,16 +127,21 @@ input:checked {
         transform: translate(#{$offx}rem, #{- $offy}rem) rotate(-60deg);
     }
 
-    & ~ nav ul {
+    & ~ nav {
         transform: translate(0, 0);
     }
 }
 
 nav {
+    left: 0;
     line-height: 2;
     overflow: hidden;
-    position: relative;
+    position: absolute;
+    right: 0;
     text-align: center;
+    top: $header_height;
+    transform: translate(0, -100%);
+    transition-duration: 0.5s;
     z-index: 0;
 
     ul {
@@ -144,8 +149,6 @@ nav {
         background-color: palette('mint_green');
         list-style-type: none;
         padding: 0.5rem;
-        transition-duration: 0.5s;
-        transform: translate(0, -100%);
         li {
             color: white;
             a {

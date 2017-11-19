@@ -22,17 +22,17 @@
                 <li><a href="#">Get in touch</a></li>
             </ul>
         </nav>
+        <main>
         <!--
-        <section id="main-content">
             {{ content }}
-        </section>
+        -->
+        </main>
         <footer>
             <address>
                 <a href="mailto:{{ site.email | uri_escape }}" aria-label="email address {{ site.email }}">{{ site.email }}</a>
                 <a href="tel:{{ site.tel | slugify }}" aria-label="telephone number {{ site.tel }}">{{ site.tel }}</a>
             </address>
         </footer>
-        -->
     </body>
     <script>
         document.getElementById('menu').classList.remove('no-delay');
