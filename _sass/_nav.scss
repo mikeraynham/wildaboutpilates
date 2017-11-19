@@ -20,6 +20,24 @@ $click_box_w: ($inner_len * 1.5) + $dia;
 $click_box_h: $dia * 3 + $gap * 2;
 $header_height: $click_box_h + 2rem;
 
+#skip-to-content {
+    position: absolute;
+    left: 0;
+    top: -100%;
+}
+
+#skip-to-content:focus {
+    background-color: palette('mint_green');
+    border-bottom: 1px solid palette('dark_blue');
+    border-radius: 0 0 0.5rem 0;
+    border-right: 1px solid palette('dark_blue');
+    box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.2);
+    list-style-type: none;
+    padding: 0.5rem;
+    position: absolute;
+    top: $header_height;
+}
+
 header {
     background-color: white;
     border-bottom: 1px solid palette('dark_blue');
