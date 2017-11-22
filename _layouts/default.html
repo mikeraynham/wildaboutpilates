@@ -33,6 +33,21 @@
             <address>
                 <a class="email" href="mailto:{{ site.email | uri_escape }}" aria-label="email address {{ site.email }}">{{ site.email }}</a>
                 <a class="tel" href="tel:{{ site.tel | slugify }}" aria-label="telephone number {{ site.tel }}">{{ site.tel }}</a>
+                <script type="application/ld+json">
+                {
+                    "@context": "http://schema.org",
+                    "@type": "Organization",
+                    "url": "https://www.wildaboutpilates.co.uk/",
+                    "name": "Wild About Pilates",
+                    "contactPoint": {
+                        "@type": "ContactPoint",
+                        "telephone": "{{ site.tel_int }}",
+                        "email": "{{ site.email | uri_escape }}",
+                        "contactType": "sales",
+                        "areaServed": "GB"
+                    }
+                }
+                </script>
             </address>
         </footer>
     </body>
