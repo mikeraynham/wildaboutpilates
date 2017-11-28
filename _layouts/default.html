@@ -22,13 +22,12 @@
             <a class="logo" href="/">Wild About Pilates</a>
         </header>
         <input id="menu-toggle" type="checkbox" />
-        <script>document.getElementById('menu-toggle').checked = false;</script>
         <label for="menu-toggle">Menu toggle</label>
-        <nav id="main-nav" class="no-delay" role="navigation" aria-label="Main Navigation">
+        <nav id="main-nav" class="no-delay" aria-label="Main Navigation">
             <ul id="menu">
             {%- for item in site.data.nav %}
                 {%- if page.url == item.url %}
-                <li aria-current="page"><span>{{ item.name }}<span></li>
+                <li aria-current="page"><span>{{ item.name }}</span></li>
                 {%- else %}
                 <li><a href="{{ item.url }}" title="{{ page.description }}">{{ item.name }}</a></li>
                 {%- endif %}
@@ -70,8 +69,16 @@
                 </script>
             </address>
         </footer>
+        <script>
+            (function() {
+                var menu_toggle = document.getElementById('menu-toggle');
+                document.body.addEventListener("click", function(e) {
+                    if(e.target && e.target.nodeName == "A") {
+                        menu_toggle.checked = false;
+                    }
+                });
+                document.getElementById('main-nav').classList.remove('no-delay');
+            })();
+        </script>
     </body>
-    <script>
-        document.getElementById('main-nav').classList.remove('no-delay');
-    </script>
 </html>
