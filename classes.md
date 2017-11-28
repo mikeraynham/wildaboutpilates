@@ -6,7 +6,7 @@ title: "Classes"
 
 ## Class times and venue
 
-Thursdays 18:00-19:00 and 19:15-20:15 at Morton Hall Community Centre in Macclesfield:
+Thursdays <time>18:00</time>-<time>19:00</time> and <time>19:15</time>-<time>20:15</time> at Morton Hall Community Centre in Macclesfield:
 
 <address>
     Morton Hall Community Centre<br>
@@ -35,7 +35,21 @@ Thursdays 18:00-19:00 and 19:15-20:15 at Morton Hall Community Centre in Maccles
             "addressLocality": "Macclesfield",
             "addressRegion": "Cheshire",
             "postalCode": "SK11 7BN"
-        }
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "opens":  "18:00:00",
+                "closes":  "19:00:00",
+                "dayOfWeek": "http://schema.org/Thursday"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "opens":  "19:15:00",
+                "closes":  "20:15:00",
+                "dayOfWeek": "http://schema.org/Thursday"
+            }
+        ]
     }
     </script>
 </address>
