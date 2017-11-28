@@ -6,7 +6,40 @@ title: "Classes"
 
 ## Class times and venue
 
-Thursdays 18:00-19:00 and 19:15-20:15 in Macclesfield.
+Thursdays 18:00-19:00 and 19:15-20:15 at Morton Hall Community Centre in Macclesfield:
+
+<address>
+    Morton Hall Community Centre<br>
+    Union Road<br>
+    Macclesfield<br>
+    SK11 7BN<br><br>
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "LocalBusiness",
+        "@id": "https://www.wildaboutpilates.co.uk/macclesfield",
+        "url": "https://www.wildaboutpilates.co.uk/",
+        "name": "Wild About Pilates",
+        "telephone": "+44-7378-166524",
+        "image": "https://www.wildaboutpilates.co.uk/images/wild-about-pilates-logo.svg",
+        "priceRange": "$",
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "53.258309",
+            "longitude": "-2.114774"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "GB",
+            "streetAddress": "Morton Hall Community Centre, Union Road",
+            "addressLocality": "Macclesfield",
+            "addressRegion": "Cheshire",
+            "postalCode": "SK11 7BN"
+        }
+    }
+    </script>
+</address>
+
 Please come 10 minutes early to your first session to allow time to complete the health questionnaire.
 
 ## What to wear & bring
