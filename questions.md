@@ -2,6 +2,8 @@
 layout: default
 title: "Questions & answers"
 ---
+# Questions & answers
+
 ## Am I suitable for the class?
 
 Modified Pilates is suitable for most people, including those with injuries or who  suffer from back or other joint pain. As a physiotherapist I can modify the exercises so that you can exercise comfortably and safely.
