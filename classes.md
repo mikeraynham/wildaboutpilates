@@ -59,9 +59,7 @@ Please come 10 minutes early to your first session to allow time to complete the
 
 ## What to wear & bring
 
-Wear loose fitting comfortable clothing, and if possible socks with grips on them.
-Mats are provided but please feel free to bring your own mat.
-Bring a drink of water to keep you hydrated and a towel if you wish.
+Wear loose fitting comfortable clothing, and if possible socks with grips on them. Mats are provided but please feel free to bring your own mat. Bring a drink of water to keep you hydrated and a towel if you wish.
 
 ## Prices
 
