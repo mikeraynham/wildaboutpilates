@@ -7,7 +7,7 @@ layout: default
 
 ## Am I suitable for the class?
 
-Modified Pilates is suitable for most people, including those with injuries or who  suffer from back or other joint pain. As a physiotherapist I can modify the exercises so that you can exercise comfortably and safely.
+Modified Pilates is suitable for most people, including those with injuries or those who suffer from back or other joint pain. As a physiotherapist I can modify the exercises so that you can exercise comfortably and safely.
 
 I need to be aware of any medical problems or injuries that might impact your training, and as such, all new members must complete a health questionnaire.  It is also very important that you keep me up-to-date with any changes to your health.
 
@@ -21,14 +21,13 @@ At present this class isn't suitable for pregnant women, but this is something t
 
 In some cases, a letter from your doctor may be required if you have a complex medical history, and in some instances it may be more appropriate for you to have a one-to-one assessment or lessons prior to attending the class. If you have any concerns about your health or ability to participate, please get in touch and we can discuss this further.
 
-
 ## What you can expect from Wild About Pilates?
 
 * Small group sizes; no more than 12 in a class, meaning more care and attention for you.
 
-* If you do an exercise that doesn't feel right for you – tell me and we can modify it so that you can join in every step of the way and achieve your goals.  My musculoskeletal physiotherapy experience helps me to help you.
+* If you do an exercise that doesn't feel right for you — tell me and we can modify it so that you can join in every step of the way and achieve your goals.  My musculoskeletal physiotherapy experience helps me to help you.
 
-* Lots of tips, good attention to detail so you get the most from the exercises
+* Lots of tips, good attention to detail so you get the most from the exercises.
 
 * An all-round workout: all major muscle groups will be addressed, so you should come away feeling positive about a well balanced and challenging excercise plan.
 
