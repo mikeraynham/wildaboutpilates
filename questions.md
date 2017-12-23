@@ -1,7 +1,8 @@
 ---
+title: Questions & answers
 layout: default
-title: "Questions & answers"
 ---
+
 # Questions & answers
 
 ## Am I suitable for the class?

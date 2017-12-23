@@ -1,7 +1,8 @@
 ---
+title: Classes
 layout: default
-title: "Classes"
 ---
+
 # Classes
 
 ## Class times and venue

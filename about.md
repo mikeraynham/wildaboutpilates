@@ -1,7 +1,8 @@
 ---
+title: About Me
 layout: default
-title: "About Me"
 ---
+
 # About Me
 
 Hello! My name is Chrissie Raynham-Wild and I'm a specialist musculoskeletal (MSK) physiotherapist, and a certified [<abbr title="The Australian Physiotherapy & Pilates Institute">APPI</abbr>][1] Matwork Pilates instructor. I have worked in the NHS for over 7 years, and prior to specialising in MSK, I completed rotations in other specialist areas including neurology, orthopaedics, stroke rehabilitation, respiratory medicine and elderly care and rehab.

@@ -1,20 +1,17 @@
+---
 title: Wild About Pilates
+timezone: UTC
+collections:
+  posts:
+    title: Posts
+    output: true
+  uploads:
+    title: Uploads
+    output: true
 email: info@wildaboutpilates.co.uk
-tel: 07378 166524
-tel_int: +44-7378-166524
+tel: '07378 166524'
+tel_int: "+44-7378-166524"
 description: Description
-url: "https://www.wildaboutpilates.co.uk"
+url: https://www.wildaboutpilates.co.uk
 markdown: kramdown
 permalink: pretty
-
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
