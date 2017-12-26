@@ -31,7 +31,7 @@ In some cases, a letter from your doctor may be required if you have a complex m
 
 * An all-round workout: all major muscle groups will be addressed, so you should come away feeling positive about a well balanced and challenging excercise plan.
 
-* A non-competitive environment. Everyone is encouraged to work at their own level of comfort and ability.
+* A friendly, non-competitive environment. Everyone is encouraged to work at their own level of comfort and ability.
 
 * The venue has been chosen so you have ample space to move and stretch without feeling cramped.
 
