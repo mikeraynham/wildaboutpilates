@@ -10,3 +10,19 @@ We offer modified physio led Pilates sessions in Macclesfield.  Although it’s 
 If you do have problems such as back pain, this method is a safe and effective way to help improve strength, posture, balance and flexibility. It also promotes well being and is an enjoyable way to exercise.
 
 Most of us have something we can improve, whether it be to improve fitness, strength or balance. Pilates is a great way to address all of these areas and more.
+
+## What you can expect from Wild About Pilates?
+
+* Small group sizes; no more than 12 in a class, meaning more care and attention for you.
+
+* If you do an exercise that doesn't feel right for you — tell me and we can modify it so that you can join in every step of the way and achieve your goals.  My musculoskeletal physiotherapy experience helps me to help you.
+
+* Lots of tips, good attention to detail so you get the most from the exercises.
+
+* An all-round workout: all major muscle groups will be addressed, so you should come away feeling positive about a well balanced and challenging excercise plan.
+
+* A friendly, non-competitive environment. Everyone is encouraged to work at their own level of comfort and ability.
+
+* The venue has been chosen so you have ample space to move and stretch without feeling cramped.
+
+* Varied and fun sessions: I use a variety of equipment, and each session is different so you won't be left doing the same routine week in week out.
