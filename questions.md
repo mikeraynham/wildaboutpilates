@@ -21,22 +21,6 @@ At present this class isn't suitable for pregnant women, but this is something t
 
 In some cases, a letter from your doctor may be required if you have a complex medical history, and in some instances it may be more appropriate for you to have a one-to-one assessment or lessons prior to attending the class. If you have any concerns about your health or ability to participate, please get in touch and we can discuss this further.
 
-## What you can expect from Wild About Pilates?
-
-* Small group sizes; no more than 12 in a class, meaning more care and attention for you.
-
-* If you do an exercise that doesn't feel right for you — tell me and we can modify it so that you can join in every step of the way and achieve your goals.  My musculoskeletal physiotherapy experience helps me to help you.
-
-* Lots of tips, good attention to detail so you get the most from the exercises.
-
-* An all-round workout: all major muscle groups will be addressed, so you should come away feeling positive about a well balanced and challenging excercise plan.
-
-* A friendly, non-competitive environment. Everyone is encouraged to work at their own level of comfort and ability.
-
-* The venue has been chosen so you have ample space to move and stretch without feeling cramped.
-
-* Varied and fun sessions: I use a variety of equipment, and each session is different so you won't be left doing the same routine week in week out.
-
 ## What is meant by 'modified Pilates'?
 
 Traditional Pilates was designed over 100 years ago in Germany Joseph H. Pilates. His original method was based on 34 mat based movements, which consisted of strengthening, stretch and mobility exercises. Some of these movements are, however, very challenging, and only suitable for elite level strong and flexible athletes. Most people don't have that level of ability, so the founders of The Australian Physiotherapy and Pilates Institute (with which I have done my training) reviewed and modified the exercises, to enable the vast majority of people to be able to participate regardless of their ability, posture or injuries.
