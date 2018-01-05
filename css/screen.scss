@@ -8,9 +8,10 @@
 @import 'footer';
 
 html {
-    /* background: url(/images/background.png) no-repeat 50% 0 / auto 100%; */
     margin: 0 auto;
     height: 100%;
+    position: relative;
+    max-width: 900px;
 }
 
 body {

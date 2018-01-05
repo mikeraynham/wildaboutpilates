@@ -31,7 +31,6 @@ $header_height: $click_box_h + 2rem;
     border-bottom: 1px solid palette('dark_blue');
     border-radius: 0 0 0.5rem 0;
     border-right: 1px solid palette('dark_blue');
-    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.2);
     list-style-type: none;
     padding: 0.5rem;
     position: absolute;
@@ -41,7 +40,6 @@ $header_height: $click_box_h + 2rem;
 header {
     background-color: white;
     border-bottom: 1px solid palette('dark_blue');
-    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.2);
     height: $header_height;
     line-height: #{$click_box_h}rem;
     padding: 1rem;
