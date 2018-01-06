@@ -57,7 +57,7 @@ Thursdays <time>18:00</time>-<time>19:00</time> and <time>19:15</time>-<time>20:
 
 Please come 10 minutes early to your first session to allow time to complete the health questionnaire.
 
-<a href="/documents/wild_about_pilates_registration_form_20180106.pdf">Download Registration Form</a>
+<a class="button" href="/documents/wild_about_pilates_registration_form_20180106.pdf">Download Registration Form</a>
 
 ## What to wear & bring
 
