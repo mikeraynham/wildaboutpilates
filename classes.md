@@ -89,6 +89,4 @@ Ad-hoc sessions
 
 : You must have completed the initial assessment first.
 
-30 minute tailored session: £35
 
-: You must have completed the initial assessment first.
