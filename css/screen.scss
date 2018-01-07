@@ -1,32 +1,11 @@
 ---
 ---
 
+@import 'base';
 @import 'palette';
 @import 'reset';
 @import 'typography';
+@import 'links';
+@import 'photo';
 @import 'nav';
 @import 'footer';
-@import 'links';
-
-html {
-    margin: 0 auto;
-    height: 100%;
-    position: relative;
-    max-width: 900px;
-}
-
-body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-}
-
-main {
-    flex: 1;
-    margin: 0 0.5rem;
-}
-
-.photo {
-    display: block;
-    margin: 0 auto;
-}
