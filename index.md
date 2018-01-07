@@ -2,7 +2,9 @@
 title: Welcome
 layout: default
 og_title: Welcome to Wild About Pilates
-og_description: Modified physio-led Pilates sessions in Macclesfield, for beginners to elite level athletes. A safe and effective way to help improve strength, posture, balance and flexibility, in a friendly, non-competitive environment.
+og_description: Modified physio-led Pilates sessions in Macclesfield, for beginners
+  to elite level athletes. A safe and effective way to help improve strength, posture,
+  balance and flexibility, in a friendly, non-competitive environment.
 ---
 
 # Welcome to Wild About Pilates
