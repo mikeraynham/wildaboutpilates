@@ -28,12 +28,20 @@
     @return (rem_to_px($body_line_height) / nounit($pixels)) * 0.5rem;
 }
 
-body, caption, th, td, input, textarea, select, option, legend, fieldset,
-h1, h2, h3, h4, h5, h6, p {
-    font-family: 'Montserrat Light', sans-serif;
+body, caption, th, td, input, textarea, select, option, legend, fieldset, p,
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
     font-size-adjust: 0.5;
     font-size: 100%;
     text-rendering: optimizeLegibility;
+}
+
+body, caption, th, td, input, textarea, select, option, legend, fieldset, p {
+    font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
 }
 
 $body_size: 1rem;
