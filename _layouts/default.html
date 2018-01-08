@@ -13,7 +13,7 @@
         <meta name="viewport" content="initial-scale=1" />
         <title>Wild About Pilates | {{ page.title }}</title>
         <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400" rel="stylesheet">
-        <link rel="stylesheet" href="/css/screen.css?d">
+        <link rel="stylesheet" href="/css/screen.css?f">
         <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -44,20 +44,22 @@
         <header>
             <a id="skip-to-content" href="#main-content">Skip to main content</a>
             <a class="logo" href="/">Wild About Pilates</a>
+            <nav id="main-nav" class="no-delay" aria-label="Main Navigation">
+                <ul id="menu">
+                {%- for item in site.data.nav %}
+                    {%- if page.url == item.url %}
+                    <li aria-current="page">
+                        <span class="{{ item.name | slugify: 'ascii' }}">{{ item.name }}</span>
+                    </li>
+                    {%- else %}
+                    <li>
+                        <a class="{{ item.name | slugify: 'ascii' }}" href="{{ item.url }}" title="{{ page.description }}">{{ item.name }}</a>
+                    </li>
+                    {%- endif %}
+                {%- endfor %}
+                </ul>
+            </nav>
         </header>
-        <input id="menu-toggle" type="checkbox" />
-        <label for="menu-toggle">Menu toggle</label>
-        <nav id="main-nav" class="no-delay" aria-label="Main Navigation">
-            <ul id="menu">
-            {%- for item in site.data.nav %}
-                {%- if page.url == item.url %}
-                <li aria-current="page"><span>{{ item.name }}</span></li>
-                {%- else %}
-                <li><a href="{{ item.url }}" title="{{ page.description }}">{{ item.name }}</a></li>
-                {%- endif %}
-            {%- endfor %}
-            </ul>
-        </nav>
         <main>
             {{ content }}
         </main>
@@ -94,16 +96,5 @@
                 </script>
             </address>
         </footer>
-        <script>
-            (function() {
-                var menu_toggle = document.getElementById('menu-toggle');
-                document.body.addEventListener("click", function(e) {
-                    if (e.target.id !== 'menu-toggle' && menu_toggle.checked) {
-                        menu_toggle.checked = false;
-                    }
-                });
-                document.getElementById('main-nav').classList.remove('no-delay');
-            })();
-        </script>
     </body>
 </html>

@@ -11,14 +11,8 @@
     top: 0;
 }
 
-$gap: 0.22;
-$rad: 0.22;
-$dia: $rad * 2;
-$inner_len: 1;
-$outer_len: $inner_len + $dia;
-$click_box_w: ($inner_len * 1.5) + $dia;
-$click_box_h: $dia * 3 + $gap * 2;
-$header_height: $click_box_h + 2rem;
+$nav_icon_size: 2rem;
+$header_height: $nav_icon_size + 2rem;
 
 #skip-to-content {
     position: absolute;
@@ -38,140 +32,88 @@ $header_height: $click_box_h + 2rem;
 }
 
 header {
-    background-color: white;
     border-bottom: 1px solid palette('dark_blue');
     height: $header_height;
-    line-height: #{$click_box_h}rem;
+    line-height: $nav_icon_size;
     padding: 1rem;
-    position: relative;
-    z-index: 1;
+    vertical-align: middle;
 
-    .logo {
-        $logo_w: 408.5;
-        $logo_h: 301.90827473;
-        $logo_w_rem: ($logo_w / ($logo_h / ($click_box_h * 16))) / 16;
-
-        background: url(/images/wild-about-pilates-logo.svg) left center/auto #{$click_box_h}rem no-repeat;
-        display: block;
-        height: #{$click_box_h}rem;
-        text-decoration: none;
-        text-indent: #{$logo_w_rem + $dia}rem;
-        vertical-align: middle;
-    }
-}
-
-input {
-    height: #{$click_box_h}rem;
-    opacity: 0;
-    position: absolute;
-    right: #{1 - (($click_box_w - $outer_len) / 2)}rem;
-    top: 1rem;
-    width: #{$click_box_w}rem;
-    z-index: 3;
-}
-
-label {
-    background-color: palette('dark_blue');
-    margin: #{$dia + $rad}rem 0 #{$dia + $rad}rem 0;
-    position: absolute;
-    right: 1rem;
-    text-indent: -999999px;
-    top: 1rem;
-    z-index: 1;
-}
-
-label, label::before, label::after {
-    border-radius: #{$rad}rem;
-    border: none;
-    display: block;
-    height: #{$dia}rem;
-    width: #{$outer_len}rem;
-    transition: transform 0.5s;
-}
-
-label::before, label::after {
-    content: "";
-    position: absolute;
-}
-
-label::before {
-    background-color: palette('dusky_pink');
-    top: -#{$dia + $gap}rem
-}
-
-label::after {
-    background-color: palette('mint_green');
-    top: #{$dia + $gap}rem
-}
-
-input:checked {
-    $half_len: $inner_len / 2;
-    $offx: $half_len - abs(rotx($half_len, 0, 60));
-    $offy: ($gap + $dia) - abs(roty($half_len, 0, 60));
-
-    & + label, label::before, label::after {
-        transition-duration: 0.5s;
-    }
-
-    & + label::before {
-        transform: translate(#{- $offx}rem, #{$offy}rem) rotate(-60deg);
-    }
-
-    & + label {
-        transform: rotate(-60deg);
-    }
-
-    & + label::after {
-        transform: translate(#{$offx}rem, #{- $offy}rem) rotate(-60deg);
-    }
-
-    & ~ nav {
-        transform: translate(0, 0);
-    }
-}
-
-nav {
-    background-color: palette('mint_green');
-    border-bottom: 1px solid palette('dark_blue');
-    left: 0;
-    line-height: 2;
-    position: absolute;
-    right: 0;
-    text-align: center;
-    top: $header_height;
-    transform: translate(0, -100%);
-    transition-duration: 0.5s;
-    z-index: 0;
-
-    ul {
-        list-style-type: none;
-        padding: 0.5rem;
-        li {
-            padding-bottom: 0.1rem;
-
-            &:last-child {
-                padding-bottom: 0;
+    a, span {
+        &.logo, &.home, &.about, &.questions, &.classes {
+            background-image: url(/images/nav-icon-sprite.min.svg);
+            background-repeat: no-repeat;
+            background-size: $nav_icon_size;
+            display: block;
+            overflow: hidden;
+            text-decoration: none;
+            text-indent: #{$nav_icon_size + 0.5};
+            height: #{$nav_icon_size};
+            width: #{$nav_icon_size};
+        }
+        &.home, &.about, &.questions, &.classes {
+            @media (min-width: 40em) {
+                width: auto;
             }
-
-            span, a {
-                color: white;
-                display: block;
-            }
-            span {
-                background-color: palette('dark_blue');
-                border-radius: 1rem;
-            }
-            a {
-                text-decoration: none;
-                &:hover {
-                    background-color: palette('dark_blue');
-                    border-radius: 1rem;
-                }
+        }
+        &.logo {
+            @media (min-width: 43.75em) {
+                width: auto;
             }
         }
     }
+    a {
+        &.logo {
+            background-position: 0 0;
+        }
+        &.home {
+            background-position: 0 -#{$nav_icon_size * 4};
+        }
+        &.about {
+            background-position: 0 -#{$nav_icon_size * 8};
+        }
+        &.questions {
+            background-position: 0 -#{$nav_icon_size * 12};
+        }
+        &.classes {
+            background-position: 0 -#{$nav_icon_size * 16};
+        }
+    }
+    a:hover, span {
+        color: palette('mint_green');
+        &.logo {
+            background-position: 0 -#{$nav_icon_size * 2};
+        }
+        &.home {
+            background-position: 0 -#{$nav_icon_size * 6};
+        }
+        &.about {
+            background-position: 0 -#{$nav_icon_size * 10};
+        }
+        &.questions {
+            background-position: 0 -#{$nav_icon_size * 14};
+        }
+        &.classes {
+            background-position: 0 -#{$nav_icon_size * 18};
+        }
+    }
 
-    &.no-delay {
-        transition-duration: 0s;
+    .logo {
+        float: left;
+        @media (min-width: 56.25em) {
+            width: auto;
+        }
+    }
+
+    nav {
+        float: right;
+
+        ul li {
+            display: inline-block;
+            padding-right: 1em;
+        }
+
+        ul li:last-child {
+            padding-right: 0;
+        }
     }
 }

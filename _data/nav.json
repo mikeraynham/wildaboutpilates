@@ -1,18 +1,18 @@
 [
   {
     "url": "/",
-    "name": "Welcome"
+    "name": "Home"
   },
   {
     "url": "/about/",
-    "name": "About me"
+    "name": "About"
   },
   {
     "url": "/questions/",
-    "name": "Questions & answers"
+    "name": "Questions"
   },
   {
     "url": "/classes/",
-    "name": "Classes & one-to-one sessions"
+    "name": "Classes"
   }
 ]
