@@ -9,51 +9,8 @@ layout: default
 
 Thursdays <time>18:00</time>-<time>19:00</time> and <time>19:15</time>-<time>20:15</time> at Morton Hall Community Centre in Macclesfield:
 
-<address>
-    Morton Hall Community Centre<br>
-    Union Road<br>
-    Macclesfield<br>
-    SK11 7BN<br><br>
-    <script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "LocalBusiness",
-        "@id": "https://www.wildaboutpilates.co.uk/macclesfield",
-        "url": "https://www.wildaboutpilates.co.uk/",
-        "name": "Wild About Pilates",
-        "telephone": "+44-7378-166524",
-        "image": "https://www.wildaboutpilates.co.uk/images/wild-about-pilates-logo.svg",
-        "priceRange": "$",
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": "53.258309",
-            "longitude": "-2.114774"
-        },
-        "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "GB",
-            "streetAddress": "Morton Hall Community Centre, Union Road",
-            "addressLocality": "Macclesfield",
-            "addressRegion": "Cheshire",
-            "postalCode": "SK11 7BN"
-        },
-        "openingHoursSpecification": [
-            {
-                "@type": "OpeningHoursSpecification",
-                "opens":  "18:00:00",
-                "closes":  "19:00:00",
-                "dayOfWeek": "http://schema.org/Thursday"
-            },
-            {
-                "@type": "OpeningHoursSpecification",
-                "opens":  "19:15:00",
-                "closes":  "20:15:00",
-                "dayOfWeek": "http://schema.org/Thursday"
-            }
-        ]
-    }
-    </script>
-</address>
+{% include address.html %}
+{% include map.html %}
 
 Please come 10 minutes early to your first session to allow time to complete the health questionnaire.
 
