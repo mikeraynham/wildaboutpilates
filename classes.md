@@ -16,6 +16,14 @@ Please come 10 minutes early to your first session to allow time to complete the
 
 {% include registration_form.html %}
 
+Wild About Pilates is in the Main Hall: a spacious, well lit room, with a polished wooden floor.  There's plenty of room to exercise.
+
+{% include image.html
+    file="wild-about-pilates-morton-hall"
+    alt="Photo of the main hall at Morton Hall Community Centre"
+    caption="The Main Hall"
+%}
+
 ## What to wear & bring
 
 Wear loose fitting comfortable clothing, and if possible socks with grips on them. Mats are provided but please feel free to bring your own mat. Bring a drink of water to keep you hydrated and a towel if you wish.

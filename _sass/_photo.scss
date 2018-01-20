@@ -1,4 +1,24 @@
-.photo {
-    display: block;
-    margin: 0 auto;
+figure.photo {
+    display: table;
+    border: 10px solid white;
+    box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.2);
+    margin: 0 auto 1rem auto;
+
+    img {
+        margin: 0 auto;
+        width: 200px;
+        display: table-caption;
+
+        @media (min-width: 43.75em) {
+            width: 300px;
+        }
+        @media (min-width: 56.25em) {
+            width: 400px;
+        }
+    }
+
+    figcaption {
+        display: table-row;
+        text-align: center;
+    }
 }

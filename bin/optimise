@@ -1,0 +1,35 @@
+#!/bin/bash
+
+input=$1
+quality=${2:-85}
+degrees=${3:-0}
+
+base=$(basename "$input")
+dir=$(dirname "$input")
+file="${base%.*}"
+ext="${base#"$file"}"
+file="${file%-original}"
+clean="${dir}/${file%-original}-clean${ext}"
+rotate=""
+
+if [[ "$degrees" ==  "90" ]] ||
+   [[ "$degrees" == "180" ]] ||
+   [[ "$degrees" == "270" ]]; then
+    rotate="-rotate ${degrees}"
+fi
+
+set -x
+
+jpegtran -copy none -outfile "${clean}" ${rotate} "${input}"
+
+for width in 200 300 400; do
+    convert "${clean}" \
+        -sampling-factor 4:2:0 \
+        -interlace JPEG \
+        -colorspace sRGB \
+        -quality "$quality" \
+        -resize "${width}x" \
+        "${dir}/${file%-original}-${width}w${ext}"
+done
+
+set +x
