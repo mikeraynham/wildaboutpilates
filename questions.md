@@ -11,7 +11,7 @@ Modified Pilates is suitable for most people, including those with injuries or t
 
 I need to be aware of any medical problems or injuries that might impact your training, and as such, all new members must complete a health questionnaire.  It is also very important that you keep me up-to-date with any changes to your health.
 
-<a class="button" href="/documents/wild_about_pilates_registration_form_20180106.pdf">Download Registration Form</a>
+{% include registration_form.html %}
 
 It is essential that you are able to get down to floor level and back up, as there is a mat based element to every class.
 
