@@ -1,0 +1,9 @@
+<figure class="testimonial">
+    <blockquote>{{ include.content }}</blockquote>
+    {%- if include.more %}
+    <cite>
+        <a href="{{ include.more }}">read more&hellip;</a>
+    </cite>
+    {%- endif %}
+    <figcaption>{{ include.author }}</figcaption>
+</figure>

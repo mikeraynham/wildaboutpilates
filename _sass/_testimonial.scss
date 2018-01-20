@@ -1,0 +1,44 @@
+figure.testimonial {
+    margin: 1rem auto;
+    padding: 1rem 3rem;
+    border-width: 1px;
+    border-style: solid;
+    $r: red(palette('dusky_pink'));
+    $g: green(palette('dusky_pink'));
+    $b: blue(palette('dusky_pink'));
+    border-image: linear-gradient(
+        to right,
+        white 0%,
+        palette('dusky_pink') 15%,
+        palette('dusky_pink') 85%,
+        white,
+    ) 100% 0 100%;
+    max-width: 31.25rem;
+    position: relative;
+
+    blockquote {
+        font-style: italic;
+        font-weight: 500;
+        quotes: "“" "”" "‘" "’";
+
+        &::before {
+            color: palette('dusky_pink');
+            content: open-quote;
+            font-size: 6rem;
+            left: 0;
+            line-height: 1;
+            position: absolute;
+            top: 0;
+        }
+    }
+
+    cite {
+        font-size: smaller;
+        font-weight: 300;
+    }
+
+    figcaption {
+        font-size: smaller;
+        text-align: right;
+    }
+}

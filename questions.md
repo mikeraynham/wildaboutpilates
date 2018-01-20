@@ -9,6 +9,12 @@ layout: default
 
 Modified Pilates is suitable for most people, including those with injuries or those who suffer from back or other joint pain. As a physiotherapist I can modify the exercises so that you can exercise comfortably and safely.
 
+{% include testimonial.html
+    content="I loved Chrissies session tonight! &hellip; Chrissie has a very calming manner and made me feel very comfortable in the class."
+    author="S McLaren"
+    more="https://www.facebook.com/shona.mclaren.35/posts/10155947481184831:0"
+%}
+
 I need to be aware of any medical problems or injuries that might impact your training, and as such, all new members must complete a health questionnaire.  It is also very important that you keep me up-to-date with any changes to your health.
 
 {% include registration_form.html %}
