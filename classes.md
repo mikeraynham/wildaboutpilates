@@ -36,7 +36,7 @@ Block bookings
 
 Ad-hoc sessions
 
-: Ad-hoc sessions are £12, and booking is essential. Please text me or email and I will get back to you to confirm your place.
+: Ad-hoc sessions are £10, and booking is essential. Please text me or email and I will get back to you to confirm your place.
 
 ### One-to-one sessions
 
