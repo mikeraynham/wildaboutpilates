@@ -7,22 +7,17 @@ layout: default
 
 ## Class times and venue
 
-Thursdays <time>18:00</time>-<time>19:00</time> and <time>19:15</time>-<time>20:15</time> at Morton Hall Community Centre in Macclesfield:
-
-{% include address.html %}
-{% include map.html %}
-
-Please come 10 minutes early to your first session to allow time to complete the health questionnaire.
-
-{% include registration_form.html %}
-
-Wild About Pilates is in the Main Hall: a spacious, well lit room, with a polished wooden floor.  There's plenty of room to exercise.
+Thursday's <time>18:00</time>-<time>19:00</time> and <time>19:15</time>-<time>20:15</time> at [Morton Hall Community Centre in Macclesfield](#morton-hall-community-centre-macclesfield).  Classes are held in the Main Hall: a spacious, well-lit room, with a polished sprung wooden floor.
 
 {% include image.html
     file="wild-about-pilates-morton-hall"
     alt="Photo of the main hall at Morton Hall Community Centre"
     caption="The Main Hall"
 %}
+
+Please come 10 minutes early to your first session to allow time to complete the health questionnaire.
+
+{% include registration_form.html %}
 
 ## What to wear & bring
 
@@ -55,3 +50,8 @@ Ad-hoc sessions
 60 minute tailored session: £50
 
 : You must have completed the initial assessment first.
+
+## Morton Hall Community Centre, Macclesfield
+
+{% include address.html %}
+{% include map.html %}
