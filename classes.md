@@ -1,11 +1,10 @@
 ---
-title: Classes
 layout: default
-title: Class times and venue
+nav_title: Classes
+nav_order: 4
+title: Classes
 description: Thursday's 18:00-19:00, and 19:15-2015. Morton Hall Community Centre in Macclesfield.
 ---
-
-# Classes
 
 ## Class times and venue
 
