@@ -1,8 +1,8 @@
 ---
 title: Questions & answers
 layout: default
-title: Questions & answers
-description: Modified Pilates is suitable for most people.  Improve Core Stability and Strength, Posture, Flexibility, & Balance.
+description: Modified Pilates is suitable for most people.  Improve Core Stability
+  and Strength, Posture, Flexibility, & Balance.
 ---
 
 # Questions & answers
