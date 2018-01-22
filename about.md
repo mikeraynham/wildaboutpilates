@@ -1,6 +1,8 @@
 ---
 title: About Me
 layout: default
+title: About Me
+description: My name is Chrissie Raynham-Wild and I'm a state registered Chartered Physiotherapist specialising in musculoskeletal physiotherapy, and a certified APPI  Matwork Pilates instructor.
 ---
 
 # About Me
