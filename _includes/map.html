@@ -2,20 +2,34 @@
 
 <script>
     function initMap() {
-        var center = {lat: 53.2580984, lng: -2.1147834};
+        var center = {lat: 53.2580984, lng: -2.1169721};
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 15,
             center: center
         });
+
         var marker = new google.maps.Marker({
-            position: center,
-            map: map
+            map: map,
+            position: center
+        });
+
+        var infowindow = new google.maps.InfoWindow();
+        infowindow.setContent(
+            '<div><strong>Wild About Pilates</strong><br>' +
+            'Morton Hall Community Centre<br>' +
+            'Union Road<br>' +
+            'Macclesfield<br>' +
+            'SK11 7BN</div>'
+        );
+
+        google.maps.event.addListener(marker, 'click', function() {
+            infowindow.open(map, this);
         });
     }
 </script>
 <script
     async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHKsSfywxuRsNDtl3oienUIoUWZtMO9EQ&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHKsSfywxuRsNDtl3oienUIoUWZtMO9EQ&amp;callback=initMap">
 </script>
 
-<a class="button" href="https://www.google.com/maps/search/?api=1&amp;query=Morton+Hall+Community+Centre%2C+Union+Road%2C+Macclesfield+SK11+7BN">View on external map</a>
+<a class="button" href="https://www.google.com/maps/search/?api=1&amp;query_place_id=ChIJCZesDRZJekgR4_R5p0cg6UI&amp;query=Wild+About+Pilates%2C+Morton+Hall+Community+Centre%2C+Union+Road%2C+Macclesfield+SK11+7BN">View on Google Maps</a>
