@@ -30,10 +30,12 @@ Most of us have something we can improve, whether it be to improve fitness, stre
 
 * An all-round workout: all major muscle groups will be addressed, so you should come away feeling positive about a well balanced and challenging excercise plan.
 
+{% comment %}
 {% include testimonial.html
     content="I meant to e-mail you last week to let you know how much I am enjoying your classes. I think Wednesday is the only night I get a good night's sleep. The class is hard but obviously relaxing."
     author="A Shenton"
 %}
+{% endcomment %}
 
 * A friendly, non-competitive environment. Everyone is encouraged to work at their own level of comfort and ability.
 

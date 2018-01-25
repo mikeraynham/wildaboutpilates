@@ -10,11 +10,9 @@ description: My name is Chrissie Raynham-Wild and I'm a state registered Charter
 
 Hello! My name is Chrissie Raynham-Wild and I'm a state registered Chartered Physiotherapist specialising in musculoskeletal physiotherapy, and a certified [<abbr title="The Australian Physiotherapy & Pilates Institute">APPI</abbr>][1] Matwork Pilates instructor.
 
-{% comment %}
 {% include testimonial.html
     content="The sessions so far have been great, Chrissie is really professional and connects really well with the group. She is warm and welcoming and seems like she really knows her stuff."
     author="D Mullineux" %}
-{% endcomment %}
 
 I have worked in the NHS for over 7 years, and prior to specialising in MSK, I completed rotations in other specialist areas including neurology, orthopaedics, stroke rehabilitation, respiratory medicine and elderly care and rehab.
 
