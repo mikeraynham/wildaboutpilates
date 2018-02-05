@@ -31,6 +31,10 @@ All places must be booked in advance.
 
 ### Classes
 
+{% include testimonial.html
+    content="I'm having a great time at the classes and getting so much out of it!  Please could you put me down for the next 6 weeks?"
+    author="N Prestt" %}
+
 Taster session
 
 : First session £8.50 with no obligation. At Wild about Pilates we want people to come and see what it’s all about.
