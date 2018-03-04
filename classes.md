@@ -9,6 +9,12 @@ description: Thursday's 18:00-19:00, and 19:15-2015. Morton Hall Community Centr
 
 ## Class times and venue
 
+### Coming soon
+
+Tuesday evening classes will begin after Easter.
+
+### Thursday's
+
 Thursday's <time>18:00</time>-<time>19:00</time> and <time>19:15</time>-<time>20:15</time> at [Morton Hall Community Centre in Macclesfield](#morton-hall-community-centre-macclesfield).  Classes are held in the Main Hall: a spacious, well-lit room, with a polished sprung wooden floor.
 
 {% include image.html
