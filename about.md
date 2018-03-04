@@ -14,7 +14,7 @@ Hello! My name is Chrissie Raynham-Wild and I'm a state registered Chartered Phy
     content="The sessions so far have been great, Chrissie is really professional and connects really well with the group. She is warm and welcoming and seems like she really knows her stuff."
     author="D Mullineux" %}
 
-I have worked in the NHS for over 7 years, and prior to specialising in MSK, I completed rotations in other specialist areas including neurology, orthopaedics, stroke rehabilitation, respiratory medicine and elderly care and rehab.
+I have worked in the NHS for over 8 years, and prior to specialising in MSK, I completed rotations in other specialist areas including neurology, orthopaedics, stroke rehabilitation, respiratory medicine and elderly care and rehab.
 
 {% include image.html
     file="wild-about-pilates-chrissie-wild"
