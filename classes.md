@@ -61,6 +61,8 @@ Ad-hoc sessions
 
 ### One-to-one sessions
 
+There is a £5 discount for class attendees.
+
 60 minute initial assessment: £50
 
 : This includes an assessment of your posture, spinal range of movement and muscle length and function. You will learn the Pilates key elements and how to engage your centre. I will teach you some of the main Pilates exercises, and you will be provided with 3 exercises which are tailored specifically to help you, which you can practice independently in your own time.
@@ -68,8 +70,6 @@ Ad-hoc sessions
 60 minute tailored session: £50
 
 : You must have completed the initial assessment first.
-
-: There is a £5 discount for class attendees.
 
 ## Morton Hall Community Centre, Macclesfield
 
