@@ -9,13 +9,7 @@ description: Thursday's 18:00-19:00, and 19:15-2015. Morton Hall Community Centr
 
 ## Class times and venue
 
-### Coming soon
-
-Tuesday evening classes will begin after Easter.
-
-### Thursday's
-
-Thursday's <time>18:00</time>-<time>19:00</time> and <time>19:15</time>-<time>20:15</time> at [Morton Hall Community Centre in Macclesfield](#morton-hall-community-centre-macclesfield).  Classes are held in the Main Hall: a spacious, well-lit room, with a polished sprung wooden floor.
+Classes are held at [Morton Hall Community Centre in Macclesfield](#morton-hall-community-centre-macclesfield) in the Main Hall: a spacious, well-lit room, with a polished sprung wooden floor.
 
 {% include image.html
     file="wild-about-pilates-morton-hall"
@@ -23,9 +17,17 @@ Thursday's <time>18:00</time>-<time>19:00</time> and <time>19:15</time>-<time>20
     caption="The Main Hall"
 %}
 
-Please come 10 minutes early to your first session to allow time to complete the health questionnaire.
+Please come 5 minutes early to your first session to allow time to complete the health questionnaire.
 
 {% include registration_form.html %}
+
+### Tuesday
+
+Tuesday's <time>19:30</time>-<time>20:30</time>.
+
+### Thursday
+
+Thursday's <time>18:00</time>-<time>19:00</time> and <time>19:15</time>-<time>20:15</time>.
 
 ## What to wear & bring
 
@@ -49,6 +51,10 @@ Block bookings
 
 : The classes are £8.50 per session and run in blocks of 6 which are to be paid in full in advance.
 
+Refer a friend
+
+: If you refer a friend into one of the classes (it doesn't have to be the same class that you attend), and they sign up to a block of 6, the referrer gets a free session in their next block.
+
 Ad-hoc sessions
 
 : Ad-hoc sessions are £10, and booking is essential. Please text me or email and I will get back to you to confirm your place.
@@ -62,6 +68,8 @@ Ad-hoc sessions
 60 minute tailored session: £50
 
 : You must have completed the initial assessment first.
+
+: There is a £5 discount for class attendees.
 
 ## Morton Hall Community Centre, Macclesfield
 
