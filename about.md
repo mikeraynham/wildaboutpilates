@@ -26,4 +26,4 @@ Being an MSK physiotherapist means that I have a lot of experience of working wi
 
 I use Pilates frequently during my practice, and it is my pleasure to be able to help people to become stronger, more flexible and improve posture and function, irrespective of their level of experience of Pilates or level of ability.
 
-[1]: http://www.appihealthgroup.com/
+[1]: https://www.appihealthgroup.com/Community/Instructors-directory/Christine-Raynham-Wild-Fully-Certified
