@@ -1,8 +1,9 @@
 ---
+title: Therapeutic Yoga
+date: 2018-06-01 06:30:00 Z
+categories:
+- blog
 layout: default
-title:  "Therapeutic Yoga"
-date:   2018-06-01 06:30:00 +0000
-categories: blog
 ---
 
 I'm very excited to soon be attending an introduction to Therapeutic Yoga course. I love learning and exploring new techniques to enrich my classes and bring maximum benefit to my clients. Although my classes are predominantly Pilates based, I do like to add my own therapeutic and balance exercises.
