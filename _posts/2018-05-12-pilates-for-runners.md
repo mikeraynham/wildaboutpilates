@@ -1,8 +1,9 @@
 ---
+title: Pilates for Runners
+date: 2018-05-12 19:00:00 Z
+categories:
+- blog
 layout: default
-title:  "Pilates for Runners"
-date:   2018-05-12 19:00:00 +0000
-categories: blog
 ---
 
 Today has been a great day for learning, sharing ideas, and doing Pilates myself with fellow physio's and Pilates instructors.  I've been on a Pilates For Runners course delivered by The Australian Physiotherapy and Pilates Institute.
