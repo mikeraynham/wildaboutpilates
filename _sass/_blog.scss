@@ -1,0 +1,25 @@
+.blog_list li {
+    list-style-type: none;
+    margin: 0;
+    border-bottom: 1px solid rgba(palette('dark_blue'), 0.2);
+    margin-bottom: 1rem;
+}
+
+.blog_list li:last-of-type {
+    border-bottom: none;
+}
+
+.blog_list a.title {
+    text-decoration: none;
+}
+
+.blog_list p:last-of-type {
+    margin-bottom: 0;
+}
+
+.blog_list .read_more {
+    display: block;
+    font-size: smaller;
+    text-align: right;
+    margin-bottom: 1rem;
+}
