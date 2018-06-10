@@ -6,8 +6,12 @@ categories:
 layout: default
 ---
 
-
 I've produced a 10 minute Pilates workout available to anyone attending my classes. This can be used while on holiday, if you miss a class, or if you want to do a little extra during the week.
+
+{% include image.html
+    file="yacht"
+    alt="Photo of a yacht in Norway"
+%}
 
 *Disclaimer:* This program has been developed only for those who attend my classes *and* have been identified as suitable to use it.
 
