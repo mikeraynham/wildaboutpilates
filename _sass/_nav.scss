@@ -51,12 +51,12 @@ header {
             width: #{$nav_icon_size};
         }
         &.home, &.about, &.questions, &.classes, &.blog {
-            @media (min-width: 40em) {
+            @media (min-width: 43.25em) {
                 width: auto;
             }
         }
         &.logo {
-            @media (min-width: 43.75em) {
+            @media (min-width: 56.25em) {
                 width: auto;
             }
         }
