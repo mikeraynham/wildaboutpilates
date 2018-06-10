@@ -40,7 +40,7 @@ body, caption, th, td, input, textarea, select, option, legend, fieldset, p {
     font-weight: 300;
 }
 
-h1, h2, h3, h4, h5, h6, time, .blog_list .title {
+h1, h2, h3, h4, h5, h6, time, em, .blog_list .title {
     font-weight: 400;
 }
 
@@ -54,8 +54,13 @@ body {
 }
 
 main {
+
     p {
         margin-bottom: 1rem;
+    }
+
+    ol + p {
+        margin-top: 1rem;
     }
 
     li, dd {
@@ -63,6 +68,10 @@ main {
         margin-left: 1em;
         list-style-type: disc;
         display: list-item;
+    }
+
+    li span, dd span {
+        color: palette('dark_blue');
     }
 
     h1 {
