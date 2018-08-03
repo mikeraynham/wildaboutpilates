@@ -36,9 +36,15 @@
         <meta property="og:description" content="{{ page.description }}">
         {%- endif %}
         {%- if page.og_image %}
-        <meta property="og:image" content="{{ page.og_image }}">
+        <meta property="og:image" content="{{ site.url }}/images/{{ page.og_image }}">
+        {%- if page.og_image_width %}
+        <meta property="og:image:width" content="{{ page.og_image_width }}">
+        {%- endif %}
+        {%- if page.og_image_height %}
+        <meta property="og:image:height" content="{{ page.og_image_height }}">
+        {%- endif %}
         {%- else %}
-        <meta property="og:image" content="https://www.wildaboutpilates.co.uk/images/wild-about-pilates-logo-1200w630h.png">
+        <meta property="og:image" content="{{ site.url }}/images/wild-about-pilates-logo-1200w630h.png">
         <meta property="og:image:width" content="1200">
         <meta property="og:image:height" content="630">
         {%- endif %}
@@ -73,7 +79,6 @@
         <footer>
             <address>
                 <a class="email" href="mailto:{{ site.email | uri_escape }}" aria-label="email address {{ site.email }}">{{ site.email }}</a>
-                <a class="tel" href="tel:{{ site.tel | slugify }}" aria-label="telephone number {{ site.tel }}">{{ site.tel }}</a>
                 <script type="application/ld+json">
                 {
                     "@context": "http://schema.org",
@@ -83,7 +88,6 @@
                     "logo": "https://www.wildaboutpilates.co.uk/images/wild-about-pilates-logo-1120w1120h.png",
                     "contactPoint": {
                         "@type": "ContactPoint",
-                        "telephone": "{{ site.tel_int }}",
                         "email": "{{ site.email | uri_escape }}",
                         "contactType": "sales",
                         "areaServed": "GB"
