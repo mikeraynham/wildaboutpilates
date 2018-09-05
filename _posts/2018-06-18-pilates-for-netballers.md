@@ -4,7 +4,8 @@ date: 2018-06-18 18:00:00 Z
 categories:
 - blog
 layout: default
-description: A fun and challenging one hour Pilates class, designed specifically for netballers.
+description: A fun and challenging one hour Pilates class, designed specifically for
+  netballers.
 og_image: wild-about-pilates-for-netballers-fb.png
 og_image_width: 1200
 og_image_height: 630
