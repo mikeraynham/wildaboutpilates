@@ -76,7 +76,7 @@ Email <a href="mailto:{{ site.email | uri_escape }}" aria-label="email address {
     }
   },
   "image": [
-    "https://www.wildaboutpilates.co.uk/images/wild-about-pilates-for-netballers-6260w4626h.png"
+    "https://www.wildaboutpilates.co.uk/images/wild-about-pilates-for-netballers-fb.png"
    ],
   "description": "A fun and challenging one hour Pilates class, designed specifically for netballers.",
   "endDate": "2018-07-03T20:00+01:00",
