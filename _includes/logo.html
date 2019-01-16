@@ -1,0 +1,18 @@
+{% assign ext = include.ext | default: "png" -%}
+<figure class="logo">
+    <a href="{{ include.url }}">
+    <img srcset="
+            /images/{{ include.file }}-200w.{{ ext }} 200w,
+            /images/{{ include.file }}-300w.{{ ext }} 300w,
+            /images/{{ include.file }}-400w.{{ ext }} 400w"
+         sizes="
+            (min-width: 56.25em) 400px,
+            (min-width: 43.75em) 300px,
+            200px"
+         src="/images/{{ include.file }}-400w.{{ ext }}"
+         alt="{{ include.alt }}">
+    </a>
+    {%- if include.caption %}
+    <figcaption>{{ include.caption }}</figcaption>
+    {%- endif %}
+</figure>
