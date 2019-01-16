@@ -1,14 +1,15 @@
+{% assign ext = include.ext | default: "jpg" -%}
 <figure class="photo">
-    <a href="/images/{{ include.file }}-clean.jpg">
+    <a href="/images/{{ include.file }}-clean.{{ ext }}">
     <img srcset="
-            /images/{{ include.file }}-200w.jpg 200w,
-            /images/{{ include.file }}-300w.jpg 300w,
-            /images/{{ include.file }}-400w.jpg 400w"
+            /images/{{ include.file }}-200w.{{ ext }} 200w,
+            /images/{{ include.file }}-300w.{{ ext }} 300w,
+            /images/{{ include.file }}-400w.{{ ext }} 400w"
          sizes="
             (min-width: 56.25em) 400px,
             (min-width: 43.75em) 300px,
             200px"
-         src="/images/{{ include.file }}-400w.jpg"
+         src="/images/{{ include.file }}-400w.{{ ext }}"
          alt="{{ include.alt }}">
     </a>
     {%- if include.caption %}
