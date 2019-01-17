@@ -26,4 +26,41 @@ Being an MSK physiotherapist means that I have a lot of experience of working wi
 
 I use Pilates frequently during my practice, and it is my pleasure to be able to help people to become stronger, more flexible and improve posture and function, irrespective of their level of experience of Pilates or level of ability.
 
+## Qualifications
+
+### Pilates Qualifications
+
+* APPI Pilates Matwork Level 1
+* APPI Pilates Matwork Level 2
+* APPI Pilates Matwork Level 3
+* APPI Certified Matwork Pilates Instructor
+* APPI Pilates For Runners
+* Unite Health Level 1 Therapeutic Yoga
+
+### Physiotherapy Qualification
+
+* BSc (Hons) Physiotherapy
+
+### Physiotherapy post graduate qualifications
+
+* Acupuncture foundation course
+* Spinal Manipulations course
+* Problem solving the sporting shoulder
+* Shoulder: Steps to success online course
+
+### [British Bobath Tutors Association Courses][2]
+
+* What is Normal Movement
+* Assessment & Treatment of Adults with Neurological Conditions - Part A
+* Assessment & Treatment of Adults with Neurological Conditions - Part B
+* Recovery of the Upper Limb
+
+### Other Courses
+
+* The Physiotherapy Assessment and Management of Ankylosing Spondylitis
+* Acute Illness Management
+* Anatomy and Physiology and Assessment of the Acutely Unwell Child
+* Respiratory On-call Competence
+
 [1]: https://www.appihealthgroup.com/Community/Instructors-directory/Christine-Raynham-Wild-Fully-Certified
+[2]: https://www.bbta.org.uk/
