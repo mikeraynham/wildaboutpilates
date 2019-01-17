@@ -30,6 +30,12 @@ The event is free, and you'll get a glass of fizz upon arrival. There will also 
     alt="Female Focus Clinic Logo"
 %}
 
+## Register Interest
+
+If you would like to come, please register interest at <a href="mailto:awesomemumsbrunchclub@gmail.com" aria-label="email address">awesomemumsbrunchclub@gmail.com</a> or via their [Facebook][1] page.
+
+## Location
+
 It will be held at [Unico Lounge][4] in Wilmslow. We'll be starting at <time>19:30</time>, but don't feel as though you need to arrive bang on time, or stay right until the end. Talks will start at around <time>20:15</time> to <time>20:30</time>, but we'll play it by ear on the night.
 
 <address>
@@ -113,7 +119,6 @@ It will be held at [Unico Lounge][4] in Wilmslow. We'll be starting at <time>19:
 
 <a class="button" href="https://www.google.com/maps/search/?api=1&amp;query_place_id=ChIJ-wBS_p1NekgRQEB-PE0fuu4&amp;query=Unico+Lounge%2C+68+Grove+Street%2C+Wilmslow%2C+SK9+1DS">View on Google Maps</a>
 
-If you would like to come, please register interest at <a href="mailto:awesomemumsbrunchclub@gmail.com" aria-label="email address">awesomemumsbrunchclub@gmail.com</a> or via their [Facebook][1] page.
 
 [1]: https://www.facebook.com/groups/awesomemumsbrunchclub/
 [2]: https://femalefocusclinic.co.uk/
