@@ -14,6 +14,7 @@ We offer modified physio-led Pilates sessions in Macclesfield.  Although it’s 
     content="This is the first Pilates class I have ever attended and I feel great! &hellip; I highly recommend this to everyone!!"
     author="B Coghlan"
     more="https://www.facebook.com/beverley.colclough/posts/10155115745660906:0"
+    read_more="read on Facebook&hellip;"
 %}
 
 If you do have problems such as back pain, this method is a safe and effective way to help improve strength, posture, balance and flexibility. It also promotes well being and is an enjoyable way to exercise.
