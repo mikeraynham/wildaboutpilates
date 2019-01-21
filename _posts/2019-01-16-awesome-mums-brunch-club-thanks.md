@@ -4,7 +4,8 @@ date: 2019-01-16 21:00:00 Z
 categories:
 - blog
 layout: default
-description: Thanks to everyone who turned up to the Awesome Mums Brunch Club on Friday 18 January
+description: Thanks to everyone who turned up to the Awesome Mums Brunch Club on Friday
+  18 January
 og_image: ambc-logo-1200w630h.png
 og_image_width: 1200
 og_image_height: 630
