@@ -67,6 +67,14 @@ It will be held at [Unico Lounge][4] in Wilmslow. We'll be starting at <time>19:
         ],
         "description": "Destigmatise talking about the physical changes we are left with following pregnancy and birth",
         "endDate": "2019-01-18T21:30+00:00",
+        "offers": {
+            "@type": "Offer",
+            "url": "https://www.wildaboutpilates.co.uk/blog/2019-01-16-awesome-mums-brunch-club-event/",
+            "price": "0",
+            "priceCurrency": "GBP",
+            "availability": "http://schema.org/InStock",
+            "validFrom": "2019-01-18T19:30+00:00"
+        },
         "performer": [
             {
                 "@type": "Person",
