@@ -28,6 +28,11 @@ I use Pilates frequently during my practice, and it is my pleasure to be able to
 
 ## Qualifications
 
+{% include testimonial.html
+    content="Chrissie is an amazing teacher. She is knowledgeable and very helpful at adapting postures for your needs &hellip; I have loved her classes and would definitely recommend her classes to anyone."
+    author="K Anderton"
+%}
+
 ### Pilates Qualifications
 
 * APPI Pilates Matwork Level 1
