@@ -55,7 +55,11 @@ Saturday 23 March 2019, <time>13:30</time> to <time>16:00</time>.
             },
             {
                 "@type": "Person",
-                "name": "Maryline Higham,"
+                "name": "Maryline Higham"
+            },
+            {
+                "@type": "Person",
+                "name": "Laura Latham"
             }
         ]
     }
