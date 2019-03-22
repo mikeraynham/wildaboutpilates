@@ -15,6 +15,8 @@ The class costs £25 per person and includes refreshments and a healthy snack. I
 
 ## Timetable
 
+Saturday 23 March 2019, <time>13:30</time> to <time>16:00</time>.
+
 &#8203;<time>13:30</time> to <time>14:30</time> Restorative Yoga and Deep Relaxation
 : 15 minutes: guided relaxation (Yoga Nidra)
 : 45 minutes: easy, supported and relaxing yoga sequence
@@ -30,9 +32,7 @@ The class costs £25 per person and includes refreshments and a healthy snack. I
 &#8203;<time>15:30</time> to <time>16:00</time> Gentle Yoga
 : Revitalising and stretching
 
-## Date and Location
-
-Saturday 23 March 2019, <time>13:30</time> to <time>16:00</time>.
+## Location
 
 <address>
     Rajar Building<br>
