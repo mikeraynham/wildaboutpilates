@@ -9,7 +9,7 @@ description: Recharge, relax and strengthen during this unique Postnatal / Women
 
 I'm once again collaborating with [Yoga Spirits][1] to provide a Post-natal Pilates class at a women's yoga workshop in Mobberley. It's a relax, recharge and strengthening workshop with exercises tailored exclusively for post natal recovery.
 
-If you know anyone who might be interested please pass on the details: [Postnatal / Women’s Yoga Workshops][1].
+If you know anyone who might be interested please pass on the details: [Postnatal / Women’s Yoga Workshops][2].
 
 ## Date and Location
 
