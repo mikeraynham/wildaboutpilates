@@ -63,9 +63,6 @@ I use Pilates frequently during my practice, and it is my pleasure to be able to
 ### Other Courses
 
 * The Physiotherapy Assessment and Management of Ankylosing Spondylitis
-* Acute Illness Management
-* Anatomy and Physiology and Assessment of the Acutely Unwell Child
-* Respiratory On-call Competence
 
 [1]: https://www.appihealthgroup.com/Community/Instructors-directory/Christine-Raynham-Wild-Fully-Certified
 [2]: https://www.bbta.org.uk/
