@@ -41,6 +41,7 @@ I use Pilates frequently during my practice, and it is my pleasure to be able to
 * APPI Certified Matwork Pilates Instructor
 * APPI Pilates For Runners
 * Unite Health Level 1 Therapeutic Yoga
+* Ante & Post Natal Pilates
 
 ### Physiotherapy Qualification
 
