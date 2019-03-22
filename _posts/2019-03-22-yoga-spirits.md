@@ -9,14 +9,33 @@ description: Recharge, relax and strengthen during this unique Postnatal / Women
 
 I'm once again collaborating with [Yoga Spirits][1] to provide a Post-natal Pilates class at a women's yoga workshop in Mobberley. It's a relax, recharge and strengthening workshop with exercises tailored exclusively for post natal recovery.
 
-If you know anyone who might be interested please pass on the details: [Postnatal / Women’s Yoga Workshops][2].
+The class costs £25 per person and includes refreshments and a healthy snack. It's £20 if you've attended previously.  If you know anyone who might be interested please pass on [the details][2].
+
+<a class="button" href="https://yogaspirits.co.uk/postnatal-yoga-workshops/">Postnatal / Women's Yoga Workshops</a>
+
+## Timetable
+
+&#8203;<time>13:30</time> to <time>14:30</time> Restorative Yoga and Deep Relaxation
+: 15 minutes: guided relaxation (Yoga Nidra)
+: 45 minutes: easy, supported and relaxing yoga sequence
+
+&#8203;<time>14:30</time> to <time>15:15</time> Postnatal Pilates
+: Help with ‘closing the gap’ of abdominals post-pregnancy (Diastasis Recti symptoms)
+: Lower back rescue workout
+: Pelvic floor activation
+
+&#8203;<time>15:15</time> to <time>15:30</time> Breaktime
+: Your opportunity to ask Chrissie, Laura, and Maryline questions with a cup of tea / juice and a healthy snack.
+
+&#8203;<time>15:30</time> to <time>16:00</time> Gentle Yoga
+: Revitalising and stretching
 
 ## Date and Location
 
 Saturday 23 March 2019, <time>13:30</time> to <time>16:00</time>.
 
 <address>
-    Rajar Cottages<br>
+    Rajar Building<br>
     Town Lane<br>
     Mobberley<br>
     WA16 7ER<br><br>
@@ -28,7 +47,7 @@ Saturday 23 March 2019, <time>13:30</time> to <time>16:00</time>.
         "startDate": "2019-03-22T13:30+00:00",
         "location": {
             "@type": "EventVenue",
-            "name": "Rajar Cottages",
+            "name": "Rajar Building",
             "address": {
                 "@type": "PostalAddress",
                 "addressCountry": "GB",
@@ -43,7 +62,7 @@ Saturday 23 March 2019, <time>13:30</time> to <time>16:00</time>.
         "offers": {
             "@type": "Offer",
             "url": "https://www.wildaboutpilates.co.uk/blog/2019-03-22-yoga-spirits/",
-            "price": "0",
+            "price": "25",
             "priceCurrency": "GBP",
             "availability": "http://schema.org/InStock",
             "validFrom": "2019-03-22T13:30+00:00"
@@ -83,7 +102,7 @@ Saturday 23 March 2019, <time>13:30</time> to <time>16:00</time>.
 
         var infowindow = new google.maps.InfoWindow();
         infowindow.setContent(
-            '<div><strong>Rajar Cottages</strong><br>' +
+            '<div><strong>Rajar Building</strong><br>' +
             'Town Lane<br>' +
             'Mobberley<br>' +
             'Knutsford<br>' +
@@ -100,7 +119,7 @@ Saturday 23 March 2019, <time>13:30</time> to <time>16:00</time>.
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHKsSfywxuRsNDtl3oienUIoUWZtMO9EQ&amp;callback=initMap">
 </script>
 
-<a class="button" href="https://www.google.com/maps/search/?api=1&amp;query_place_id=ChIJ57yCOphTekgRELe0EXWaaHk&amp;query=Rajar+Cottages%2C+Town+Lane%2C+Mobberley%2C+Knutsford%2C+WA16 7ER">View on Google Maps</a>
+<a class="button" href="https://www.google.com/maps/search/?api=1&amp;query_place_id=ChIJ57yCOphTekgRELe0EXWaaHk&amp;query=Rajar+Building%2C+Town+Lane%2C+Mobberley%2C+Knutsford%2C+WA16 7ER">View on Google Maps</a>
 
 [1]: https://yogaspirits.co.uk/
 [2]: https://yogaspirits.co.uk/postnatal-yoga-workshops/
