@@ -1,36 +1,36 @@
 ---
-title: Postnatal / Women's Yoga Workshop
+title: Yoga & Pilates Workshops for Busy Mums
 date: 2019-03-22 06:00:00 Z
 categories:
 - blog
 layout: default
-description: Recharge, relax and strengthen during this unique Postnatal / Women's Yoga and Pilates Workshop.
+description: Recharge, relax and strengthen during this Yoga & Pilates Workshops for Busy Mums.
 ---
 
-I'm once again collaborating with [Yoga Spirits][1] to provide a Post-natal Pilates class at a women's yoga workshop in Mobberley. It's a relax, recharge and strengthening workshop with exercises tailored exclusively for post natal recovery.
+I'm once again collaborating with [Yoga Spirits][1] in Mobberley to provide a Yoga & Pilates Workshop for Busy Mums. It's a relax, recharge and strengthening workshop with exercises tailored exclusively for post natal recovery.
 
-The class costs £25 per person and includes refreshments and a healthy snack. It's £20 if you've attended previously.  If you know anyone who might be interested please pass on [the details][2].
+The class costs £25 per person (or £20 for those who have attended previously) and includes refreshments and a healthy snack.
 
-<a class="button" href="https://yogaspirits.co.uk/postnatal-yoga-workshops/">Postnatal / Women's Yoga Workshops</a>
+<a class="button" href="https://yogaspirits.co.uk/pilates-yoga-workshops/">Yoga & Pilates Workshops for Busy Mums</a>
 
 ## Timetable
 
-Saturday 23 March 2019, <time>13:30</time> to <time>16:00</time>.
+Saturday 27 April 2019, <time>13:30</time> to <time>16:00</time>.
 
 &#8203;<time>13:30</time> to <time>14:30</time> Restorative Yoga and Deep Relaxation
-: 15 minutes: guided relaxation (Yoga Nidra)
+: 15 minutes: guided relaxation
 : 45 minutes: easy, supported and relaxing yoga sequence
 
-&#8203;<time>14:30</time> to <time>15:15</time> Postnatal Pilates
-: Help with ‘closing the gap’ of abdominals post-pregnancy (Diastasis Recti symptoms)
+&#8203;<time>14:30</time> to <time>15:15</time> Pilates
+: Abdominal strength building
 : Lower back rescue workout
 : Pelvic floor activation
 
 &#8203;<time>15:15</time> to <time>15:30</time> Breaktime
-: Your opportunity to ask Chrissie, Laura, and Maryline questions with a cup of tea / juice and a healthy snack.
+: Your opportunity to ask Chrissie and Maryline questions with a cup of tea / juice and a healthy snack.
 
 &#8203;<time>15:30</time> to <time>16:00</time> Gentle Yoga
-: Revitalising and stretching
+: Revitalising and stretching.
 
 ## Location
 
@@ -44,7 +44,7 @@ Saturday 23 March 2019, <time>13:30</time> to <time>16:00</time>.
         "@context": "http://schema.org",
         "@type": "BusinessEvent",
         "name": "Wild About Pilates: Postnatal / Women's Yoga Workshop",
-        "startDate": "2019-03-22T13:30+00:00",
+        "startDate": "2019-04-27T13:30+00:00",
         "location": {
             "@type": "EventVenue",
             "name": "Rajar Building",
@@ -58,7 +58,7 @@ Saturday 23 March 2019, <time>13:30</time> to <time>16:00</time>.
             }
         },
         "description": "Recharge, relax and strengthen during this unique Postnatal / Women's Yoga and Pilates Workshop.",
-        "endDate": "2019-03-22T16:00+00:00",
+        "endDate": "2019-04-27T16:00+00:00",
         "offers": {
             "@type": "Offer",
             "url": "https://www.wildaboutpilates.co.uk/blog/2019-03-22-yoga-spirits/",
@@ -75,10 +75,6 @@ Saturday 23 March 2019, <time>13:30</time> to <time>16:00</time>.
             {
                 "@type": "Person",
                 "name": "Maryline Higham"
-            },
-            {
-                "@type": "Person",
-                "name": "Laura Latham"
             }
         ]
     }
@@ -122,4 +118,4 @@ Saturday 23 March 2019, <time>13:30</time> to <time>16:00</time>.
 <a class="button" href="https://www.google.com/maps/search/?api=1&amp;query_place_id=ChIJ57yCOphTekgRELe0EXWaaHk&amp;query=Rajar+Building%2C+Town+Lane%2C+Mobberley%2C+Knutsford%2C+WA16 7ER">View on Google Maps</a>
 
 [1]: https://yogaspirits.co.uk/
-[2]: https://yogaspirits.co.uk/postnatal-yoga-workshops/
+[2]: https://yogaspirits.co.uk/pilates-yoga-workshops/
