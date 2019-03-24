@@ -27,7 +27,7 @@ Thursday classes: <time>18:00</time>-<time>19:00</time> and <time>19:15</time>-<
 
 ## What to wear & bring
 
-Wear loose fitting comfortable clothing, and if possible socks with grips on them. Mats are provided but please feel free to bring your own mat. Bring a drink of water to keep you hydrated and a towel if you wish.
+Wear loose fitting comfortable clothing, and if possible socks with grips on them. Mats are provided but please feel free to bring your mat. Bring a drink of water to keep you hydrated and a towel if you wish.
 
 ## Prices
 
@@ -41,25 +41,25 @@ All places must be booked in advance.
 
 Taster session
 
-: First session £8.50 with no obligation. At Wild about Pilates we want people to come and see what it’s all about.
+: First session £8.50 with no obligation. At Wild About Pilates we want people to come and see what it’s all about.
 
 Block bookings
 
-: The classes are £8.50 per session and run in blocks of 6 which are to be paid in full in advance.
+: The classes are £8.50 per session and run in blocks of 6 which are to be paid in full in advance.  Block-bookings take priority over ad-hoc bookings, and your place will be reserved.
+
+Ad-hoc sessions
+
+: Ad-hoc classes are £10 per session and subject to availability.  Booking is essential. Please text me or email and I will get back to you to confirm your place.  
 
 Refer a friend
 
 : If you refer a friend into one of the classes (it doesn't have to be the same class that you attend), and they sign up to a block of 6, the referrer gets a free session in their next block.
 
-Ad-hoc sessions
-
-: Ad-hoc sessions are £10, and booking is essential. Please text me or email and I will get back to you to confirm your place.
-
 ### One-to-one sessions
 
 There is a £5 discount for class attendees.
 
-60 minute initial assessment: £50
+60-minute initial assessment: £50
 
 : This includes an assessment of your posture, spinal range of movement and muscle length and function. You will learn the Pilates key elements and how to engage your centre. I will teach you some of the main Pilates exercises, and you will be provided with 3 exercises which are tailored specifically to help you, which you can practice independently in your own time.
 
