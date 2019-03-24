@@ -14,7 +14,7 @@ Hello! My name is Chrissie Raynham-Wild and I'm a state registered Chartered Phy
     content="The sessions so far have been great, Chrissie is really professional and connects really well with the group. She is warm and welcoming and seems like she really knows her stuff."
     author="D Mullineux" %}
 
-I have worked in the NHS for over 8 years, and prior to specialising in MSK, I completed rotations in other specialist areas including neurology, orthopaedics, stroke rehabilitation, respiratory medicine and elderly care and rehab.
+I have worked in the NHS for over 8 years.  Prior to specialising in MSK, I completed rotations in other specialist areas including neurology, orthopaedics, stroke rehabilitation, respiratory medicine and elderly care and rehab.
 
 {% include image.html
     file="wild-about-pilates-chrissie-wild"
@@ -24,7 +24,7 @@ I have worked in the NHS for over 8 years, and prior to specialising in MSK, I c
 
 Being an MSK physiotherapist means that I have a lot of experience of working with people who have pain or injuries. It also means I have a very good understanding of the anatomy and physiology of the body.
 
-I use Pilates frequently during my practice, and it is my pleasure to be able to help people to become stronger, more flexible and improve posture and function, irrespective of their level of experience of Pilates or level of ability.
+I use Pilates frequently during my practice.  I like to help people to become stronger, more flexible and to improve posture and function, irrespective of their level of experience of Pilates or level of ability.
 
 ## Qualifications
 
@@ -47,11 +47,11 @@ I use Pilates frequently during my practice, and it is my pleasure to be able to
 
 * BSc (Hons) Physiotherapy
 
-### Physiotherapy post graduate qualifications
+### Physiotherapy postgraduate qualifications
 
 * Acupuncture foundation course
 * Spinal Manipulations course
-* Problem solving the sporting shoulder
+* Problem-solving the sporting shoulder
 * Shoulder: Steps to success online course
 
 ### [British Bobath Tutors Association Courses][2]

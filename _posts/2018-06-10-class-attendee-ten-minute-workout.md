@@ -1,5 +1,5 @@
 ---
-title: Class Attendee 10 Minute Work-out
+title: Class Attendee 10 Minute Workout
 date: 2018-06-10 08:40:00 Z
 categories:
 - blog
@@ -54,7 +54,7 @@ Tummy time!
 3. <span>Hundreds – choose your level.</span>
 4. <span>Knee hug followed by gentle head rotations after this section.</span>
 
-### Cool down
+### Cooldown
 Place knees and feet together, then:
 1. <span>Hip twist level 2 (knee rolls with shoulders staying on the mat) ✕ 5 each way.</span>
 2. <span>Stretch hamstrings and circle at hip ✕ 5 each way. Repeat other side.</span>

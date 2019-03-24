@@ -8,7 +8,7 @@ description: Modified physio-led Pilates sessions in Macclesfield, for beginners
   balance and flexibility, in a friendly, non-competitive environment.
 ---
 
-We offer modified physio-led Pilates sessions in Macclesfield.  Although it’s Physio led that doesn’t mean that it’s just for people with injuries — the exercises can be modified from beginner level to elite level athletes. But what it does mean is that you are under the supervision of a qualified physiotherapist with the ability to adapt exercises to meet your needs.
+We offer modified physio-led Pilates sessions in Macclesfield.  Physio-led Pilates is not just for people with injuries; the exercises can be modified from beginner level to elite level athletes.  You will be under the supervision of a qualified physiotherapist who can adapt exercises to your needs.
 
 {% include testimonial.html
     content="This is the first Pilates class I have ever attended and I feel great! &hellip; I highly recommend this to everyone!!"
@@ -34,7 +34,7 @@ Most of us have something we can improve, whether it be to improve fitness, stre
 
 * Lots of tips, good attention to detail so you get the most from the exercises.
 
-* An all-round workout: all major muscle groups will be addressed, so you should come away feeling positive about a well balanced and challenging excercise plan.
+* An all-round workout: all major muscle groups will be addressed, so you should come away feeling positive about a well balanced and challenging exercise plan.
 
 {% comment %}
 {% include testimonial.html
@@ -43,8 +43,8 @@ Most of us have something we can improve, whether it be to improve fitness, stre
 %}
 {% endcomment %}
 
-* A friendly, non-competitive environment. Everyone is encouraged to work at their own level of comfort and ability.
+* A friendly, non-competitive environment. Everyone is encouraged to work at their level of comfort and ability.
 
 * The venue has been chosen so you have ample space to move and stretch without feeling cramped.
 
-* Varied and fun sessions: I use a variety of equipment, and each session is different so you won't be left doing the same routine week in week out.
+* Varied and fun sessions. I use a variety of equipment, and each session is different so you won't be left doing the same routine week in week out.

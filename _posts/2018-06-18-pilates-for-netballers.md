@@ -18,7 +18,7 @@ Those of you who know me will know that I love netball.  I've been playing for a
     alt="Photo of people playing netball"
 %}
 
-I'm passionate about improving sport performance, preventing injuries, and rehabilitating athletes.  I have created a fun and challenging one hour Pilates class, designed to target the key areas that I believe have an impact on our performance on the court.  This one-off class will give attendees a full body work-out; test their balance and control; and stretch, strengthen and mobilise the body.
+I'm passionate about improving sports performance, preventing injuries, and rehabilitating athletes.  I have created a fun and challenging one hour Pilates class, designed to target the key areas that I believe have an impact on our performance on the court.  This one-off class will give attendees a full body work-out; test their balance and control; and stretch, strengthen and mobilise the body.
 
 ## Class Features
 

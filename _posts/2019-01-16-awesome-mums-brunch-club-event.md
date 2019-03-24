@@ -21,7 +21,7 @@ I am very excited to let you know about an [Awesome Mums Brunch Club][1] Event o
 
 AMBC is a fantastic charity all about normalising the ups and downs of mental health during and after pregnancy. We are hosting this event to destigmatise talking about the physical changes we are left with following pregnancy and birth. We will be openly and honestly discussing the changes to our body, talking about our lady parts, the pelvic floor, parting of the abdominals, incontinence, exercise, and whatever else comes up (or droops down) on the night! You can ask us questions, and we will be sharing our knowledge and giving tips and advice.
 
-It doesn't matter when you had your baby, be it newly born, or born twenty years ago. It is an evening event, there will be alcohol, and open adult talk. But babies and young children are welcome, at your discretion; if you need to bring your little one(s) to enable you to get there, that's not a problem.
+It doesn't matter when you had your baby, be it newly born, or born twenty years ago. It is an evening event, there will be alcohol and open adult talk. But babies and young children are welcome, at your discretion; if you need to bring your little one(s) to enable you to get there, that's not a problem.
 
 The event is free, and you'll get a glass of fizz upon arrival. There will also be a raffle to win a [Mummy MOT][3] with Babs (normally £80).
 
