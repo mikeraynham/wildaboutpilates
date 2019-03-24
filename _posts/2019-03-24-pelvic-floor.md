@@ -15,7 +15,7 @@ Pelvic floor muscle exercises are beneficial for women and men (men too can suff
 
 I've been teaching people to focus on their breathing with the exercise because the diaphragm (the major muscle of respiration) and pelvic floor work in parallel. As we exhale the diaphragm and pelvic floor rise, on inhalation they both descend.
 
-For those that want to keep up the practice in between classes, I recommend the Squeezy NHS Pelvic Floor app.  It alerts you “to squeeze” during the day and has a timer for the exercises. It can be found on the [Squeezy website][1], the [Apple App Store][2], the [Google Play][3] site, and the [NHS website][1].
+For those that want to keep up the practice in between classes, I recommend the Squeezy NHS Pelvic Floor app.  It alerts you “to squeeze” during the day and has a timer for the exercises. It can be found on the [Squeezy website][1], the [Apple App Store][2], the [Google Play][3] site, and the [NHS website][4].
 
 [1]: https://www.squeezyapp.com/
 [2]: https://itunes.apple.com/gb/app/squeezy-nhs-pelvic-floor-app/id700740791
