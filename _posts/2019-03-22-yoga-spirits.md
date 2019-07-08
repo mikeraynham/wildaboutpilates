@@ -113,7 +113,7 @@ The class costs £25 per person (or £20 for those who have attended previously)
 </script>
 <script
     async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHKsSfywxuRsNDtl3oienUIoUWZtMO9EQ&amp;callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key={{ site.data.google.maps_api_key }}&amp;callback=initMap">
 </script>
 
 <a class="button" href="https://www.google.com/maps/search/?api=1&amp;query_place_id=ChIJ57yCOphTekgRELe0EXWaaHk&amp;query=Rajar+Building%2C+Town+Lane%2C+Mobberley%2C+Knutsford%2C+WA16 7ER">View on Google Maps</a>

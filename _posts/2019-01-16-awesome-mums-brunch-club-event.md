@@ -123,7 +123,7 @@ It will be held at [Unico Lounge][4] in Wilmslow. We'll be starting at <time>19:
 </script>
 <script
     async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHKsSfywxuRsNDtl3oienUIoUWZtMO9EQ&amp;callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key={{ site.data.google.maps_api_key }}&amp;callback=initMap">
 </script>
 
 <a class="button" href="https://www.google.com/maps/search/?api=1&amp;query_place_id=ChIJ-wBS_p1NekgRQEB-PE0fuu4&amp;query=Unico+Lounge%2C+68+Grove+Street%2C+Wilmslow%2C+SK9+1DS">View on Google Maps</a>
