@@ -25,11 +25,17 @@ Please come 5 minutes early to your first session to allow time to complete the 
 
 ### Wednesday
 
-Wednesday class: <time>14:00</time>-<time>15:00</time>.
+<s>Wednesday class: <time>14:00</time>-<time>15:00</time>.</s>
+Wednesday classes are cancelled until further notice.
 
 ### Thursday
 
-Thursday classes: <time>18:00</time>-<time>19:00</time> and <time>19:15</time>-<time>20:15</time>.
+<s>Thursday classes: <time>18:00</time>-<time>19:00</time> and <time>19:15</time>-<time>20:15</time>.</s>
+Our usual Thursday classes have been replaced by online classes:
+
+<p><time>18:00</time>-<time>18:50</time> Beginners / improvers stretch, strengthen and mobilise</p>
+
+<p><time>19:00</time>-<time>19:50</time> Intermediate / advanced stretch, strengthen and mobilise</p>
 
 ## What to wear & bring
 

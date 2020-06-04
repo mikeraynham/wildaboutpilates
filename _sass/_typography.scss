@@ -107,6 +107,10 @@ main {
         margin-top: h_margin_top($body_line_height, 18px);
     }
 
+    s {
+        opacity: 50%;
+    }
+
     @media (min-width: 43.75em) {
         $body_size: 1rem;
         $body_line_height: 1.375;
