@@ -19,7 +19,7 @@ figure.testimonial {
     blockquote {
         font-style: italic;
         font-weight: 500;
-        quotes: "“" "”" "‘" "’";
+        quotes: "“" "”";
 
         &::before {
             color: palette('dusky_pink');
