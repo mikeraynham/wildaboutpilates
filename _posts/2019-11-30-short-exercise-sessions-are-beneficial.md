@@ -4,7 +4,8 @@ date: 2019-11-30 06:00:00 Z
 categories:
 - blog
 layout: default
-description: Even short sessions of activity can have health benefits, government advises
+description: Even short sessions of activity can have health benefits, government
+  advises
 ---
 
 Don't have time for exercise? Do you think exercise has to be strenuous to be beneficial?  [Recent reports][1] show that short sessions of activity can be beneficial.
