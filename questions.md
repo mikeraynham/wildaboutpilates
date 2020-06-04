@@ -25,7 +25,7 @@ It is essential that you can get down to floor level and back up, as there is a 
 
 If you have recently had surgery please discuss this with me first.
 
-Postnatal women can come once they have had clearance from their doctor.  This will be at their 6-week medical check-up for a normal delivery, or 12-week check-up for a caesarean section, providing there are no complications. Pilates is a great way to get back into shape after having a baby.
+Postnatal women can come once they have had clearance from their doctor.  This will be at their 6-week medical check-up for a normal delivery, or 12-week check-up for a caesarean section, providing there are no complications.  Pilates is a great way to address any imbalances and postural changes after pregnancy.  We also include pelvic floor exercises which is an important group of muscles that can become weakened after pregnancy and birth.
 
 At present this class isn't suitable for pregnant women, but this is something that I will review again and may change in due course.
 
@@ -35,7 +35,7 @@ In some cases, a letter from your doctor may be required if you have a complex m
 
 Traditional Pilates was designed over 100 years ago in Germany Joseph H. Pilates. His original method was based on 34 mat based movements, which consisted of strengthening, stretch and mobility exercises. Some of these movements are, however, very challenging, and only suitable for elite level strong and flexible athletes. Most people don't have that level of ability, so the founders of The Australian Physiotherapy and Pilates Institute (with which I have done my training) reviewed and modified the exercises. The vast majority of people can now participate, regardless of their ability, posture, or injuries.
 
-## What will Pilates do for me?
+## What can Pilates do for me?
 
 Pilates has rapidly grown in popularity and is recommended by physiotherapists and other healthcare professionals. When taught correctly it can safely challenge you and provide some therapeutic benefits:
 

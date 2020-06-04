@@ -25,7 +25,7 @@
 }
 
 @function h_margin_bottom($body_line_height, $pixels) {
-    @return (rem_to_px($body_line_height) / nounit($pixels)) * 0.5rem;
+    @return (rem_to_px($body_line_height) / nounit($pixels)) * 1.5rem;
 }
 
 body, caption, th, td, input, textarea, select, option, legend, fieldset, p,

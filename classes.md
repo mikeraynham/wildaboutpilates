@@ -11,10 +11,13 @@ description: Wednesday's and Thursday's at Morton Hall Community Centre in Maccl
 Classes are held at [Morton Hall Community Centre in Macclesfield](#morton-hall-community-centre-macclesfield) in the Main Hall: a spacious, well-lit room, with a polished sprung wooden floor.
 
 {% include image.html
-    file="wild-about-pilates-morton-hall"
-    alt="Photo of the main hall at Morton Hall Community Centre"
-    caption="The Main Hall"
+    file="woman-side-plank"
+    alt="Photo of a woman doing a side plank"
 %}
+
+{% include testimonial.html
+    content="I'm loving your Pilates classes, they make me feel so much better!  Better balance, more supple and generally much healthier and happier. So thank you very much Chrissie."
+    author="S Champ" %}
 
 Please come 5 minutes early to your first session to allow time to complete the health questionnaire.
 
@@ -52,7 +55,7 @@ Block bookings
 
 Ad-hoc sessions
 
-: Ad-hoc classes are £10 per session and subject to availability.  Booking is essential. Please text me or email and I will get back to you to confirm your place.  
+: Ad-hoc classes are £10 per session and subject to availability.  Booking is essential. Please text me or email and I will get back to you to confirm your place.
 
 Refer a friend
 
@@ -60,7 +63,7 @@ Refer a friend
 
 ### One-to-one sessions
 
-There is a £5 discount for class attendees.
+If you are interested in trying Pilates, but a class isn't for you, you could consider a one-to-one session with me. They are tailored to meet the individual's needs and it's a great way to begin an exercise programme that's right for you. Several people who now come to my classes started this way.
 
 60-minute initial assessment: £50
 

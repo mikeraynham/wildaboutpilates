@@ -10,6 +10,11 @@ description: Modified physio-led Pilates sessions in Macclesfield, for beginners
 
 We offer modified physio-led Pilates sessions in Macclesfield.  Physio-led Pilates is not just for people with injuries; the exercises can be modified from beginner level to elite level athletes.  You will be under the supervision of a qualified physiotherapist who can adapt exercises to your needs.
 
+{% include image.html
+    file="chrissie-pilates-v"
+    alt="Photo of Chrissie doing the Pilates V"
+%}
+
 {% include testimonial.html
     content="This is the first Pilates class I have ever attended and I feel great! &hellip; I highly recommend this to everyone!!"
     author="B Coghlan"

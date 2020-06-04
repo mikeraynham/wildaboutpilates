@@ -26,6 +26,8 @@ Being an MSK physiotherapist means that I have a lot of experience of working wi
 
 I use Pilates frequently during my practice.  I like to help people to become stronger, more flexible and to improve posture and function, irrespective of their level of experience of Pilates or level of ability.
 
+I have a special interest in women's health Physiotherapy and strength & conditioning.  Not only has Pilates improved my strength, mobility, balance and body awareness, it has enabled me to help thousands of people during my career.
+
 ## Qualifications
 
 {% include testimonial.html
@@ -49,10 +51,13 @@ I use Pilates frequently during my practice.  I like to help people to become st
 
 ### Physiotherapy postgraduate qualifications
 
+* MSc Advanced Physiotherapy Module in Principles of Clinical Management for Patients with Neuromusculoskeletal Dysfunction: Foundation Unit
+* Pelvic Health Physiotherapy: Female Urinary Dysfunction
 * Acupuncture foundation course
 * Spinal Manipulations course
 * Problem-solving the sporting shoulder
 * Shoulder: Steps to success online course
+* The Physiotherapy Assessment and Management of Ankylosing Spondylitis
 
 ### [British Bobath Tutors Association Courses][2]
 
@@ -61,9 +66,9 @@ I use Pilates frequently during my practice.  I like to help people to become st
 * Assessment & Treatment of Adults with Neurological Conditions - Part B
 * Recovery of the Upper Limb
 
-### Other Courses
+### Exercise Courses
 
-* The Physiotherapy Assessment and Management of Ankylosing Spondylitis
+* Active IQ Level 2 Certificate in Gym Instructing
 
 [1]: https://www.appihealthgroup.com/Community/Instructors-directory/Christine-Raynham-Wild-Fully-Certified
 [2]: https://www.bbta.org.uk/
