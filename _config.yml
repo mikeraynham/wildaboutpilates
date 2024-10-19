@@ -15,3 +15,5 @@ description: Description
 url: https://www.wildaboutpilates.co.uk
 markdown: kramdown
 permalink: pretty
+sass:
+  style: compressed

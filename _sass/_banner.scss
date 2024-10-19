@@ -1,6 +1,8 @@
+@use 'palette';
+
 #banner {
-    background: palette('dark_blue');
-    border-bottom: 1px solid palette('dark_blue');
+    background: palette.color('dark_blue');
+    border-bottom: 1px solid palette.color('dark_blue');
     color: #fff;
     padding: 0.1em 0;
     text-align: center;
@@ -8,5 +10,5 @@
 }
 
 #banner:hover {
-    background: palette('mint_green');
+    background: palette.color('mint_green');
 }

@@ -1,17 +1,17 @@
 ---
 ---
 
-@import 'base';
-@import 'palette';
-@import 'reset';
-@import 'typography';
-@import 'links';
-@import 'photo';
-@import 'logo';
-@import 'nav';
-@import 'footer';
-@import 'map';
-@import 'testimonial';
-@import 'blog';
-@import 'banner';
-@import 'video';
+@use 'base';
+@use 'palette';
+@use 'reset';
+@use 'typography';
+@use 'links';
+@use 'photo';
+@use 'logo';
+@use 'nav';
+@use 'footer';
+@use 'map';
+@use 'testimonial';
+@use 'blog';
+@use 'banner';
+@use 'video';

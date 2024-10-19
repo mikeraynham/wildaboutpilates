@@ -1,8 +1,12 @@
+@use 'sass:math';
+@use 'sass:meta';
+@use 'palette';
+
 // http://typecast.com/blog/a-more-modern-scale-for-web-typography
 
 @function nounit($number) {
-    @if type-of($number) == 'number' and not unitless($number) {
-        @return $number / ($number * 0 + 1);
+    @if meta.type-of($number) == 'number' and not math.is-unitless($number) {
+        @return math.div($number, $number * 0 + 1);
     }
 
     @return $number;
@@ -17,15 +21,15 @@
 }
 
 @function h_line_height($font_size, $pixels) {
-    @return nounit($pixels) / rem_to_px($font_size);
+    @return math.div(nounit($pixels), rem_to_px($font_size));
 }
 
 @function h_margin_top($body_line_height, $pixels) {
-    @return (rem_to_px($body_line_height) / nounit($pixels)) * 1.5rem;
+    @return math.div(rem_to_px($body_line_height), nounit($pixels)) * 1.5rem;
 }
 
 @function h_margin_bottom($body_line_height, $pixels) {
-    @return (rem_to_px($body_line_height) / nounit($pixels)) * 1.5rem;
+    @return math.div(rem_to_px($body_line_height), nounit($pixels)) * 1.5rem;
 }
 
 body, caption, th, td, input, textarea, select, option, legend, fieldset, p,
@@ -64,20 +68,20 @@ main {
     }
 
     li, dd {
-        color: palette('dark_blue');
+        color: palette.color('dark_blue');
         margin-left: 1em;
         list-style-type: disc;
         display: list-item;
     }
 
     li span, dd span {
-        color: palette('dark_blue');
+        color: palette.color('dark_blue');
     }
 
     h1 {
         $font_size: h_size($body_size, 2);
         font-size: $font_size;
-        letter-spacing: #{- $font_size / rem_to_px($font_size)};
+        letter-spacing: math.div(-$font_size, rem_to_px($font_size));
         line-height: h_line_height($font_size, 45px);
         margin-bottom: h_margin_bottom($body_line_height, 32px);
         margin-top: h_margin_top($body_line_height, 32px);

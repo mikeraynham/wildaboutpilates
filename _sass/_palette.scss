@@ -1,3 +1,5 @@
+@use 'sass:map';
+
 $palette: (
     'dark_blue':  #2d4a5c,
     'dusky_pink': #e29bb5,
@@ -7,6 +9,6 @@ $palette: (
     'coral':      #f58c7b
 );
 
-@function palette($key) {
-    @return map-get($palette, $key);
+@function color($key) {
+    @return map.get($palette, $key);
 }

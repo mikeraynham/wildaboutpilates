@@ -1,7 +1,10 @@
+@use 'sass:color';
+@use 'palette';
+
 .blog_list li {
     list-style-type: none;
     margin: 0;
-    border-bottom: 1px solid rgba(palette('dark_blue'), 0.2);
+    border-bottom: 1px solid rgba(palette.color('dark_blue'), 0.2);
     margin-bottom: 1rem;
 }
 

@@ -1,4 +1,5 @@
-@import 'trig';
+@use 'palette';
+@use 'trig';
 
 #skip-to-content {
     position: absolute;
@@ -21,10 +22,10 @@ $header_height: $nav_icon_size + 2rem;
 }
 
 #skip-to-content:focus {
-    background-color: palette('mint_green');
-    border-bottom: 1px solid palette('dark_blue');
+    background-color: palette.color('mint_green');
+    border-bottom: 1px solid palette.color('dark_blue');
     border-radius: 0 0 0.5rem 0;
-    border-right: 1px solid palette('dark_blue');
+    border-right: 1px solid palette.color('dark_blue');
     list-style-type: none;
     padding: 0.5rem;
     position: absolute;
@@ -32,7 +33,7 @@ $header_height: $nav_icon_size + 2rem;
 }
 
 header {
-    border-bottom: 1px solid palette('dark_blue');
+    border-bottom: 1px solid palette.color('dark_blue');
     height: $header_height;
     line-height: $nav_icon_size;
     padding: 1rem;
@@ -82,7 +83,7 @@ header {
         }
     }
     a:hover, span {
-        color: palette('mint_green');
+        color: palette.color('mint_green');
         &.logo {
             background-position: 0 -#{$nav_icon_size * 2};
         }

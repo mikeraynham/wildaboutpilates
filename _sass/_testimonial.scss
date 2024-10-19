@@ -1,16 +1,19 @@
+@use 'sass:color';
+@use 'palette';
+
 figure.testimonial {
     margin: 1rem auto;
     padding: 1rem 3rem;
     border-width: 1px;
     border-style: solid;
-    $r: red(palette('dusky_pink'));
-    $g: green(palette('dusky_pink'));
-    $b: blue(palette('dusky_pink'));
+    $r: color.channel(palette.color('dusky_pink'), 'red',   $space: rgb);
+    $r: color.channel(palette.color('dusky_pink'), 'green', $space: rgb);
+    $r: color.channel(palette.color('dusky_pink'), 'blue',  $space: rgb);
     border-image: linear-gradient(
         to right,
         white 0%,
-        palette('dusky_pink') 15%,
-        palette('dusky_pink') 85%,
+        palette.color('dusky_pink') 15%,
+        palette.color('dusky_pink') 85%,
         white,
     ) 100% 0 100%;
     max-width: 31.25rem;
@@ -22,7 +25,7 @@ figure.testimonial {
         quotes: "“" "”";
 
         &::before {
-            color: palette('dusky_pink');
+            color: palette.color('dusky_pink');
             content: open-quote;
             font-size: 6rem;
             left: 0;

@@ -1,6 +1,8 @@
+@use 'palette';
+
 * {
     box-sizing: border-box;
-    color: palette('dark_blue');
+    color: palette.color('dark_blue');
     margin: 0;
     outline: none;
     padding: 0;
