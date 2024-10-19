@@ -24,7 +24,7 @@ We offer modified physio-led Pilates sessions in Macclesfield.  Physio-led Pilat
 
 If you do have problems such as back pain, this method is a safe and effective way to help improve strength, posture, balance and flexibility. It also promotes well being and is an enjoyable way to exercise.
 
-Most of us have something we can improve, whether it be to improve fitness, strength or balance. Pilates is a great way to address all of these areas and more.
+Most of us have something we can improve, whether it be to improve flexibility, strength, or balance. Pilates is a great way to address all of these areas and more.
 
 ## What you can expect from Wild About Pilates?
 
@@ -39,7 +39,7 @@ Most of us have something we can improve, whether it be to improve fitness, stre
 
 * Lots of tips, good attention to detail so you get the most from the exercises.
 
-* An all-round workout: all major muscle groups will be addressed, so you should come away feeling positive about a well balanced and challenging exercise plan.
+* An all-round workout: all major muscle groups will be addressed, so you should come away feeling positive having completed a well balanced and challenging exercise session.
 
 {% comment %}
 {% include testimonial.html

@@ -45,7 +45,7 @@ Core Stability and Strength
 
 Posture
 
-: You will learn the five key elements that help promote good posture and body awareness.
+: You will improve proprioception, body awareness, and learn good form for different exercises.
 
 Flexibility
 

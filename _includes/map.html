@@ -1,9 +1,14 @@
-<div id="map"></div>
+<div id="gawsworth-map"></div>
+<p><a class="button" href="https://www.google.com/maps/search/?api=1&amp;query_place_id=ChIJY5ayhhdPekgRknoq2C0ibtw&amp;query=Gawsworth+Village+Hall,+Church+Lane,+Macclesfield,+SK11+9RJ">View on Google Maps</a></p>
 
 <script>
     function initMap() {
-        var center = {lat: 53.2580984, lng: -2.1169721};
-        var map = new google.maps.Map(document.getElementById('map'), {
+        gawsworthMap();
+    }
+
+    function gawsworthMap() {
+        var center = {lat: 53.2305637, lng: -2.168794};
+        var map = new google.maps.Map(document.getElementById('gawsworth-map'), {
             zoom: 15,
             center: center
         });
@@ -16,10 +21,10 @@
         var infowindow = new google.maps.InfoWindow();
         infowindow.setContent(
             '<div><strong>Wild About Pilates</strong><br>' +
-            'Morton Hall Community Centre<br>' +
-            'Union Road<br>' +
+            'Gawsworth Village Hall<br>' +
+            'Church Lane<br>' +
             'Macclesfield<br>' +
-            'SK11 7BN</div>'
+            'SK11 9RJ</div>'
         );
 
         google.maps.event.addListener(marker, 'click', function() {
@@ -27,9 +32,5 @@
         });
     }
 </script>
-<script
-    async defer
-    src="https://maps.googleapis.com/maps/api/js?key={{ site.data.google.maps_api_key }}&amp;callback=initMap">
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDx857EBbEnyUnEJ8_qqwygj9QO1mZSa3o&amp;callback=initMap">
 </script>
-
-<a class="button" href="https://www.google.com/maps/search/?api=1&amp;query_place_id=ChIJCZesDRZJekgR4_R5p0cg6UI&amp;query=Wild+About+Pilates%2C+Morton+Hall+Community+Centre%2C+Union+Road%2C+Macclesfield+SK11+7BN">View on Google Maps</a>

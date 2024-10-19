@@ -8,25 +8,21 @@ description: My name is Chrissie Raynham-Wild and I'm a state registered Charter
   Pilates instructor.
 ---
 
-Hello! My name is Chrissie Raynham-Wild and I'm a state registered Chartered Physiotherapist specialising in musculoskeletal physiotherapy, and a certified [<abbr title="The Australian Physiotherapy & Pilates Institute">APPI</abbr>][1] Matwork Pilates instructor.
+Hello! My name is Chrissie Raynham-Wild and I'm a clinical specialist Chartered Physiotherapist, and a certified [<abbr title="The Australian Physiotherapy & Pilates Institute">APPI</abbr>][1] Matwork Pilates instructor.
 
 {% include testimonial.html
     content="The sessions so far have been great, Chrissie is really professional and connects really well with the group. She is warm and welcoming and seems like she really knows her stuff."
     author="D Mullineux" %}
 
-I have worked in the NHS for over 8 years.  Prior to specialising in MSK, I completed rotations in other specialist areas including neurology, orthopaedics, stroke rehabilitation, respiratory medicine and elderly care and rehab.
+I have worked in the NHS for over 10 years and I specialise in musculoskeletal physiotherapy. I am currently undertaking masters modules in Advanced Physiotherapy at Manchester Metropolitan University and my specialist interests include post-natal exercise, chronic musculoskeletal pain management, sports rehabilitation, strength training, and breast cancer post-operative rehabilitation.
 
 {% include image.html
-    file="wild-about-pilates-chrissie-wild"
+    file="chrissie-raynham-wild"
     alt="Photo of Chrissie Wild"
     caption="Chrissie Raynham-Wild"
 %}
 
-Being an MSK physiotherapist means that I have a lot of experience of working with people who have pain or injuries. It also means I have a very good understanding of the anatomy and physiology of the body.
-
-I use Pilates frequently during my practice.  I like to help people to become stronger, more flexible and to improve posture and function, irrespective of their level of experience of Pilates or level of ability.
-
-I have a special interest in women's health Physiotherapy and strength & conditioning.  Not only has Pilates improved my strength, mobility, balance and body awareness, it has enabled me to help thousands of people during my career.
+I have a lot of experience rehabilitating people who have pain or injuries, and a very good understanding of anatomy and physiology. I help people to become stronger, improve their joint mobility, balance, body awareness, and confidence, all while having fun and challenging themselves. Pilates has improved my health and wellbeing and enabled me to help lots of people during my career.
 
 ## Qualifications
 
@@ -44,6 +40,7 @@ I have a special interest in women's health Physiotherapy and strength & conditi
 * APPI Pilates For Runners
 * Unite Health Level 1 Therapeutic Yoga
 * Ante & Post Natal Pilates
+* Pilates for Osteoporosis
 
 ### Physiotherapy Qualification
 
@@ -58,6 +55,7 @@ I have a special interest in women's health Physiotherapy and strength & conditi
 * Problem-solving the sporting shoulder
 * Shoulder: Steps to success online course
 * The Physiotherapy Assessment and Management of Ankylosing Spondylitis
+* Pregnancy Related Physiotherapy: the childbearing year
 
 ### [British Bobath Tutors Association Courses][2]
 
