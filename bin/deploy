@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -euo pipefail
+
+source ./.env
+
+rsync -avzi --delete ./site/_site/ wildaboutpilates:/var/www/html/wildaboutpilates/public_html/
+
+curl -X POST "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/purge_cache" \
+     -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+     -H "Content-Type:application/json" \
+     -d '{"purge_everything":true}'

@@ -28,6 +28,10 @@ All classes are at [Gawsworth Village Hall, Macclesfield](#gawsworth-village-hal
 
 <em><time>11:00</time>-<time>12:00</time></em> Beginners / improvers / intermediate
 
+### Tuesday
+
+<em><time>09:30</time>-<time>10:30</time></em> Beginners / improvers / intermediate
+
 ### Thursday
 
 <em><time>18:15</time>-<time>19:15</time></em> Beginners / improvers / intermediate

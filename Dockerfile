@@ -7,7 +7,7 @@ RUN apt-get update -y && \
 WORKDIR /site
 
 RUN gem update --system && gem install jekyll
-COPY ./scripts/docker-entrypoint.sh /usr/local/bin/
+COPY ./bin/docker-entrypoint.sh /usr/local/bin/
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
 
 FROM jekyll AS jekyll-serve

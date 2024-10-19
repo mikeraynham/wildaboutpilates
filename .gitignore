@@ -1,7 +1,2 @@
 .DS_Store
-_data/google.yml
-_site
-.sass-cache
-.jekyll-metadata
-update
-videos/
+.env
