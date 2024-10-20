@@ -40,7 +40,7 @@ header {
     vertical-align: middle;
 
     a, span {
-        &.logo, &.home, &.about, &.questions, &.classes, &.blog {
+        &.logo, &.home, &.about, &.questions, &.classes, &.blog, &.clothing {
             background-image: url(/images/nav-icon-sprite.min.svg?b);
             background-repeat: no-repeat;
             background-size: $nav_icon_size;
@@ -51,8 +51,8 @@ header {
             height: #{$nav_icon_size};
             width: #{$nav_icon_size};
         }
-        &.home, &.about, &.questions, &.classes, &.blog {
-            @media (min-width: 43.25em) {
+        &.home, &.about, &.questions, &.classes, &.blog, &.clothing {
+            @media (min-width: 48.25em) {
                 width: auto;
             }
         }
@@ -81,6 +81,9 @@ header {
         &.blog {
             background-position: 0 -#{$nav_icon_size * 20};
         }
+        &.clothing {
+            background-position: 0 -#{$nav_icon_size * 24};
+        }
     }
     a:hover, span {
         color: palette.color('mint_green');
@@ -101,6 +104,9 @@ header {
         }
         &.blog {
             background-position: 0 -#{$nav_icon_size * 22};
+        }
+        &.clothing {
+            background-position: 0 -#{$nav_icon_size * 26};
         }
     }
 
