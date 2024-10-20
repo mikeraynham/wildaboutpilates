@@ -41,7 +41,7 @@ header {
 
     a, span {
         &.logo, &.home, &.about, &.questions, &.classes, &.blog {
-            background-image: url(/images/nav-icon-sprite.min.svg?a);
+            background-image: url(/images/nav-icon-sprite.min.svg?b);
             background-repeat: no-repeat;
             background-size: $nav_icon_size;
             display: block;
