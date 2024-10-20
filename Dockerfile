@@ -1,19 +1,21 @@
-FROM ruby:slim AS jekyll
+FROM ruby:slim AS ruby
 
 RUN apt-get update -y && \
     apt-get install -y --no-install-recommends build-essential && \
-    gem install jekyll bundler
+    gem install jekyll bundle && \
+    gem update --system && \
+    gem install jekyll
 
-WORKDIR /site
+FROM ruby AS jekyll
 
-RUN gem update --system && gem install jekyll
-COPY ./bin/docker-entrypoint.sh /usr/local/bin/
-ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
+WORKDIR /jekyll
+COPY ./jekyll/Gemfile .
+RUN bundle install
 
-FROM jekyll AS jekyll-serve
+FROM jekyll AS dev
 
-WORKDIR /site
 EXPOSE 4000
-
-ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
-CMD ["bundle", "exec", "jekyll", "serve", "--host", "0.0.0.0"]
+RUN useradd --create-home --shell /bin/bash jekyll
+USER jekyll
+WORKDIR /jekyll
+CMD ["/bin/bash"]

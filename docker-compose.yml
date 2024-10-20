@@ -7,4 +7,7 @@ services:
     ports:
       - "4000:4000"
     volumes:
-      - ./site:/site
+      - ./bin/dev:/usr/local/sbin
+      - ./jekyll:/jekyll
+    # stdin_open: true
+    # tty: true

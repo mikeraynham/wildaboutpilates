@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -euo pipefail
+
+docker compose run \
+    --build \
+    --name wildaboutpilates \
+    --remove-orphans \
+    --rm \
+    --service-ports \
+    jekyll
