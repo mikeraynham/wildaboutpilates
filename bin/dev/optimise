@@ -20,6 +20,7 @@ fi
 
 set -x
 
+exiftran -a -i "${input}"
 jpegtran -copy none -outfile "${clean}" ${rotate} "${input}"
 
 for width in 200 300 400; do
