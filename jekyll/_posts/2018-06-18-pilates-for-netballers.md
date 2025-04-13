@@ -40,7 +40,6 @@ I'm passionate about improving sports performance, preventing injuries, and reha
 
 Tuesday 3rd July, <time>19:00</time>-<time>20:00</time>.
 Morton Hall Community Centre, Macclesfield
-{% include address.html %}
 
 ## Booking
 

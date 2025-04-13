@@ -18,6 +18,3 @@ Wednesday class: <time>14:00</time>-<time>15:00</time>.
 ### Where
 
 Morton Hall Community Centre, Macclesfield.
-
-{% include address.html %}
-{% include map.html %}
