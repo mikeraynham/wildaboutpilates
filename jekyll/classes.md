@@ -66,11 +66,11 @@ Taster session
 
 Block bookings
 
-: The classes are £10.00 per session and run in blocks of 6 consecutive classes which are to be paid in full in advance. Block-bookings take priority over ad-hoc bookings, and your place will be reserved.
+: £75 for a block of 6 consecutive classes (£12.50 per session), to be paid in full in advance. Block-bookings take priority over ad-hoc bookings, and your place will be reserved.
 
 Ad-hoc sessions
 
-: Ad-hoc classes are £12 per session and subject to availability. Booking is essential. Please text me or email and I will get back to you to confirm your place.
+: Ad-hoc classes are £15 per session and subject to availability. Booking is essential. Please text me or email and I will get back to you to confirm your place.
 
 Refer a friend
 
