@@ -33,7 +33,7 @@ Most of us have something we can improve, whether it be to improve flexibility, 
     author="H Starkey"
 %}
 
-* Small group sizes; no more than 12 in a class, meaning more care and attention for you.
+* Small group sizes, meaning more care and attention for you.
 
 * If you do an exercise that doesn't feel right for you — tell me and we can modify it so that you can join in every step of the way and achieve your goals.  My musculoskeletal physiotherapy experience helps me to help you.
 

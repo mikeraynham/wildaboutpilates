@@ -35,6 +35,12 @@ The following classes are available at [Gawsworth Village Hall, Macclesfield](#g
 
 <em><time>09:30</time>-<time>10:30</time></em> Beginners / improvers / intermediate
 
+#### Wednesday
+
+*Coming in September*
+
+<em><time>18:15</time>-<time>19:15</time></em> Beginners / improvers / intermediate
+
 #### Thursday
 
 <em><time>18:15</time>-<time>19:15</time></em> Beginners / improvers / intermediate
@@ -44,12 +50,6 @@ The following classes are available at [Gawsworth Village Hall, Macclesfield](#g
 #### Friday
 
 <em><time>09:15</time>-<time>10:15</time></em> Beginners / improvers / intermediate
-
-### Substation
-
-<strong>Classes at Substation start on Tuesday, 6 May, 2015.</strong>
-
-The following classes will be available at [Substation, Macclesfield](#substation-macclesfield), starting Tuesday, 6 May, 2015:
 
 #### Tuesday
 
@@ -113,10 +113,3 @@ Gawsworth Village Hall is on Church Lane and opened in 1953. It is used by a num
 
 {% include address_gawsworth.html %}
 {% include map_gawsworth.html %}
-
-### Substation, Macclesfield
-
-Substation is a vibrant community hub set within a spacious 600m² facility on Queen’s Avenue. Home to a state-of-the-art bouldering wall and a welcoming café, it’s the perfect place to move, meet, and unwind. After your session, relax with a locally roasted coffee and enjoy a selection of locally sourced cakes, savoury pastries, toasties, and wholesome snacks.
-
-{% include address_substation.html %}
-{% include map_substation.html %}
