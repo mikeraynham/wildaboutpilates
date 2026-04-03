@@ -34,10 +34,9 @@ The following classes are available at [Gawsworth Village Hall, Macclesfield](#g
 #### Tuesday
 
 <em><time>09:30</time>-<time>10:30</time></em> Beginners / improvers / intermediate
+<em><time>11:00</time>-<time>12:00</time></em> Beginners / improvers / intermediate
 
 #### Wednesday
-
-*Coming in September*
 
 <em><time>18:15</time>-<time>19:15</time></em> Beginners / improvers / intermediate
 
@@ -50,10 +49,6 @@ The following classes are available at [Gawsworth Village Hall, Macclesfield](#g
 #### Friday
 
 <em><time>09:15</time>-<time>10:15</time></em> Beginners / improvers / intermediate
-
-#### Tuesday
-
-<em><time>11:00</time>-<time>12:00</time></em> Beginners / improvers / intermediate
 
 ## What to wear & bring
 
@@ -97,11 +92,11 @@ Virtual (Zoom) classes are £12.50 per session and run in blocks of 6 consecutiv
 
 If you are interested in trying Pilates, but a class isn't for you, you could consider a one-to-one session with me. They are tailored to meet the individual's needs and it's a great way to begin an exercise programme that's right for you. Several people who now come to my classes started this way.
 
-60-minute initial assessment: £60
+60-minute initial assessment: £75
 
 : This includes an assessment of your posture, spinal range of movement and muscle length and function. You will learn the Pilates key elements and how to engage your centre. I will teach you some of the main Pilates exercises, and you will be provided with exercises which are tailored specifically to help you, which you can practice independently in your own time.
 
-60 minute tailored session: £60
+60 minute tailored session: £75
 
 : You must have completed the initial assessment first.
 
