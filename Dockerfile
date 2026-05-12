@@ -1,21 +1,18 @@
-FROM ruby:slim AS ruby
+FROM ruby:3.4-slim AS ruby
 
 RUN apt-get update -y && \
-    apt-get install -y --no-install-recommends build-essential && \
-    gem install jekyll bundle && \
+    apt-get install -y --no-install-recommends \
+    build-essential \
+    exiftran \
+    imagemagick \
+    libjpeg-turbo-progs && \
     gem update --system && \
     gem install jekyll
 
 FROM ruby AS jekyll
 
 WORKDIR /jekyll
-COPY ./jekyll/Gemfile .
+COPY ./jekyll/Gemfile ./jekyll/Gemfile.lock ./
 RUN bundle install
-
-FROM jekyll AS dev
-
 EXPOSE 4000
-RUN useradd --create-home --shell /bin/bash jekyll
-USER jekyll
-WORKDIR /jekyll
-CMD ["/bin/bash"]
+CMD ["jserve"]
