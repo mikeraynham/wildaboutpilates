@@ -70,7 +70,7 @@ Wear loose fitting comfortable clothing, and if possible socks with grips on the
 
 Taster session
 
-: First session is free, with no obligation. At Wild About Pilates we want people to come and see what it's all about.
+: Your first Pilates class is available at our block booking rate of just £12.50, with no obligation.  At Wild About Pilates we want people to come and see what it's all about.
 
 Block bookings
 
