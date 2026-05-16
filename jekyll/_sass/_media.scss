@@ -7,7 +7,7 @@ figure.photo, figure.video {
     img, video {
         margin: 0 auto;
         width: 200px;
-        display: table-caption;
+        display: block;
 
         @media (min-width: 43.75em) {
             width: 300px;
