@@ -42,10 +42,14 @@ I am currently studying an MSc in Advanced Physiotherapy at Manchester Metropoli
 * APPI Pilates Matwork Level 3
 * APPI Certified Matwork Pilates Instructor exam
 * APPI Pilates For Runners
-* Unite Health Level 1 Therapeutic Yoga
 * Ante & Post Natal Pilates
 * Pilates for Osteoporosis
- 
+
+### Yoga Qualifications
+
+* Unite Health Level 1 Therapeutic Yoga
+* Clinical Yoga Teacher Training
+
 ### Physiotherapy Qualification
 
 * BSc (Hons) Physiotherapy
