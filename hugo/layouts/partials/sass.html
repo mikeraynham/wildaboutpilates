@@ -1,0 +1,4 @@
+{{- $opts := dict "transpiler" "dartsass" "outputStyle" "compressed" -}}
+{{- with resources.Get "css/screen.scss" | css.Sass $opts -}}
+<link rel="stylesheet" href="{{ .RelPermalink }}?z">
+{{- end -}}

@@ -1,0 +1,16 @@
+@use 'palette';
+
+* {
+    box-sizing: border-box;
+    color: palette.color('dark_blue');
+    margin: 0;
+    outline: none;
+    padding: 0;
+    font-style: normal;
+}
+
+body {
+    height: auto !important;
+    height: 100%;
+    min-height: 100%;
+}

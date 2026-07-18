@@ -1,0 +1,14 @@
+@use 'palette';
+
+#banner {
+    background: palette.color('dark_blue');
+    border-bottom: 1px solid palette.color('dark_blue');
+    color: #fff;
+    padding: 0.1em 0;
+    text-align: center;
+    text-decoration: none;
+}
+
+#banner:hover {
+    background: palette.color('mint_green');
+}

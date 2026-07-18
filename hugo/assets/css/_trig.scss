@@ -1,0 +1,59 @@
+$pi: 3.14159265359;
+$_precision: 10;
+
+@function pow($base, $exp) {
+  $value: $base;
+  @if $exp > 1 {
+    @for $i from 2 through $exp {
+      $value: $value * $base;
+    }
+  }
+  @if $exp < 1{
+    @for $i from 0 through -$exp {
+      $value: $value / $base;
+    }
+  }
+  @return $value;
+}
+
+@function fact($num) {
+  $fact: 1;
+  @if $num > 0{
+    @for $i from 1 through $num {
+      $fact: $fact * $i;
+    }
+  }
+  @return $fact;
+}
+
+@function rad($deg) {
+    @return $deg / 180 * $pi;
+}
+
+@function sin($rad){
+    $sin: $rad;
+    @for $n from 1 through $_precision {
+        $sin: $sin + (pow(-1, $n) / fact(2 * $n + 1) ) * pow($rad, (2 * $n + 1));
+    }
+    @return $sin;
+}
+
+@function cos($rad){
+  $cos: 1;
+  @for $n from 1 through $_precision {
+    $cos: $cos + ( pow(-1, $n) / fact(2 * $n) ) * pow($rad, 2 * $n);
+  }
+  @return $cos;
+}
+
+@function rotx($x, $y, $deg) {
+    $rad: rad($deg);
+    $x1: $y * sin($rad) + $x * cos($rad);
+    @return $x1;
+}
+
+@function roty($x, $y, $deg) {
+    $rad: rad($deg);
+    $y1: $y * cos($rad) - $x * sin($rad);
+    @return $y1;
+}

@@ -1,0 +1,132 @@
+@use 'palette';
+@use 'trig';
+
+#skip-to-content {
+    position: absolute;
+    top: -5rem;
+    left: 0;
+}
+
+#skip-to-content:focus {
+    position: absolute;
+    top: 0;
+}
+
+$nav_icon_size: 2rem;
+$header_height: $nav_icon_size + 2rem;
+
+#skip-to-content {
+    position: absolute;
+    left: 0;
+    top: -100%;
+}
+
+#skip-to-content:focus {
+    background-color: palette.color('mint_green');
+    border-bottom: 1px solid palette.color('dark_blue');
+    border-radius: 0 0 0.5rem 0;
+    border-right: 1px solid palette.color('dark_blue');
+    list-style-type: none;
+    padding: 0.5rem;
+    position: absolute;
+    top: $header_height;
+}
+
+header {
+    border-bottom: 1px solid palette.color('dark_blue');
+    height: $header_height;
+    line-height: $nav_icon_size;
+    padding: 1rem;
+    vertical-align: middle;
+
+    a, span {
+        &.logo, &.home, &.about, &.questions, &.classes, &.blog, &.clothing {
+            background-image: url(/images/nav-icon-sprite.min.svg?b);
+            background-repeat: no-repeat;
+            background-size: $nav_icon_size;
+            display: block;
+            overflow: hidden;
+            text-decoration: none;
+            text-indent: #{$nav_icon_size + 0.5};
+            height: #{$nav_icon_size};
+            width: #{$nav_icon_size};
+        }
+        &.home, &.about, &.questions, &.classes, &.blog, &.clothing {
+            @media (min-width: 48.25em) {
+                width: auto;
+            }
+        }
+        &.logo {
+            @media (min-width: 56.25em) {
+                width: auto;
+            }
+        }
+    }
+    a {
+        &.logo {
+            background-position: 0 0;
+        }
+        &.home {
+            background-position: 0 -#{$nav_icon_size * 4};
+        }
+        &.about {
+            background-position: 0 -#{$nav_icon_size * 8};
+        }
+        &.questions {
+            background-position: 0 -#{$nav_icon_size * 12};
+        }
+        &.classes {
+            background-position: 0 -#{$nav_icon_size * 16};
+        }
+        &.blog {
+            background-position: 0 -#{$nav_icon_size * 20};
+        }
+        &.clothing {
+            background-position: 0 -#{$nav_icon_size * 24};
+        }
+    }
+    a:hover, span {
+        color: palette.color('mint_green');
+        &.logo {
+            background-position: 0 -#{$nav_icon_size * 2};
+        }
+        &.home {
+            background-position: 0 -#{$nav_icon_size * 6};
+        }
+        &.about {
+            background-position: 0 -#{$nav_icon_size * 10};
+        }
+        &.questions {
+            background-position: 0 -#{$nav_icon_size * 14};
+        }
+        &.classes {
+            background-position: 0 -#{$nav_icon_size * 18};
+        }
+        &.blog {
+            background-position: 0 -#{$nav_icon_size * 22};
+        }
+        &.clothing {
+            background-position: 0 -#{$nav_icon_size * 26};
+        }
+    }
+
+    .logo {
+        float: left;
+        @media (min-width: 56.25em) {
+            width: auto;
+        }
+    }
+
+    nav {
+        float: right;
+
+        ul li {
+            display: inline-block;
+            padding-right: 1em;
+        }
+
+        ul li:last-child {
+            padding-right: 0;
+        }
+    }
+}
