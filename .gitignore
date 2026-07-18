@@ -1,2 +1,5 @@
 .DS_Store
 .env
+scratch/
+hugo/public/
+hugo/resources/

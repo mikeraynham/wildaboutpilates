@@ -1,0 +1,44 @@
+baseURL = "https://www.wildaboutpilates.co.uk/"
+languageCode = "en-GB"
+title = "Wild About Pilates"
+disableKinds = ["taxonomy", "term", "rss", "sitemap"]
+enableInlineShortcodes = true
+
+[permalinks]
+  blog = "/blog/:year/:month/:day/:slug/"
+
+[imaging]
+  quality = 85
+
+[params]
+  email = "info@wildaboutpilates.co.uk"
+  tel = "07378 166524"
+  tel_int = "+44-7378-166524"
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[[menus.main]]
+  name = "Home"
+  pageRef = "/"
+  weight = 1
+[[menus.main]]
+  name = "About"
+  pageRef = "/about"
+  weight = 2
+[[menus.main]]
+  name = "Questions"
+  pageRef = "/questions"
+  weight = 3
+[[menus.main]]
+  name = "Classes"
+  pageRef = "/classes"
+  weight = 4
+[[menus.main]]
+  name = "Blog"
+  pageRef = "/blog"
+  weight = 5
+[[menus.main]]
+  name = "Clothing"
+  pageRef = "/clothing"
+  weight = 6
