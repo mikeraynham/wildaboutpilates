@@ -1,0 +1,32 @@
+{{- $specs := slice -}}
+{{- range .Site.Data.classes -}}
+  {{- $spec := dict
+      "@type" "OpeningHoursSpecification"
+      "opens" (printf "%s:00" .start)
+      "closes" (printf "%s:00" .end)
+      "dayOfWeek" (printf "http://schema.org/%s" .day) -}}
+  {{- with .since }}{{ $spec = merge $spec (dict "validFrom" .) }}{{ end -}}
+  {{- $specs = $specs | append $spec -}}
+{{- end -}}
+{{- $doc := dict
+    "@context" "http://schema.org"
+    "@type" "EventVenue"
+    "@id" "https://www.wildaboutpilates.co.uk/#gawsworth"
+    "url" "https://www.wildaboutpilates.co.uk/"
+    "name" "Wild About Pilates"
+    "telephone" "+44-7378-166524"
+    "image" "https://www.wildaboutpilates.co.uk/images/wild-about-pilates-logo-1120w1120h.png"
+    "logo" "https://www.wildaboutpilates.co.uk/images/wild-about-pilates-logo-1120w1120h.png"
+    "maximumAttendeeCapacity" "12"
+    "geo" (dict "@type" "GeoCoordinates" "latitude" "53.2305637" "longitude" "-2.168794")
+    "address" (dict "@type" "PostalAddress" "addressCountry" "GB" "streetAddress" "Gawsworth Village Hall, Church Lane" "addressLocality" "Macclesfield" "addressRegion" "Cheshire" "postalCode" "SK11 9RJ")
+    "openingHoursSpecification" $specs -}}
+<address>
+    Gawsworth Village Hall<br/>
+    Church Lane<br/>
+    Macclesfield<br/>
+    SK11 9RJ<br/>
+    <script type="application/ld+json">
+    {{ $doc | jsonify (dict "indent" "    ") | safeJS }}
+    </script>
+</address>
