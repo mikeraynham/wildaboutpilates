@@ -1,0 +1,12 @@
+{{- $file := .file -}}
+{{- $ext := .ext -}}
+{{- with resources.Get (printf "images/%s.%s" $file $ext) -}}
+  {{- $o := .Filter images.AutoOrient -}}
+  {{- range slice 200 300 400 -}}
+    {{- $r := $o.Resize (printf "%dx q85" .) -}}
+    {{- $named := resources.Copy (printf "/images/%s-%dw.%s" $file . $ext) $r -}}
+    {{- $named.Publish -}}
+  {{- end -}}
+  {{- $clean := resources.Copy (printf "/images/%s-clean.%s" $file $ext) $o -}}
+  {{- $clean.Publish -}}
+{{- end -}}
