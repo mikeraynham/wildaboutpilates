@@ -80,4 +80,5 @@ If you are interested in trying Pilates, but a class isn't for you, you could co
 Gawsworth Village Hall is on Church Lane and opened in 1953. It is used by a number of community organisations including the Bridge Club, the Parish Council and the Women's Institute (WI). The hall underwent a £50,000 refurbishment in 2017. <a href="https://www.google.co.uk/maps/@53.2303733,-2.1688624,3a,90y,140.17h,82.29t/data=!3m8!1e1!3m6!1sAF1QipMcPedMvoto3adPyxireF72yFfo_q5HrEAY2Ats!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipMcPedMvoto3adPyxireF72yFfo_q5HrEAY2Ats%3Dw203-h100-k-no-pi-0-ya331.4644-ro0-fo100!7i8704!8i4352">View the refurbished hall on Google Maps</a>.
 
 {{< address_gawsworth >}}
+
 {{< map_gawsworth >}}
