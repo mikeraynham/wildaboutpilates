@@ -1,0 +1,11 @@
+{{- $file := .Get "file" -}}
+<figure class="video">
+    <video controls>
+        <source src="/videos/{{ $file }}.mp4" type="video/mp4">
+        <source src="/videos/{{ $file }}.mov" type="video/quicktime">
+        Your browser does not support the video tag.
+    </video>
+    {{- with .Get "caption" }}
+    <figcaption>{{ . }}</figcaption>
+    {{- end }}
+</figure>
