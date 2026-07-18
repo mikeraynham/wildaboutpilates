@@ -1,0 +1,28 @@
+<footer>
+    <address>
+        <a class="email" href="mailto:{{ .Site.Params.email }}" aria-label="email address {{ .Site.Params.email }}">{{ .Site.Params.email }}</a>
+        <a class="tel" href="tel:{{ .Site.Params.tel | urlize }}" aria-label="telephone number {{ .Site.Params.tel }}">{{ .Site.Params.tel }}</a>
+        <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "Organization",
+            "url": "https://www.wildaboutpilates.co.uk/",
+            "name": "Wild About Pilates",
+            "logo": "https://www.wildaboutpilates.co.uk/images/wild-about-pilates-logo-1120w1120h.png",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "{{ .Site.Params.tel_int }}",
+                "email": "{{ .Site.Params.email }}",
+                "contactType": "sales",
+                "areaServed": "GB"
+            },
+            "sameAs": [
+                "https://www.facebook.com/WildAboutPilates/",
+                "https://www.linkedin.com/in/chrissie-raynham-wild-11a1b9157/",
+                "https://www.instagram.com/wildaboutpilates/",
+                "https://twitter.com/WAPilates1"
+            ]
+        }
+        </script>
+    </address>
+</footer>

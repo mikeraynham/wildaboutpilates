@@ -1,0 +1,15 @@
+<nav id="main-nav" class="no-delay" aria-label="Main Navigation">
+    <ul id="menu">
+    {{- range .Site.Menus.main }}
+        {{- if $.IsMenuCurrent "main" . }}
+        <li aria-current="page">
+            <span class="{{ .Name | urlize }}">{{ .Name }}</span>
+        </li>
+        {{- else }}
+        <li>
+            <a class="{{ .Name | urlize }}" href="{{ .URL }}">{{ .Name }}</a>
+        </li>
+        {{- end }}
+    {{- end }}
+    </ul>
+</nav>

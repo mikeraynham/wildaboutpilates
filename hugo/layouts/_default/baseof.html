@@ -1,2 +1,16 @@
 <!DOCTYPE html>
-<html lang="en-GB"><head>{{ partial "sass.html" . }}</head><body>{{ block "main" . }}{{ end }}</body></html>
+<html lang="en-GB">
+    {{ partial "head.html" . }}
+    <body>
+        <header>
+            <a id="skip-to-content" href="#main-content">Skip to main content</a>
+            <a class="logo" href="/">Wild About Pilates</a>
+            {{ partial "nav.html" . }}
+        </header>
+        <main id="main-content">
+            <h1 id="{{ .Title | urlize }}">{{ .Title }}</h1>
+            {{ block "main" . }}{{ end }}
+        </main>
+        {{ partial "footer-jsonld.html" . }}
+    </body>
+</html>
