@@ -16,7 +16,7 @@
 - Blog post URLs must stay `/blog/YYYY/MM/DD/slug/`.  Reproduced by `[permalinks] blog = "/blog/:year/:month/:day/:slug/"`, date-stripped content filenames with `date:` front matter, and `disableKinds = ["taxonomy", "term"]`.
 - Filter mappings: `slugify:'ascii'` and plain `slugify` both map to `urlize` (not `anchorize`, which double-hyphens `&`-titles); `uri_escape` on the email is a no-op, so output it plain (not `urlquery`, which would give `%40`); `relative_url` maps to `relURL`.
 - Success criterion: `diff -r` of Jekyll `_site/` against Hugo `public/`, over HTML and the URL list, reduces to the known-difference list only.
-- Reference URL set (22 URLs), which the Hugo build must reproduce exactly:
+- Reference URL set (24 URLs), which the Hugo build must reproduce exactly (`/admin/` is added in Task 11, so the pre-Task-11 build has 23):
   `/`, `/about/`, `/blog/`, `/classes/`, `/clothing/`, `/questions/`, `/404.html`, `/google16af2f711db15395.html`, `/admin/`, and the 15 posts `/blog/YYYY/MM/DD/slug/`.
 - British English throughout; the site's existing copy is authoritative and must not be reworded.
 
@@ -81,7 +81,7 @@ cp -r jekyll/_site scratch/jekyll-baseline
 find scratch/jekyll-baseline -name '*.html' | sed 's|scratch/jekyll-baseline||; s|/index.html|/|' | sort > scratch/jekyll-urls.txt
 wc -l scratch/jekyll-urls.txt
 ```
-Expected: `22 scratch/jekyll-urls.txt`.
+Expected: `24 scratch/jekyll-urls.txt`.
 
 - [ ] **Step 2: Ignore scratch and the Hugo build output**
 
@@ -101,6 +101,7 @@ languageCode = "en-GB"
 title = "Wild About Pilates"
 disableKinds = ["taxonomy", "term", "rss", "sitemap"]
 enableInlineShortcodes = true
+disableHugoGeneratorInject = true
 
 [permalinks]
   blog = "/blog/:year/:month/:day/:slug/"
@@ -476,7 +477,7 @@ git commit -m "feat: add Hugo base layout, head, nav, and footer"
 - Create: `hugo/layouts/shortcodes/registration_form.html`
 
 **Interfaces:**
-- Produces: shortcodes invoked from content as `{{</* image file="x" alt="y" */>}}`.  Jekyll `include.foo` becomes `.Get "foo"`.  The content rewrites happen in Task 8-9.
+- Produces: shortcodes invoked from content as `{{< image file="x" alt="y" >}}`.  Jekyll `include.foo` becomes `.Get "foo"`.  The content rewrites happen in Task 8-9.
 
 - [ ] **Step 1: Write `image.html`**
 
@@ -626,7 +627,7 @@ Run:
 cd /Users/mikeraynham/git/wildaboutpilates/hugo
 # temporary probe page
 mkdir -p content
-printf -- '---\ntitle: probe\n---\n{{</* class_times */>}}\n' > content/probe.md
+printf -- '---\ntitle: probe\n---\n{{< class_times >}}\n' > content/probe.md
 docker run --rm -v "$PWD:/src" -w /src hugomods/hugo:exts hugo --logLevel error -d public >/dev/null 2>&1
 grep -oE '<h4 id="[a-z]+">' public/probe/index.html
 rm content/probe.md
@@ -655,6 +656,8 @@ git commit -m "feat: add class_times shortcode grouping by day"
 - [ ] **Step 1: Write the shortcode**
 
 Build the specification as a Go slice of maps and `jsonify` the whole document.  This removes the comma-juggling and the injection risk of the Jekyll string-building version.
+
+Note: the final pipe stage must be `safeJS`, not `safeHTML`.  Go's `html/template` treats content inside `<script>` as JS context regardless of the tag's `type` attribute, and only `safeJS` suppresses that context's escaping; `safeHTML` does not, and produces a `jsonify` result re-encoded as an escaped JS string (`json.loads` on it returns a `str`, not a `dict`) rather than a JSON-LD object. Confirmed against a real Hugo build (`hugomods/hugo:exts`) during Task 7 implementation.
 
 Create `hugo/layouts/shortcodes/address_gawsworth.html`:
 ```go-html-template
@@ -687,7 +690,7 @@ Create `hugo/layouts/shortcodes/address_gawsworth.html`:
     Macclesfield<br/>
     SK11 9RJ<br/>
     <script type="application/ld+json">
-    {{ $doc | jsonify (dict "indent" "    ") | safeHTML }}
+    {{ $doc | jsonify (dict "indent" "    ") | safeJS }}
     </script>
 </address>
 ```
@@ -698,7 +701,7 @@ Run:
 ```bash
 cd /Users/mikeraynham/git/wildaboutpilates/hugo
 mkdir -p content
-printf -- '---\ntitle: probe\n---\n{{</* address_gawsworth */>}}\n' > content/probe.md
+printf -- '---\ntitle: probe\n---\n{{< address_gawsworth >}}\n' > content/probe.md
 docker run --rm -v "$PWD:/src" -w /src hugomods/hugo:exts hugo --logLevel error -d public >/dev/null 2>&1
 python3 -c "
 import re, json, pathlib
@@ -738,7 +741,7 @@ For each page, copy `jekyll/<page>.md` to the Hugo path, then:
 - Remove `layout: default` (Hugo uses `single.html` by default).
 - Remove `nav_title`/`nav_order` (the menu is defined in `hugo.toml`).
 - Keep `title`, `description`, and any `og_image*`/`include_map` as-is (they are read as `.Params`).
-- Rewrite every `{% include foo.html a="b" c="d" %}` as `{{</* foo a="b" c="d" */>}}`.  Multi-line include calls collapse to one shortcode call.
+- Rewrite every `{% include foo.html a="b" c="d" %}` as `{{< foo a="b" c="d" >}}`.  Multi-line include calls collapse to one shortcode call.
 
 `jekyll/index.md` becomes `hugo/content/_index.md` (the home page).  The others keep their filenames.
 
@@ -755,30 +758,30 @@ Through a combination of physiotherapy, Pilates, and a focus on well-being, I ta
 
 I am a passionate and experienced Pilates instructor, currently leading a number of classes and providing 1-2-1 sessions. Teaching Pilates is a personal joy and a hobby for me. My love for movement and fitness enhances my ability to help clients improve their strength, flexibility and overall wellbeing.
 
-{{</* testimonial
+{{< testimonial
     content="The sessions so far have been great, Chrissie is really professional and connects really well with the group. She is warm and welcoming and seems like she really knows her stuff."
-    author="D Mullineux" */>}}
+    author="D Mullineux" >}}
 
 Beyond Pilates, I am an Advanced Clinical Specialist Physiotherapist with a strong background in musculoskeletal care and rehabilitation. With 15 years of NHS experience, I have developed expertise in complex patient assessment, treatment planning, and therapeutic techniques. I provide high-level clinical care, guiding both patients and junior staff in achieving optimal health outcomes.
 
-{{</* image
+{{< image
     file="chrissie-raynham-wild"
     alt="Photo of Chrissie Wild"
-    caption="Chrissie Raynham-Wild" */>}}
+    caption="Chrissie Raynham-Wild" >}}
 
 In addition to my current role, I have also worked as a First Contact Practitioner (FCP), serving as the first point of contact for patients presenting with musculoskeletal issues. In this role, I independently assessed, diagnosed, and managed a wide range of conditions, streamlining patient pathways and reducing pressure on primary care services.
 
 I am currently studying an MSc in Advanced Physiotherapy at Manchester Metropolitan University and my specialist interests include post-natal exercise, persistent musculoskeletal pain management, sports rehabilitation, strength training, and breast cancer post-operative rehabilitation.
 
-{{</* testimonial
+{{< testimonial
     content="Chrissie is an amazing teacher. She is knowledgeable and very helpful at adapting postures for your needs &hellip; I have loved her classes and would definitely recommend her classes to anyone."
-    author="K Anderton" */>}}
+    author="K Anderton" >}}
 
 ## Qualifications
 ```
 (continue with the remaining qualifications body verbatim from `jekyll/about.md:36-89`.)
 
-Repeat for `_index.md`, `classes.md`, `clothing.md`, `questions.md`.  `classes.md` keeps `include_map: true` in front matter and uses `{{</* class_times */>}}`, `{{</* address_gawsworth */>}}`, `{{</* map_gawsworth */>}}`, and `{{</* registration_form */>}}`.
+Repeat for `_index.md`, `classes.md`, `clothing.md`, `questions.md`.  `classes.md` keeps `include_map: true` in front matter and uses `{{< class_times >}}`, `{{< address_gawsworth >}}`, `{{< map_gawsworth >}}`, and `{{< registration_form >}}`.
 
 - [ ] **Step 2: Build and diff each page against the Jekyll baseline**
 
@@ -880,6 +883,79 @@ Expected: `ALL 15 POST URLS MATCH`.
 cd /Users/mikeraynham/git/wildaboutpilates
 git add hugo/content/blog hugo/layouts/blog
 git commit -m "feat: migrate blog posts and list page"
+```
+
+---
+
+## Task 9b: 404 page and Google verification file
+
+**Files:**
+- Create: `hugo/static/google16af2f711db15395.html`
+- Create: `hugo/layouts/404.html`
+
+**Interfaces:**
+- Consumes: `baseof.html` (Task 4).
+- Produces: `/404.html` and `/google16af2f711db15395.html`, two of the 24 reference URLs that are neither a menu page nor a static asset.
+
+These fell out of Task 2 (they are not plain static files) and Task 8 (they are not menu pages).  The Jekyll sources are `jekyll/404.html` (`permalink: /404.html`, `layout: default`) and `jekyll/google_site_verification.md` (`permalink: /google16af2f711db15395.html`, no layout, so a bare kramdown `<p>`).
+
+- [ ] **Step 1: Google verification file as a static file**
+
+The built Jekyll output is a bare `<p>` with no site chrome (the source has no `layout`).  Reproduce it exactly as a static file.
+
+Create `hugo/static/google16af2f711db15395.html` with this single line (and a trailing newline):
+```html
+<p>google-site-verification: google16af2f711db15395.html</p>
+```
+
+- [ ] **Step 2: 404 layout**
+
+Hugo builds `layouts/404.html` to `/404.html`.  Reuse the base skeleton so the 404 carries the same header, nav, and footer as every other page (matching Jekyll's `layout: default`).
+
+Create `hugo/layouts/404.html`:
+```go-html-template
+{{ define "main" }}
+<style type="text/css" media="screen">
+  .container {
+    margin: 10px auto;
+    max-width: 600px;
+    text-align: center;
+  }
+  h1 {
+    margin: 30px 0;
+    font-size: 4em;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+</style>
+
+<div class="container">
+  <h1>404</h1>
+
+  <p><strong>Page not found :(</strong></p>
+  <p>The requested page could not be found.</p>
+</div>
+{{ end }}
+```
+Note: Hugo's 404 has no page title, so `baseof`'s `<h1 id="{{ .Title | urlize }}">` renders an empty-id heading, as Jekyll's does today (the 404 source sets no `title`).  This is faithful.  The 404 page is not in the SEO-critical set, so a minor heading-id difference here is acceptable and recorded in Task 10.
+
+- [ ] **Step 3: Verify both URLs build**
+
+Run:
+```bash
+cd /Users/mikeraynham/git/wildaboutpilates/hugo
+docker run --rm -v "$PWD:/src" -w /src hugomods/hugo:exts hugo --logLevel error -d public 2>&1 | grep -i error
+test -f public/404.html && echo "404 OK"
+test -f public/google16af2f711db15395.html && cat public/google16af2f711db15395.html
+```
+Expected: `404 OK`, and the Google file's content is exactly `<p>google-site-verification: google16af2f711db15395.html</p>`.
+
+- [ ] **Step 4: Commit**
+
+```bash
+cd /Users/mikeraynham/git/wildaboutpilates
+git add hugo/static/google16af2f711db15395.html hugo/layouts/404.html
+git commit -m "feat: add 404 page and Google verification file"
 ```
 
 ---
@@ -1088,7 +1164,7 @@ from PIL import Image; import piexif
 im = Image.new("RGB",(600,200),(0,120,200))
 im.save("/src/assets/images/uploadtest.jpg", exif=piexif.dump({"0th":{piexif.ImageIFD.Orientation:6}}))
 EOF'
-printf -- '---\ntitle: probe\n---\n{{</* image file="uploadtest" alt="t" */>}}\n' > content/probe.md
+printf -- '---\ntitle: probe\n---\n{{< image file="uploadtest" alt="t" >}}\n' > content/probe.md
 rm -rf public resources   # clear any stale generated-resource cache before checking output
 docker run --rm -v "$PWD:/src" -w /src hugomods/hugo:exts hugo --logLevel error -d public 2>&1 | grep -i error
 docker run --rm -v "$PWD:/src" -w /src python:3-slim sh -c \
