@@ -19,12 +19,14 @@ diff scratch/jekyll-urls.txt /tmp/hugo-urls.txt
 < /admin/
 ```
 
-Jekyll baseline: 24 URLs. Hugo build: 23 URLs. The only difference is
-`/admin/`, which is expected: the Sveltia CMS admin mount is out of scope for
-this task and is added in Task 11. No other URL is missing, extra, or
-mismatched.
+Jekyll baseline: 24 URLs. At the time this diff was first run, the Hugo build
+was 23 URLs, the only difference being `/admin/` (the Sveltia CMS admin mount,
+added later in Task 11). **Update (post-Task 11):** `/admin/` is now present, so
+the Hugo build serves all 24 URLs and the URL list matches the Jekyll baseline
+exactly. `/admin/` is additive and carries `noindex`; it does not affect the 23
+content pages, which were re-diffed after the admin commit and still match.
 
-**Result: as expected.**
+**Result: as expected — full 24-URL parity after Task 11.**
 
 ## 2. Per-page HTML diff (23 shared pages, whitespace-normalised)
 
