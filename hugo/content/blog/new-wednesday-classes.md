@@ -7,6 +7,8 @@ description: New Wednesday class starting on September 18, 14:00-15:00
 
 I am very excited to announce that I’ll be starting a new class on Wednesday 18 September 2019; these are in addition to my Thursday classes.
 
+<!--more-->
+
 Booking is essential because spaces are limited. This ensures everyone gets more of my attention and the correct techniques are adopted.  See the [classes page](/classes/) for more information.
 
 ### When

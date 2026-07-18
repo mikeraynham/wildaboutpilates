@@ -6,6 +6,8 @@ description: Receiving my Active IQ Level 2 Certificate in Gym Instructing
 
 A couple of months ago I began working on my goal to become a qualified personal trainer and here I am at [5S Fitness][1] in Macclesfield receiving my [Active IQ Level 2 Certificate in Gym Instructing][2].  The next step is level 3, after which I will be fully qualified.
 
+<!--more-->
+
 {{< image
     file="chrissie-jason-level-2"
     alt="Photo of Chrissie receiving Active IQ Level 2 Certificate in Gym Instructing from Jason Curtis"

@@ -6,6 +6,8 @@ slug: therapeutic-yoga-followup
 
 I've just spent the weekend on a Therapeutic yoga course.  The course has introduced me to a clinical approach to yoga exercises, and I spent the weekend practising and teaching therapeutic stretches, breathing exercise, and some mindful meditation techniques.
 
+<!--more-->
+
 I decided to go on this course for personal benefit and to be able to share some of the techniques and stretches with my class.  Exploring more about yoga has been a real eye-opener for me. Firstly, like many, I've seen the images of young, flexible beautiful people, in scenic places, contorted into very difficult and awkward looking postures.  You've all likely seen the perfectly timed photographs, where the sun is setting behind the sea, and the model looks in a state of unobtainable tranquillity.  Well, I will never be that person!  But in reality, there are some great stretches which can benefit the body in terms of strengthening, stretching, breathing and mobilisation.
 
 I really feel there is a benefit to adopting some of the relaxation and breathing techniques.  I am a very "on the go" type person; normally if I have a bit of time I will fill it with something, and find myself rushing from one thing to the other.  I often end up not enjoying those things, because stress levels have built up because I have taken on too much!  I've realised that I can't do everything.  It takes time, effort, and energy to be a mother, to do my day job, and to run a business.  I love these things, but in order to give my best, I also need to take time out for myself, to give me balance insight, and a sense of calm for periods of my day.  Mindfulness and meditation is such a great way to take time out, let the mind settle, and just be present in that moment.

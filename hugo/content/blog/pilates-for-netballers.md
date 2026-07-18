@@ -10,6 +10,8 @@ og_image_height: 630
 
 Those of you who know me will know that I love netball.  I've been playing for a long time (over 25 years, yikes!), and I am very lucky to have been trained by some fantastic coaches, and to have played at both club and county level.
 
+<!--more-->
+
 {{< image
     file="netball"
     alt="Photo of people playing netball" >}}
@@ -18,19 +20,23 @@ I'm passionate about improving sports performance, preventing injuries, and reha
 
 ## Class Features
 
-* <span>One hour Pilates class</span>
-* <span>Designed specifically for netballers</span>
-
-* <span>Challenging and fun session</span>
-* <span>Full body work-out</span>
-* <span>Test your balance and control</span>
-* <span>Stretch, strengthen and mobilise the body</span>
-* <span>Trigger Point Pilates section for myofacial release</span>
-
-* <span>Suitable for all levels of ability of netball players</span>
-* <span>No previous Pilates experience required</span>
-* <span>Work at your own level</span>
-* <span>Attendees must be over 16 years of age</span>
+<ul>
+  <li><span>One hour Pilates class</span></li>
+  <li>
+    <p><span>Designed specifically for netballers</span></p>
+  </li>
+  <li><span>Challenging and fun session</span></li>
+  <li><span>Full body work-out</span></li>
+  <li><span>Test your balance and control</span></li>
+  <li><span>Stretch, strengthen and mobilise the body</span></li>
+  <li>
+    <p><span>Trigger Point Pilates section for myofacial release</span></p>
+  </li>
+  <li><span>Suitable for all levels of ability of netball players</span></li>
+  <li><span>No previous Pilates experience required</span></li>
+  <li><span>Work at your own level</span></li>
+  <li><span>Attendees must be over 16 years of age</span></li>
+</ul>
 
 ## When and Where?
 

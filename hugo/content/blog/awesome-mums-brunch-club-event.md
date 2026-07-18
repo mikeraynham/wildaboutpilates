@@ -10,6 +10,8 @@ og_image_height: 630
 
 I am very excited to let you know about an [Awesome Mums Brunch Club][1] Event on Friday 18th January. I'm teaming up with Babs, a Women's Health Specialist Physiotherapist from [Female Focus Clinic][2]; and Alex, a specialist musculoskeletal physiotherapist and the founder of the Awesome Mums Brunch Club Charity (AMBC).
 
+<!--more-->
+
 {{< logo
     file="ambc-logo"
     url="https://www.facebook.com/groups/awesomemumsbrunchclub/"

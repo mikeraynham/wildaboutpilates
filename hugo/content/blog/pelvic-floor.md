@@ -7,6 +7,8 @@ description: Pelvic floor muscle exercises for women and men.
 
 The pelvic floor is a supportive sling of muscles from the tailbone to the pubic bone.  They support the bladder and bowel (and the womb in women). They contract when you sneeze, cough, or laugh to prevent leaking urine.
 
+<!--more-->
+
 There are a number of reasons why they can weaken, such as pregnancy and childbirth. Signs of weakness include leaking urine on activity such as running, jumping, coughing, and sneezing.  These activities increase demand on the pelvic floor.  If it isn't strong enough to meet those demands then we leak! The solution is to strengthen the muscles.
 
 Pelvic floor muscle exercises are beneficial for women and men (men too can suffer from weakness of the pelvic floor). We've been including them in classes, either in isolation or combined with movements and other muscle groups.

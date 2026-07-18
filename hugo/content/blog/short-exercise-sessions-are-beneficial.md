@@ -7,6 +7,8 @@ description: Even short sessions of activity can have health benefits, governmen
 
 Don't have time for exercise? Do you think exercise has to be strenuous to be beneficial?  [Recent reports][1] show that short sessions of activity can be beneficial.
 
+<!--more-->
+
 Except for those who have been advised not to exercise by a qualified health professional such as a doctor or specialist consultant, most people can exercise to some level irrespective of age or ability.  The benefits of exercise are _huge_ for both physical and mental health and I could talk all day on this!
 
 The [government guidelines][2] recommend that each week, adults should accumulate:

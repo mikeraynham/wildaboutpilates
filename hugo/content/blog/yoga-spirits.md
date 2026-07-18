@@ -8,6 +8,8 @@ description: Recharge, relax and strengthen during this Yoga & Pilates Workshops
 
 I'm once again collaborating with [Yoga Spirits][1] in Mobberley to provide a Yoga & Pilates Workshop for Busy Mums. It's a relax, recharge and strengthening workshop with exercises tailored exclusively for postnatal recovery.
 
+<!--more-->
+
 The class costs £25 per person (or £20 for those who have attended previously) and includes refreshments and a healthy snack.
 
 <a class="button" href="https://yogaspirits.co.uk/pilates-yoga-workshops/">Yoga & Pilates Workshops for Busy Mums</a>

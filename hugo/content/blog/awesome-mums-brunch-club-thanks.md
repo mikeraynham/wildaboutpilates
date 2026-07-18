@@ -10,6 +10,8 @@ og_image_height: 630
 
 A massive thank you to everyone who turned up to the [Awesome Mums Brunch Club][1] on Friday 18 January. A whopping fifty people come along which is AMBC's biggest event to date!
 
+<!--more-->
+
 {{< image
     file="ambc-alex-chrissie-babs"
     alt="Photo of Alex, Chrissie, and Babs"

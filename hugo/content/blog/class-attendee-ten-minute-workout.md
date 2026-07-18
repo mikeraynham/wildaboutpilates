@@ -6,6 +6,8 @@ slug: class-attendee-ten-minute-workout
 
 I've produced a 10 minute Pilates workout available to anyone attending my classes. This can be used while on holiday, if you miss a class, or if you want to do a little extra during the week.
 
+<!--more-->
+
 {{< image
     file="yacht"
     alt="Photo of a yacht in Norway" >}}
@@ -47,7 +49,7 @@ Lie on back, then:
 
 Tummy time!
 1. <span>Abdominal preparation (sit ups) ✕ 10.</span>
-2. <span>Oblique prep (diagonal sit up). Optional progression: legs in tabletop, ✕ 5 each side
+2. <span>Oblique prep (diagonal sit up). Optional progression: legs in tabletop, ✕ 5 each side</span>
 3. <span>Hundreds – choose your level.</span>
 4. <span>Knee hug followed by gentle head rotations after this section.</span>
 
@@ -57,7 +59,7 @@ Place knees and feet together, then:
 2. <span>Stretch hamstrings and circle at hip ✕ 5 each way. Repeat other side.</span>
 
 Lie on side, then:
-1. <span>Arm openings level 1  ✕ 5
+1. <span>Arm openings level 1  ✕ 5</span>
 2. <span>Repeat other side.</span>
 
 Return to feet, then:
