@@ -3,6 +3,7 @@ languageCode = "en-GB"
 title = "Wild About Pilates"
 disableKinds = ["taxonomy", "term", "rss", "sitemap"]
 enableInlineShortcodes = true
+disableHugoGeneratorInject = true
 
 [permalinks]
   blog = "/blog/:year/:month/:day/:slug/"
