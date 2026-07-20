@@ -332,6 +332,9 @@ collections:
       - { label: Date, name: date, widget: datetime }
       - { label: Description, name: description, widget: text }
       - { label: Slug (optional), name: slug, widget: string, required: false, hint: 'Overrides the URL slug derived from the filename.' }
+      - { label: OG image, name: og_image, widget: image, required: false }
+      - { label: OG image width, name: og_image_width, widget: string, required: false }
+      - { label: OG image height, name: og_image_height, widget: string, required: false }
       - label: Blocks
         name: blocks
         widget: list
