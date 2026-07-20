@@ -1,0 +1,9 @@
+<figure class="testimonial">
+    <blockquote>{{ .b.content | safeHTML }}</blockquote>
+    {{- with .b.more }}
+    <cite>
+        <a href="{{ . }}">{{ $.b.read_more | default "read more&hellip;" | safeHTML }}</a>
+    </cite>
+    {{- end }}
+    <figcaption>{{ .b.author }}</figcaption>
+</figure>

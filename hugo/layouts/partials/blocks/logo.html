@@ -1,0 +1,19 @@
+{{- $ext := .b.ext | default "png" -}}
+{{- $file := .b.file -}}
+<figure class="logo">
+    <a href="{{ .b.url }}">
+    <img srcset="
+            /images/{{ $file }}-200w.{{ $ext }} 200w,
+            /images/{{ $file }}-300w.{{ $ext }} 300w,
+            /images/{{ $file }}-400w.{{ $ext }} 400w"
+         sizes="
+            (min-width: 56.25em) 400px,
+            (min-width: 43.75em) 300px,
+            200px"
+         src="/images/{{ $file }}-400w.{{ $ext }}"
+         alt="{{ .b.alt }}">
+    </a>
+    {{- with .b.caption }}
+    <figcaption>{{ . }}</figcaption>
+    {{- end }}
+</figure>

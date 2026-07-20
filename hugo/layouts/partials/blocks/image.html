@@ -1,0 +1,20 @@
+{{- $ext := .b.ext | default "jpg" -}}
+{{- $file := .b.file -}}
+{{- partial "gen-image-variants.html" (dict "file" $file "ext" $ext) -}}
+<figure class="photo">
+    <a href="/images/{{ $file }}-clean.{{ $ext }}">
+    <img srcset="
+            /images/{{ $file }}-200w.{{ $ext }} 200w,
+            /images/{{ $file }}-300w.{{ $ext }} 300w,
+            /images/{{ $file }}-400w.{{ $ext }} 400w"
+         sizes="
+            (min-width: 56.25em) 400px,
+            (min-width: 43.75em) 300px,
+            200px"
+         src="/images/{{ $file }}-400w.{{ $ext }}"
+         alt="{{ .b.alt }}">
+    </a>
+    {{- with .b.caption }}
+    <figcaption>{{ . }}</figcaption>
+    {{- end }}
+</figure>

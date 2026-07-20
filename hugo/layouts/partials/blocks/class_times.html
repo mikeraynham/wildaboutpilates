@@ -1,0 +1,12 @@
+{{- $classes := .page.Site.Data.classes -}}
+{{- $days := slice -}}
+{{- range $classes -}}
+  {{- if not (in $days .day) }}{{ $days = $days | append .day }}{{ end -}}
+{{- end -}}
+{{- range $days }}
+<h4 id="{{ . | urlize }}">{{ . }}</h4>
+{{- $day := . -}}
+{{- range where $classes "day" $day }}
+<p><em><time>{{ .start }}</time>-<time>{{ .end }}</time></em> {{ .level }}</p>
+{{- end -}}
+{{- end }}
