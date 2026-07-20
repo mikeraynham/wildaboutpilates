@@ -1,0 +1,6 @@
+<dl>
+{{- range .b.items }}
+<dt>{{ .item }}</dt>
+<dd>{{ $.page.RenderString (dict "display" "block") .description }}</dd>
+{{- end }}
+</dl>
