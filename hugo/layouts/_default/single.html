@@ -1,1 +1,9 @@
-{{ define "main" }}{{ .Content }}{{ end }}
+{{ define "main" }}
+{{- if .Params.blocks -}}
+{{- range .Params.blocks -}}
+{{- partial (printf "blocks/%s.html" .type) (dict "b" . "page" $) -}}
+{{- end -}}
+{{- else -}}
+{{- .Content -}}
+{{- end -}}
+{{ end }}
