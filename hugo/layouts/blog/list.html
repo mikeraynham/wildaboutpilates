@@ -1,9 +1,14 @@
 {{ define "main" }}
 <ul class="blog_list">
   {{- range .Pages.ByDate.Reverse }}
+    {{- $excerpt := "" -}}
+    {{- with (index (where .Params.blocks "type" "text") 0) -}}
+      {{- $html := $.RenderString (dict "display" "block") .body -}}
+      {{- with (findRE `(?s)<p>.*?</p>` $html 1) }}{{ $excerpt = index . 0 }}{{ end -}}
+    {{- end -}}
     <li>
       <a href="{{ .RelPermalink }}" class="title">{{ .Title }}</a>
-      {{ .Summary }}
+      {{ $excerpt | safeHTML }}
       <a href="{{ .RelPermalink }}" class="read_more">read more&hellip;</a>
     </li>
   {{- end }}
