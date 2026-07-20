@@ -25,6 +25,9 @@ types wired up for that page.
 The blog only offers Text, Image, Logo and Video blocks; the five main
 pages offer the full set above.
 
+Every block's `type` must have a matching partial in
+`hugo/layouts/partials/blocks/`; an unknown type fails the build.
+
 ## Duplicate headings break anchors
 
 Each Text block's markdown is rendered on its own, so Hugo does not dedupe
@@ -47,3 +50,10 @@ Uploading a new photo through an Image (or Logo) block is enough on its
 own: Hugo generates the 200w/300w/400w responsive variants and the
 full-size "clean" copy from the uploaded original at build time. No manual
 resizing or format conversion is needed.
+
+## A blog post's excerpt comes from its first Text block
+
+The `/blog/` list page shows each post's excerpt by rendering the first
+paragraph of that post's first Text block, wherever it falls among the
+post's blocks. A post with no Text block at all shows no excerpt on that
+list, so lead every blog post with a Text block.

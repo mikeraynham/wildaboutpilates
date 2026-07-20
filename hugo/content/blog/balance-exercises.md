@@ -10,5 +10,4 @@ blocks:
       Every small wobble is progress toward a stronger, more resilient ankle.
   - type: video
     file: balance-exercises
-    alt: Video of Chrissie performing balance exercises
 ---

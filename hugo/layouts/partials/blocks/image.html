@@ -1,5 +1,6 @@
-{{- $ext := .b.ext | default "jpg" -}}
-{{- $file := .b.file -}}
+{{- $val := .b.file -}}
+{{- $file := path.BaseName $val -}}
+{{- $ext := or ($val | path.Ext | strings.TrimPrefix ".") .b.ext "jpg" -}}
 {{- partial "gen-image-variants.html" (dict "file" $file "ext" $ext) -}}
 <figure class="photo">
     <a href="/images/{{ $file }}-clean.{{ $ext }}">
