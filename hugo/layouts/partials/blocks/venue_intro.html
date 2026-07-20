@@ -1,0 +1,4 @@
+{{ .page.RenderString (dict "display" "block") .b.description }}
+{{- with .b.link }}
+<p><a href="{{ .url }}">{{ .text }}</a></p>
+{{- end }}
