@@ -189,3 +189,107 @@ resolved by commit `f79ccbc`:
 No page had content, links, or data actually differ in meaning between the
 two builds. The port is accepted as faithful for the 23 shared pages;
 `/admin/` remains out of scope for Task 11.
+
+## 6. Typed-block re-verification (Task 10, post block-model conversion)
+
+All page and post content has since been converted to typed blocks (pages
+and all 15 posts), the block partials built, and the Sveltia CMS config
+rewritten to edit blocks (commits `434ac6a`..`6da9853`). This section
+re-verifies that the block model reproduces the same output as the frozen
+Jekyll baseline, using the same procedure as §§1-2 above, plus one new
+accepted exception for the block model.
+
+### 6.1 URL parity
+
+The build directory carried stale files from earlier ad hoc probing
+(`bprobe`, `bprobe2`, `pprobe`, `probe`, none tracked by git and none
+produced by this build; `hugo/public/` is gitignored). A clean rebuild
+(`rm -rf public` then rebuild) produced exactly the 22 Hugo pages plus the
+static `/admin/` mount and `google16af2f711db15395.html` verification file:
+
+```
+diff scratch/jekyll-urls.txt /tmp/hugo-urls.txt
+(no output)
+```
+
+**Result: full 24-URL parity, confirmed.**
+
+### 6.2 Per-page HTML diff (23 shared pages, whitespace-normalised)
+
+Every page was rediffed with the same whitespace-normalisation as §2. Every
+difference found falls within the 8 pre-accepted categories, plus category 3
+(JSON-LD key order, `/classes/` only) and the one new accepted block-model
+exception below; no other difference was found on any page.
+
+| Page                                                       | Categories found           |
+|------------------------------------------------------------|----------------------------|
+| `/`                                                        | 1, 4, 6, 7                 |
+| `/404.html`                                                | 4, 8                       |
+| `/about/`                                                  | 1, 4, 6, 7                 |
+| `/blog/`                                                   | 1, 4, 6                    |
+| `/blog/2018/05/12/pilates-for-runners/`                    | 4, 6                       |
+| `/blog/2018/06/01/therapeutic-yoga/`                       | 4, 6                       |
+| `/blog/2018/06/10/class-attendee-ten-minute-workout/`      | 1, 4, 6, 7                 |
+| `/blog/2018/06/18/pilates-for-netballers/`                 | 1, 4, 6, 7                 |
+| `/blog/2018/06/18/therapeutic-yoga-followup/`              | 4, 6                       |
+| `/blog/2019/01/16/awesome-mums-brunch-club-event/`         | 1, 4, 6, 7                 |
+| `/blog/2019/01/16/awesome-mums-brunch-club-thanks/`        | 1, 4, 6, 7                 |
+| `/blog/2019/03/22/yoga-spirits/`                           | 1, 4, 6, 7                 |
+| `/blog/2019/03/24/pelvic-floor/`                           | 4, 6                       |
+| `/blog/2019/07/08/new-wednesday-classes/`                  | 4                          |
+| `/blog/2019/11/01/becoming-a-personal-trainer/`            | 1, 4, 7                    |
+| `/blog/2019/11/30/short-exercise-sessions-are-beneficial/` | 4, 6                       |
+| `/blog/2020/02/08/movement-is-medicine/`                   | 1, 4, 6, 7                 |
+| `/blog/2024/11/02/balance-exercises/`                      | 4, 7                       |
+| `/blog/2025/04/13/bone-health-talk/`                       | 1, 4, 7                    |
+| `/classes/`                                                | 1, 3, 4, 6, 7, Venue-intro |
+| `/clothing/`                                               | 1, 4, 6, 7                 |
+| `/google16af2f711db15395.html`                             | none (byte-identical)      |
+| `/questions/`                                              | 4, 6                       |
+
+No `<figure>`, no per-post `BusinessEvent`/`EventVenue` JSON-LD, and no
+per-post `<script>` leaks onto `/blog/`; confirmed by grep
+(`grep -c 'BusinessEvent\|EventVenue\|<figure>' public/blog/index.html`
+returns 0). The `registration_form` `<p>`-wrapping (defect D, §4) remains
+correct on `/classes/` and `/questions/`. The CSS BOM/sourcemap check (§3,
+category 2) was re-run against the current build and remains byte-identical
+once the BOM and sourcemap comment are stripped from the Jekyll side
+(`j_stripped == h` is `True`).
+
+### 6.3 New accepted exception: Venue-intro link placement
+
+On `/classes/`, the Venue intro block (`layouts/partials/blocks/venue_intro.html`)
+renders the "View the refurbished hall on Google Maps" link as its own
+`<p>` element, and drops the trailing full stop that follows the link in
+the Jekyll baseline:
+
+```
+Jekyll:  ...refurbishment in 2017. <a href="...">View the refurbished hall
+         on Google Maps</a>.</p>
+Hugo:    ...refurbishment in 2017.</p>
+         <p><a href="...">View the refurbished hall on Google Maps</a></p>
+```
+
+This is a deliberate block-model rendering choice (the link is emitted as a
+standalone paragraph rather than inlined into the preceding prose), not a
+content or data loss: the link text, `href`, and surrounding prose are all
+present and unchanged. **Accepted as a ninth divergence**, specific to the
+classes page's Venue block.
+
+### 6.4 Defects found
+
+None. No difference outside the 8 pre-accepted categories, the classes-page
+JSON-LD key order, and the Venue-intro exception above was found on any of
+the 24 URLs.
+
+### 6.5 Verdict
+
+**PASS.**
+
+The typed-block conversion (pages, all 15 posts, block partials, and the
+Sveltia block-editing config) reproduces the frozen Jekyll baseline with
+full 24-URL parity and no unexplained content difference on any of the 23
+shared pages. Every difference found falls within the 8 categories carried
+over from the original acceptance run (§3), the classes-page JSON-LD key
+order (category 3), or the one new accepted Venue-intro divergence (§6.3).
+The block model is accepted as a faithful reproduction of the site.
