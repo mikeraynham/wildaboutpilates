@@ -44,12 +44,43 @@ Class times are not a per-page field. They live in one place, the
 from that single source. Edit the timetable there; it updates everywhere
 the Class times block appears.
 
-## Photo uploads are auto-processed
+## How images and their multiple sizes work
 
-Uploading a new photo through an Image (or Logo) block is enough on its
-own: Hugo generates the 200w/300w/400w responsive variants and the
-full-size "clean" copy from the uploaded original at build time. No manual
-resizing or format conversion is needed.
+Each Image (and Logo) renders a responsive `srcset` with `-200w`, `-300w`,
+`-400w` and `-clean` sizes. Those sized files come from one of two places,
+and it helps to know which:
+
+**1. Images carried over from the old Jekyll site.** The previous site's
+helper script produced the sized variants by hand, and they were committed.
+The migration copied all of them, as-is, into `hugo/static/images/`. Hugo
+serves them directly. So an unchanged Image block just points at those
+pre-made files — nothing regenerates them. This is why you see the sizes on
+the site even though there is no obvious script producing them: they are the
+committed Jekyll variants.
+
+**2. Photos uploaded or replaced through the CMS.** Uploading (or using
+"Replace") is enough on its own. Sveltia copies the full-size original into
+`hugo/assets/images/` and records its path in the block. At **build time**,
+Hugo auto-orients the original and generates the `-200w/-300w/-400w/-clean`
+variants from it — the automatic equivalent of the old helper script. No
+manual resizing or format conversion is needed.
+
+### Things to know
+
+- **Uploaded originals live in the repo.** The full-size file in
+  `hugo/assets/images/` is the *source* the build regenerates from every
+  time, so it must be committed for the site to build (e.g. on Cloudflare).
+  The repo grows with each uploaded original — this differs from Jekyll,
+  where only the small variants were kept.
+- **A generated variant wins over an old static one of the same name.** If
+  you Replace an image whose name already exists among the pre-made Jekyll
+  variants, the newly generated versions are served and the old static ones
+  are left unused (harmless, just redundant). A brand-new file name has no
+  such overlap.
+- **The two categories are a migration artefact.** Over time, as images are
+  replaced or added through the CMS, everything moves to the generated model
+  and the old `static/images/` variants can eventually be retired. Until
+  then it is a deliberate mix: old images static, new images generated.
 
 ## A blog post's excerpt comes from its first Text block
 
