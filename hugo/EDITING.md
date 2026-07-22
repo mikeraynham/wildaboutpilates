@@ -40,9 +40,23 @@ ever reach the first one. Keep `##` heading text distinct within a page.
 
 Class times are not a per-page field. They live in one place, the
 "Class times" entry under "Site data" in the CMS (backed by
-`hugo/data/classes.yml`), and the Class times block on every page reads
-from that single source. Edit the timetable there; it updates everywhere
-the Class times block appears.
+`hugo/data/classes.yml`), and both the Class times block and the Venue
+block's structured opening-hours data (JSON-LD) are generated from it. Edit
+the timetable there; it updates everywhere those blocks appear, and the two
+cannot fall out of step.
+
+Each entry has a day, a start and end time (entered as 24-hour `HH:MM`, such
+as `09:45`), and an ability level. An optional started date is published as
+`validFrom` in the structured data; leave it blank when you do not know it,
+and the class is still listed, just without that date.
+
+Order matters for how the timetable reads. Days appear in the order they are
+first used, and times within a day in the order given, so keep each day's
+entries together and in ascending time order.
+
+The timetable does not keep the Classes page description in step for you.
+That `description` field names the days in prose and is written by hand, so
+it can go stale. Check it whenever you add or drop a day.
 
 ## How images and their multiple sizes work
 

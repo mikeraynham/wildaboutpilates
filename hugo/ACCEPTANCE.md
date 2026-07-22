@@ -328,3 +328,24 @@ plus a few never-referenced leftover images (`wild-about-pilates-chrissie-wild-*
 `wild-about-pilates-morton-hall-*`, and `yoga-spirits-original.jpg`). A clean
 build reproduces all 96 variants (24 images, four sizes each) from the originals
 in `hugo/assets/images/`.
+
+## 8. Post-acceptance change: CMS content canonicalised, four descriptions added
+
+Every CMS-managed file (the five pages, the fifteen blog posts, and
+`hugo/data/classes.yml`) was saved once through the pinned Sveltia CMS
+(0.172.3), so the committed bytes now match what the CMS emits and a later edit
+produces only its intended diff, not a one-off reformat. The canonical form
+double-quotes YAML scalars and rewrites `body: |` block scalars as double-quoted
+scalars. It is rendering-neutral. A clean-build diff against the previous commit
+shows no change to any page's HTML, with the two exceptions recorded here.
+
+Four blog posts (`class-attendee-ten-minute-workout`, `pilates-for-runners`,
+`therapeutic-yoga`, and `therapeutic-yoga-followup`) had no `description` and so
+rendered no meta description. Each now carries a short description, which adds a
+`<meta name="description">` and an `<meta property="og:description">` tag. That
+markup is new relative to the frozen Jekyll baseline. It is a deliberate,
+accepted addition, not a parity regression.
+
+One further difference: `pilates-for-netballers` renders one fewer blank line,
+a trailing line that followed its embedded JSON-LD block. Whitespace only; the
+structured data and the rendering are unaffected.

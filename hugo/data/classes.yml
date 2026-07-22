@@ -1,70 +1,38 @@
-# The class schedule for Gawsworth Village Hall.
-#
-# The timetable on the classes page and the openingHoursSpecification
-# structured data in _includes/address_gawsworth.html are both generated from
-# this file, so those two cannot fall out of step.  They had: the page listed
-# eight classes while the structured data listed six.
-#
-# This does not make the page as a whole self-consistent.  The `description` in
-# classes.md front matter names the days in prose, is still written by hand, and
-# had itself gone stale.  Check it when a day is added or dropped.
-#
-# Days appear in the order first seen here, and times within a day in the order
-# given, so keep each day's entries together and in ascending time order.
-#
-#   day    Day name, as it should read on the page.  All entries for a day sit
-#          under one heading, wherever they appear in this file.
-#   start  Start time, 24-hour, "HH:MM".
-#   end    End time, 24-hour, "HH:MM".
-#   level  Ability level, shown beside the time.
-#   since  Optional.  The date the class started, published as validFrom in the
-#          structured data.  Omit when it is not known; the entry is still
-#          published, just without validFrom.
-#
-# Times must stay quoted: unquoted 09:45 is read as a base-60 number, not text.
-
-- day: Monday
+- day: "Monday"
   start: "09:45"
   end: "10:45"
-  level: Beginners / improvers / intermediate
+  level: "Beginners / improvers / intermediate"
   since: "2022-01-03"
-
-- day: Monday
+- day: "Monday"
   start: "11:00"
   end: "12:00"
-  level: Beginners / improvers / intermediate
+  level: "Beginners / improvers / intermediate"
   since: "2022-01-03"
-
-- day: Tuesday
+- day: "Tuesday"
   start: "09:30"
   end: "10:30"
-  level: Beginners / improvers / intermediate
+  level: "Beginners / improvers / intermediate"
   since: "2024-10-08"
-
-- day: Tuesday
+- day: "Tuesday"
   start: "11:00"
   end: "12:00"
-  level: Beginners / improvers / intermediate
-
-- day: Wednesday
+  level: "Beginners / improvers / intermediate"
+- day: "Wednesday"
   start: "18:15"
   end: "19:15"
-  level: Beginners / improvers / intermediate
+  level: "Beginners / improvers / intermediate"
   since: "2025-05-14"
-
-- day: Thursday
+- day: "Thursday"
   start: "18:15"
   end: "19:15"
-  level: Beginners / improvers / intermediate
+  level: "Beginners / improvers / intermediate"
   since: "2022-07-07"
-
-- day: Thursday
+- day: "Thursday"
   start: "19:30"
   end: "20:30"
-  level: Intermediate / advanced
+  level: "Intermediate / advanced"
   since: "2022-01-06"
-
-- day: Friday
+- day: "Friday"
   start: "09:15"
   end: "10:15"
-  level: Beginners / improvers / intermediate
+  level: "Beginners / improvers / intermediate"

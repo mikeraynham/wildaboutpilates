@@ -1,20 +1,24 @@
 ---
-title: New Wednesday Class
-date: 2019-07-08 06:00:00Z
-slug: new-wednesday-classes
-description: New Wednesday class starting on September 18, 14:00-15:00
+title: "New Wednesday Class"
+date: "2019-07-08 06:00:00Z"
+description: "New Wednesday class starting on September 18, 14:00-15:00"
+slug: "new-wednesday-classes"
 blocks:
-  - type: text
-    body: |
-      I am very excited to announce that I’ll be starting a new class on Wednesday 18 September 2019; these are in addition to my Thursday classes.
+  - type: "text"
+    body: "I am very excited to announce that I’ll be starting a new class on Wednesday 18 September 2019; these are in addition to my Thursday classes.
+
 
       Booking is essential because spaces are limited. This ensures everyone gets more of my attention and the correct techniques are adopted.  See the [classes page](/classes/) for more information.
 
+
       ### When
+
 
       Wednesday class: <time>14:00</time>-<time>15:00</time>.
 
+
       ### Where
 
-      Morton Hall Community Centre, Macclesfield.
+
+      Morton Hall Community Centre, Macclesfield."
 ---
