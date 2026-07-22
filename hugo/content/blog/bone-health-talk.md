@@ -7,7 +7,7 @@ blocks:
     body: |
       I had the pleasure of presenting a talk on healthy bones and osteoporosis to participants from my Pilates class at Gawsworth Village Hall. As a physiotherapist passionate about lifelong health and wellbeing, I was keen to share the latest evidence-based research and information from the Osteoporosis Society, NHS website and NICE guidelines on this important topic.
   - type: image
-    file: bone-health-talk
+    file: "/images/bone-health-talk.jpg"
     alt: Bone Health Talk
   - type: text
     body: |

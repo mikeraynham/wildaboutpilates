@@ -12,7 +12,7 @@ blocks:
 
       ## Class times
   - type: image
-    file: woman-side-plank
+    file: "/images/woman-side-plank.jpg"
     alt: Photo of a woman doing a side plank
   - type: registration_form
   - type: text

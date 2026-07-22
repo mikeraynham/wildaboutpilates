@@ -11,6 +11,6 @@ blocks:
 
       It just sometimes has to be prescribed at the right dose. And the best thing about this type of medicine is that there are no nasty side effects.
   - type: image
-    file: chrissie-mobilising
+    file: "/images/chrissie-mobilising.jpg"
     alt: Photo of Chrissie mobilising
 ---

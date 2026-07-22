@@ -7,7 +7,7 @@ blocks:
     body: |
       I've produced a 10 minute Pilates workout available to anyone attending my classes. This can be used while on holiday, if you miss a class, or if you want to do a little extra during the week.
   - type: image
-    file: yacht
+    file: "/images/yacht.jpg"
     alt: Photo of a yacht in Norway
   - type: text
     body: |

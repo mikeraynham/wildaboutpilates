@@ -13,7 +13,7 @@ blocks:
 
       [1]: https://www.facebook.com/groups/awesomemumsbrunchclub/
   - type: image
-    file: ambc-alex-chrissie-babs
+    file: "/images/ambc-alex-chrissie-babs.jpg"
     alt: Photo of Alex, Chrissie, and Babs
     caption: 'From left to right: Alex, Chrissie, and Babs'
   - type: text

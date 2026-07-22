@@ -46,41 +46,27 @@ the Class times block appears.
 
 ## How images and their multiple sizes work
 
-Each Image (and Logo) renders a responsive `srcset` with `-200w`, `-300w`,
-`-400w` and `-clean` sizes. Those sized files come from one of two places,
-and it helps to know which:
+Each Image (and Logo) block renders a responsive `srcset` with `-200w`,
+`-300w`, `-400w`, and `-clean` sizes. You never make those sizes by hand.
+Hugo generates them at build time from a single full-size original.
 
-**1. Images carried over from the old Jekyll site.** The previous site's
-helper script produced the sized variants by hand, and they were committed.
-The migration copied all of them, as-is, into `hugo/static/images/`. Hugo
-serves them directly. So an unchanged Image block just points at those
-pre-made files — nothing regenerates them. This is why you see the sizes on
-the site even though there is no obvious script producing them: they are the
-committed Jekyll variants.
-
-**2. Photos uploaded or replaced through the CMS.** Uploading (or using
-"Replace") is enough on its own. Sveltia copies the full-size original into
-`hugo/assets/images/` and records its path in the block. At **build time**,
-Hugo auto-orients the original and generates the `-200w/-300w/-400w/-clean`
-variants from it — the automatic equivalent of the old helper script. No
+The original lives in `hugo/assets/images/`. When you upload or Replace a
+photo in the CMS, Sveltia copies the original there and records its path in
+the block, for example `/images/chrissie-mobilising.jpg`. On the next build,
+Hugo auto-orients that original and produces the four sized files from it. No
 manual resizing or format conversion is needed.
 
 ### Things to know
 
-- **Uploaded originals live in the repo.** The full-size file in
-  `hugo/assets/images/` is the *source* the build regenerates from every
-  time, so it must be committed for the site to build (e.g. on Cloudflare).
-  The repo grows with each uploaded original — this differs from Jekyll,
-  where only the small variants were kept.
-- **A generated variant wins over an old static one of the same name.** If
-  you Replace an image whose name already exists among the pre-made Jekyll
-  variants, the newly generated versions are served and the old static ones
-  are left unused (harmless, just redundant). A brand-new file name has no
-  such overlap.
-- **The two categories are a migration artefact.** Over time, as images are
-  replaced or added through the CMS, everything moves to the generated model
-  and the old `static/images/` variants can eventually be retired. Until
-  then it is a deliberate mix: old images static, new images generated.
+- **Originals are committed to the repo.** The file in `hugo/assets/images/`
+  is the source every build regenerates from, so it must be committed for the
+  site to build (for example on Cloudflare). The repo therefore grows with
+  each original, which differs from the old Jekyll site, where only the small
+  variants were kept.
+- **Site-chrome images are separate.** A few images are not block images: the
+  site logo, the social-share (Open Graph) cards, the page background, and the
+  navigation-icon sprite. These live in `hugo/static/images/` and are served
+  as-is. They are not generated and are not edited through the CMS.
 
 ## A blog post's excerpt comes from its first Text block
 

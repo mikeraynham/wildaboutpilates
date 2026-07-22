@@ -14,7 +14,7 @@ blocks:
       [1]: https://www.facebook.com/groups/awesomemumsbrunchclub/
       [2]: https://femalefocusclinic.co.uk/
   - type: logo
-    file: ambc-logo
+    file: "/images/ambc-logo.png"
     url: https://www.facebook.com/groups/awesomemumsbrunchclub/
     alt: Awesome Mums Brunch Club Logo
   - type: text
@@ -27,7 +27,7 @@ blocks:
 
       [3]: https://femalefocusclinic.co.uk/services/mummy-mot/
   - type: logo
-    file: female-focus-clinic-logo
+    file: "/images/female-focus-clinic-logo.png"
     url: https://femalefocusclinic.co.uk/
     alt: Female Focus Clinic Logo
   - type: text

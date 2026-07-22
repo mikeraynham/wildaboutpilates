@@ -11,7 +11,7 @@ blocks:
     body: |
       Those of you who know me will know that I love netball.  I've been playing for a long time (over 25 years, yikes!), and I am very lucky to have been trained by some fantastic coaches, and to have played at both club and county level.
   - type: image
-    file: netball
+    file: "/images/netball.jpg"
     alt: Photo of people playing netball
   - type: text
     body: |

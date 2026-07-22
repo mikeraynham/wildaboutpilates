@@ -10,7 +10,7 @@ blocks:
       [1]: https://5sfitness.co.uk/
       [2]: https://www.activeiq.co.uk/qualifications/level-2/active-iq-level-2-certificate-in-gym-instructing
   - type: image
-    file: chrissie-jason-level-2
+    file: "/images/chrissie-jason-level-2.jpg"
     alt: Photo of Chrissie receiving Active IQ Level 2 Certificate in Gym Instructing from Jason Curtis
     caption: Jason is the one with the beard.
   - type: text

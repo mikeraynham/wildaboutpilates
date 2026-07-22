@@ -293,3 +293,38 @@ shared pages. Every difference found falls within the 8 categories carried
 over from the original acceptance run (§3), the classes-page JSON-LD key
 order (category 3), or the one new accepted Venue-intro divergence (§6.3).
 The block model is accepted as a faithful reproduction of the site.
+
+## 7. Post-acceptance change: content images now build-generated
+
+The acceptance above compares rendered HTML, and that comparison still holds:
+the image URLs in every page's `srcset` and `src` are unchanged. This section
+records a later change to the image *bytes* those URLs serve.
+
+During the faithful port, every Jekyll image was copied verbatim into
+`hugo/static/images/` and served as-is, so the sized files stayed
+byte-identical to Jekyll's. That is no longer true for the 24 images referenced
+by Image and Logo blocks. Each now carries a `file: "/images/<name>.<ext>"`
+value pointing at an original in `hugo/assets/images/`, and Hugo regenerates
+the `-200w/-300w/-400w/-clean` variants from that original at build time
+(auto-orient, quality 85). The regenerated files differ byte-for-byte from the
+committed Jekyll variants. A spot check on `chrissie-mobilising`, for instance,
+showed the `-clean` full-size drop from 936951 to 210772 bytes under the pinned
+Hugo 0.164.0 build. The exact byte count is Hugo-version-dependent (210684 under
+0.154.5); the image is visually the same.
+
+This change was deliberate, made so the CMS can preview and re-process the
+older images the same way it handles new uploads. It does not affect the HTML
+parity recorded in §§1-6: the rendered markup, links, and data are unchanged,
+and the images remain visually equivalent. It is an accepted divergence at the
+asset level, not a regression.
+
+The old pre-built variants for these 24 images have been removed from
+`hugo/static/images/` (119 files in all: each image's sized variants plus the
+one source copy that was relocated into `hugo/assets/images/`). The generated
+files are now the only source. That directory now holds no block images. What
+remains is site chrome (the site
+logo, the Open Graph cards, the page background, and the navigation sprite)
+plus a few never-referenced leftover images (`wild-about-pilates-chrissie-wild-*`,
+`wild-about-pilates-morton-hall-*`, and `yoga-spirits-original.jpg`). A clean
+build reproduces all 96 variants (24 images, four sizes each) from the originals
+in `hugo/assets/images/`.
