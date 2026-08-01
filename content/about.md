@@ -1,26 +1,47 @@
 ---
 title: "About Me"
-description: "My name is Chrissie Raynham-Wild and I'm a state registered Chartered Physiotherapist specialising in musculoskeletal physiotherapy, and a certified APPI  Matwork Pilates instructor."
+description: "I passionately believe that everyone deserves to feel strong, confident, and empowered in their own body.  Investing time in yourself and your health today is how you build the best future for yourself—one where you can stay active, feel strong, and keep doing the things you enjoy."
 blocks:
   - type: "text"
-    body: "Through a combination of physiotherapy, Pilates, and a focus on well-being, I take a holistic approach, emphasising on long-term health, and helping individuals live active, fulfilling lives well into the future.
+    body: "Teaching Pilates is both a passion and a hobby of mine. I lead popular group classes and provide tailored 1-to-1 sessions.
 
 
-      I am a passionate and experienced Pilates instructor, currently leading a number of classes and providing 1-2-1 sessions. Teaching Pilates is a personal joy and a hobby for me. My love for movement and fitness enhances my ability to help clients improve their strength, flexibility and overall wellbeing."
+      Through a combination of physiotherapy, Pilates, strength training, and a focus on well-being, I take a holistic approach, emphasising long-term health and helping individuals live active, fulfilling lives well into the future."
   - type: "testimonial"
     content: "The sessions so far have been great, Chrissie is really professional and connects really well with the group. She is warm and welcoming and seems like she really knows her stuff."
     author: "D Mullineux"
   - type: "text"
-    body: "Beyond Pilates, I am an Advanced Clinical Specialist Physiotherapist with a strong background in musculoskeletal care and rehabilitation. With 15 years of NHS experience, I have developed expertise in complex patient assessment, treatment planning, and therapeutic techniques. I provide high-level clinical care, guiding both patients and junior staff in achieving optimal health outcomes."
+    body: "When I'm not teaching Pilates, I work as an Advanced Clinical Specialist Physiotherapist for the NHS.
+
+
+      My NHS clinical work focuses on helping people who often feel stuck or overwhelmed by complex conditions. My specialist areas include, but are not limited to:
+
+
+      - Spinal Musculoskeletal Issues: I treat all areas of the body, but I am the spinal lead in my department, which means I stay focused on best practice and clinical guidelines for spinal care. I also teach and mentor other physiotherapists on the spine.
+
+      - Strength Training: Tailoring strength training and exercise rehab for those with complex health presentations is something I am deeply passionate about.
+
+      - Healthy Ageing, Menopause, Bone Health, Osteopenia, and Osteoporosis: Using evidence-based movement to support bone density, muscle strength, and overall vitality through life transitions.
+
+      - Women's Health Recovery: Post-natal recovery and post-operative breast cancer care.
+
+      - Patients with Persistent Musculoskeletal Pain: Within my NHS role, I work with individuals who have already tried other physiotherapy treatments or medical interventions without getting the results they hoped for. Because of my specialist expertise in managing complex presentations, I receive referrals directly from GPs, First Contact Practitioners, and fellow physiotherapists within the organisation to help their most challenging cases find a path forward."
   - type: "image"
     file: "/images/profile pic.jpeg"
     alt: "Photo of Chrissie Wild"
-    caption: "Chrissie Raynham-Wild"
+    caption: "Chrissie Raynham-Wild BSc (Hons) Physiotherapy, PGDip Advanced Physiotherapy."
   - type: "text"
-    body: "In addition to my current role, I have also worked as a First Contact Practitioner (FCP), serving as the first point of contact for patients presenting with musculoskeletal issues. In this role, I independently assessed, diagnosed, and managed a wide range of conditions, streamlining patient pathways and reducing pressure on primary care services.
+    body: "Clinical Expertise & Background
 
 
-      I am currently studying an MSc in Advanced Physiotherapy at Manchester Metropolitan University and my specialist interests include post-natal exercise, persistent musculoskeletal pain management, sports rehabilitation, strength training, and breast cancer post-operative rehabilitation."
+      With 17 years of NHS experience, I bring a wealth of knowledge to everything I do.
+
+
+      - Advanced Clinical Specialist: High-level clinical assessment, complex treatment planning, and mentoring junior and senior physiotherapy staff.
+
+      - First Contact Practitioner (FCP): Completed a secondment working as a musculoskeletal specialist within a GP practice.
+
+      - Lifelong Learning: I am always studying and have completed a Postgraduate Diploma in Advanced Physiotherapy."
   - type: "testimonial"
     content: "Chrissie is an amazing teacher. She is knowledgeable and very helpful at adapting postures for your needs &hellip; I have loved her classes and would definitely recommend her classes to anyone."
     author: "K Anderton"
