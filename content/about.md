@@ -22,9 +22,9 @@ blocks:
 
       - Spinal Musculoskeletal Issues: I treat all areas of the body, but I am the spinal lead in my department, which means I stay focused on best practice and clinical guidelines for spinal care. I also teach and mentor other physiotherapists on the spine.
 
-      - Strength Training: Tailoring strength training and exercise rehab for those with complex health presentations is something I am deeply passionate about.
+      - Strength Training: Tailoring strength training and exercise rehab is something I am deeply passionate about.
 
-      - Healthy Ageing, Menopause, Bone Health, Osteopenia, and Osteoporosis: Using evidence-based movement to support bone density, muscle strength, and overall vitality through life transitions.
+      - Healthy Ageing, Menopause, Bone Health, Osteopenia, and Osteoporosis: Using evidence-based exercise to support bone density, muscle strength, and overall vitality through life transitions.
 
       - Women's Health Recovery: Post-natal recovery and post-operative breast cancer care.
 
