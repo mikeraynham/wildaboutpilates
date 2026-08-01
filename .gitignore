@@ -1,6 +1,6 @@
 .DS_Store
 .env
 scratch/
-hugo/public/
-hugo/resources/
-hugo/.hugo_build.lock
+public/
+resources/
+.hugo_build.lock

@@ -1,0 +1,352 @@
+# Sveltia CMS
+#
+# Edits the typed-block pages (content/*.md) and the blog
+# (content/blog/*.md), plus the class-times data file.
+#
+# To run it, serve the site locally from the repo root:
+#   docker run -d --name wap-hugo -v "$PWD:/src" -w /src -p 1313:1313 \
+#     hugomods/hugo:exts hugo server --bind 0.0.0.0 \
+#     --baseURL http://localhost:1313/ --disableFastRender
+#   open http://localhost:1313/admin/index.html (in Chrome, Edge or Brave)
+#   click "Work with Local Repository" and pick the repo root
+#   stop with: docker stop wap-hugo
+#
+# No authentication and no proxy server are needed for local work, so the
+# `repo` below is deliberately arbitrary.  Firefox and Safari will not work:
+# Sveltia's local mode needs the File System Access API.
+
+backend:
+  name: github
+  repo: mikeraynham/wildaboutpilates
+
+media_folder: assets/images
+public_folder: /images
+
+# This block is what makes Sveltia safe to point at a Hugo site.
+#
+# quote: double
+#   Sveltia is JavaScript and emits YAML 1.2, where `10:00` is a string.  Hugo
+#   uses go-yaml, which follows YAML 1.1, where `10:00` is sexagesimal and
+#   would read back as the integer 36000.  Quoting every string closes the
+#   gap, and a quoted scalar means the same thing under both standards.
+#
+# omit_empty_optional_fields
+#   Without this, an untouched optional field is written as `more: ''`.  Empty
+#   strings are truthy in Go templates' `with`, so `{{ with .b.more }}` would
+#   render an empty link.  Omitting the key entirely makes the guard work.
+output:
+  omit_empty_optional_fields: true
+  yaml:
+    quote: double
+
+collections:
+  # ---------------------------------------------------------------------
+  # The real class-times data.
+  #
+  # Edits data/classes.yml in place, the same file the timetable and
+  # the JSON-LD are generated from.  `root: true` is what lets a top-level
+  # YAML array be edited at all; without it the list would nest under a key.
+  # ---------------------------------------------------------------------
+  - name: data
+    label: Site data
+    files:
+      - name: classes
+        label: Class times
+        file: data/classes.yml
+        icon: schedule
+        fields:
+          - label: Classes
+            name: classes
+            widget: list
+            root: true
+            allow_reorder: true
+            summary: '{{fields.day}} {{fields.start}}-{{fields.end}} - {{fields.level}}'
+            fields:
+              - label: Day
+                name: day
+                widget: select
+                options:
+                  - Monday
+                  - Tuesday
+                  - Wednesday
+                  - Thursday
+                  - Friday
+              - label: Start
+                name: start
+                widget: string
+                pattern: ['^([01]\d|2[0-3]):[0-5]\d$', 'Use 24-hour HH:MM, e.g. 09:45']
+              - label: End
+                name: end
+                widget: string
+                pattern: ['^([01]\d|2[0-3]):[0-5]\d$', 'Use 24-hour HH:MM, e.g. 10:45']
+              - label: Level
+                name: level
+                widget: select
+                options:
+                  - Beginners / improvers / intermediate
+                  - Intermediate / advanced
+              - label: Started (optional)
+                name: since
+                widget: string
+                required: false
+                pattern: ['^\d{4}-\d{2}-\d{2}$', 'Use YYYY-MM-DD']
+                hint: The date this class started. Published as validFrom in the structured data. Leave blank if unknown.
+
+  # ---------------------------------------------------------------------
+  # The five typed-block pages.
+  #
+  # Each entry is a `files` item pointing at one content file.  The block
+  # types below are defined once, as anchors, on the first page (home) and
+  # reused by alias on every other page so the field sets stay in lock-step
+  # with the block partials in layouts/partials/blocks/.
+  # ---------------------------------------------------------------------
+  - name: pages
+    label: Pages
+    files:
+      - name: home
+        label: Home
+        file: content/_index.md
+        icon: home
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text }
+          - label: Blocks
+            name: blocks
+            widget: list
+            typeKey: type
+            allow_reorder: true
+            minimize_collapsed: true
+            summary: '{{fields.type}}'
+            types:
+              - &text_block
+                label: Text
+                name: text
+                summary: '{{fields.body}}'
+                fields:
+                  - { label: Body, name: body, widget: markdown }
+
+              - &prices_block
+                label: Prices
+                name: prices
+                fields:
+                  - label: Items
+                    name: items
+                    widget: list
+                    allow_reorder: true
+                    summary: '{{fields.item}}'
+                    fields:
+                      - { label: Item, name: item, widget: string }
+                      - { label: Description, name: description, widget: markdown }
+
+              - &testimonial_block
+                label: Testimonial
+                name: testimonial
+                summary: '{{fields.author}}'
+                fields:
+                  - { label: Quote, name: content, widget: text }
+                  - { label: Author, name: author, widget: string }
+                  - { label: Link, name: more, widget: string, required: false }
+                  - { label: Link text, name: read_more, widget: string, required: false }
+
+              - &image_block
+                label: Image
+                name: image
+                summary: '{{fields.alt}}'
+                fields:
+                  - { label: File, name: file, widget: image }
+                  - { label: Alt text, name: alt, widget: string }
+                  - { label: Caption, name: caption, widget: string, required: false }
+                  - { label: Extension, name: ext, widget: string, required: false, hint: 'Overrides the default file extension (jpg). Leave blank unless the source file is a different format.' }
+
+              - &logo_block
+                label: Logo
+                name: logo
+                summary: '{{fields.alt}}'
+                fields:
+                  - { label: File, name: file, widget: image }
+                  - { label: Link, name: url, widget: string }
+                  - { label: Alt text, name: alt, widget: string }
+                  - { label: Caption, name: caption, widget: string, required: false }
+                  - { label: Extension, name: ext, widget: string, required: false, hint: 'Overrides the default file extension (png). Leave blank unless the source file is a different format.' }
+
+              - &video_block
+                label: Video
+                name: video
+                summary: '{{fields.file}}'
+                fields:
+                  - { label: File, name: file, widget: string, hint: 'Filename without extension, under /videos/. Both .mp4 and .mov must exist.' }
+                  - { label: Caption, name: caption, widget: string, required: false }
+
+              - &class_times_block
+                label: Class times
+                name: class_times
+                fields: []
+
+              - &venue_block
+                label: Venue
+                name: venue
+                fields: []
+
+              - &map_block
+                label: Map
+                name: map
+                fields: []
+
+              - &registration_form_block
+                label: Registration form
+                name: registration_form
+                fields: []
+
+              - &venue_intro_block
+                label: Venue introduction
+                name: venue_intro
+                fields:
+                  - { label: Description, name: description, widget: markdown }
+                  - label: Link
+                    name: link
+                    widget: object
+                    required: false
+                    fields:
+                      - { label: URL, name: url, widget: string }
+                      - { label: Text, name: text, widget: string }
+
+      - name: about
+        label: About
+        file: content/about.md
+        icon: person
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text }
+          - label: Blocks
+            name: blocks
+            widget: list
+            typeKey: type
+            allow_reorder: true
+            minimize_collapsed: true
+            summary: '{{fields.type}}'
+            types:
+              - *text_block
+              - *prices_block
+              - *testimonial_block
+              - *image_block
+              - *logo_block
+              - *video_block
+              - *class_times_block
+              - *venue_block
+              - *map_block
+              - *registration_form_block
+              - *venue_intro_block
+
+      - name: classes
+        label: Classes
+        file: content/classes.md
+        icon: schedule
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Include map, name: include_map, widget: boolean, required: false }
+          - { label: Description, name: description, widget: text }
+          - label: Blocks
+            name: blocks
+            widget: list
+            typeKey: type
+            allow_reorder: true
+            minimize_collapsed: true
+            summary: '{{fields.type}}'
+            types:
+              - *text_block
+              - *prices_block
+              - *testimonial_block
+              - *image_block
+              - *logo_block
+              - *video_block
+              - *class_times_block
+              - *venue_block
+              - *map_block
+              - *registration_form_block
+              - *venue_intro_block
+
+      - name: clothing
+        label: Clothing
+        file: content/clothing.md
+        icon: checkroom
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text }
+          - label: Blocks
+            name: blocks
+            widget: list
+            typeKey: type
+            allow_reorder: true
+            minimize_collapsed: true
+            summary: '{{fields.type}}'
+            types:
+              - *text_block
+              - *prices_block
+              - *testimonial_block
+              - *image_block
+              - *logo_block
+              - *video_block
+              - *class_times_block
+              - *venue_block
+              - *map_block
+              - *registration_form_block
+              - *venue_intro_block
+
+      - name: questions
+        label: Questions & answers
+        file: content/questions.md
+        icon: help
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text }
+          - label: Blocks
+            name: blocks
+            widget: list
+            typeKey: type
+            allow_reorder: true
+            minimize_collapsed: true
+            summary: '{{fields.type}}'
+            types:
+              - *text_block
+              - *prices_block
+              - *testimonial_block
+              - *image_block
+              - *logo_block
+              - *video_block
+              - *class_times_block
+              - *venue_block
+              - *map_block
+              - *registration_form_block
+              - *venue_intro_block
+
+  # ---------------------------------------------------------------------
+  # The blog.  A folder collection, one file per post, with the lighter
+  # block palette the blog partials actually use.
+  # ---------------------------------------------------------------------
+  - name: blog
+    label: Blog
+    folder: content/blog
+    create: true
+    delete: true
+    icon: article
+    slug: '{{slug}}'
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Date, name: date, widget: datetime }
+      - { label: Description, name: description, widget: text }
+      - { label: Slug (optional), name: slug, widget: string, required: false, hint: 'Overrides the URL slug derived from the filename.' }
+      - { label: OG image, name: og_image, widget: image, required: false }
+      - { label: OG image width, name: og_image_width, widget: string, required: false }
+      - { label: OG image height, name: og_image_height, widget: string, required: false }
+      - label: Blocks
+        name: blocks
+        widget: list
+        typeKey: type
+        allow_reorder: true
+        minimize_collapsed: true
+        summary: '{{fields.type}}'
+        types:
+          - *text_block
+          - *image_block
+          - *logo_block
+          - *video_block
