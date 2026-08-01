@@ -11,13 +11,17 @@
 #   click "Work with Local Repository" and pick the repo root
 #   stop with: docker stop wap-hugo
 #
-# No authentication and no proxy server are needed for local work, so the
-# `repo` below is deliberately arbitrary.  Firefox and Safari will not work:
-# Sveltia's local mode needs the File System Access API.
+# Local mode ("Work with Local Repository", above) needs no authentication.
+# For remote editing on the live site, the `backend` below is a real GitHub
+# target (`repo`/`branch`) and `base_url` points at the sveltia-cms-auth OAuth
+# relay, so editors can "Sign in with GitHub".  Firefox and Safari will not
+# work: Sveltia's local mode needs the File System Access API.
 
 backend:
   name: github
   repo: mikeraynham/wildaboutpilates
+  branch: master
+  base_url: https://sveltia-cms-auth.enquiries-de7.workers.dev
 
 media_folder: assets/images
 public_folder: /images
