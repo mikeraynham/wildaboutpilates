@@ -9,16 +9,7 @@ blocks:
     body: "Whether you’re looking to improve strength, flexibility, balance, or move with more freedom and ease, or you want a rehabilitation class to aid recovery from injury, then you’ve come to the right place.
 
 
-      Unlike traditional classes, I offer physiotherapy-led Pilates combining the targeted movement of clinical rehab with the full-body strengthening and mobility exercises of Pilates.
-
-
-      **Why Choose Physio-Led Pilates?**
-
-
-      My background as an Advanced Clinical Specialist with a Postgraduate Diploma in Advanced Physiotherapy shapes everything we do in class. I bring an evidence-based approach and years of clinical experience to every session, having worked with people facing a wide range of physical challenges—from managing back pain to recovering from injury.
-
-
-      I integrate effective, rehab-based exercises into our workouts and can easily adapt any movement to suit your body. Whether you want to restore mobility, improve your posture, or build full-body strength, this approach offers a safe, balanced, and rewarding way to move well and feel your best."
+      Unlike traditional classes, I offer physiotherapy-led Pilates combining the targeted movement of clinical rehab with the full-body strengthening and mobility exercises of Pilates."
   - type: "image"
     file: "/images/chrissie-pilates-v.jpg"
     alt: "Photo of Chrissie doing the Pilates V"
@@ -28,7 +19,16 @@ blocks:
     more: "https://www.facebook.com/beverley.colclough/posts/10155115745660906:0"
     read_more: "read on Facebook&hellip;"
   - type: "text"
-    body: "## What you can expect from Wild About Pilates?"
+    body: "**Why Choose Physio-Led Pilates?**
+
+
+      My background as an Advanced Clinical Specialist with a Postgraduate Diploma in Advanced Physiotherapy shapes everything we do in class. I bring an evidence-based approach and years of clinical experience to every session, having worked with people facing a wide range of physical challenges—from managing back pain to recovering from injury.
+
+
+      I integrate effective, rehab-based exercises into our workouts and can easily adapt any movement to suit your body. Whether you want to restore mobility, improve your posture, or build full-body strength, this approach offers a safe, balanced, and rewarding way to move well and feel your best.
+
+
+      ## What you can expect from Wild About Pilates?"
   - type: "testimonial"
     content: "Chrissie has given me such a warm welcome and quietly guided me through my first few classes so that I feel completely at ease."
     author: "H Starkey"
