@@ -3,7 +3,10 @@ title: "About Me"
 description: "I passionately believe that everyone deserves to feel strong, confident, and empowered in their own body.  Investing time in yourself and your health today is how you build the best future for yourself—one where you can stay active, feel strong, and keep doing the things you enjoy."
 blocks:
   - type: "text"
-    body: "Teaching Pilates is both a passion and a hobby of mine. I lead popular group classes and provide tailored 1-to-1 sessions.
+    body: "I passionately believe that everyone deserves to feel strong, confident, and empowered in their own body.  Investing time in yourself and your health today is how you build the best future for yourself—one where you can stay active, feel strong, and keep doing the things you enjoy.
+
+
+      Teaching Pilates is both a passion and a hobby of mine. I lead popular group classes and provide tailored 1-to-1 sessions.
 
 
       Through a combination of physiotherapy, Pilates, strength training, and a focus on well-being, I take a holistic approach, emphasising long-term health and helping individuals live active, fulfilling lives well into the future."
