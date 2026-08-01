@@ -36,7 +36,7 @@ blocks:
     content: "Chrissie is an amazing teacher. She is knowledgeable and very helpful at adapting postures for your needs &hellip; I have loved her classes and would definitely recommend her classes to anyone."
     author: "K Anderton"
   - type: "text"
-    body: "Clinical Expertise & Background
+    body: "## Clinical Expertise & Background
 
 
       With 17 years of NHS experience, I bring a wealth of knowledge to everything I do.
