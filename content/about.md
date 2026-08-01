@@ -12,7 +12,7 @@ blocks:
     content: "The sessions so far have been great, Chrissie is really professional and connects really well with the group. She is warm and welcoming and seems like she really knows her stuff."
     author: "D Mullineux"
   - type: "text"
-    body: "Teaching Pilates is both a passion and a hobby of mine. I lead popular group classes and provide tailored 1-to-1 sessions."
+    body: "Teaching Pilates is both a passion and a hobby of mine. I lead group classes and provide tailored 1-to-1 sessions."
   - type: "text"
     body: "Through a combination of physiotherapy, Pilates, strength training, and a focus on well-being, I take a holistic approach, emphasising long-term health and helping individuals live active, fulfilling lives well into the future.
 
