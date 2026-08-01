@@ -1,12 +1,12 @@
 ---
 title: "Questions & answers"
-description: "Modified Pilates is suitable for most people.  Improve Core Stability and Strength, Posture, Flexibility, & Balance."
+description: "Physio-led Pilates is suitable for most people.  Improve Core Stability and Strength, Posture, Flexibility, & Balance."
 blocks:
   - type: "text"
     body: "## Am I suitable for the class?
 
 
-      Modified Pilates is suitable for most people, including those with injuries or those who suffer from back or other joint pain. As a physiotherapist, I can modify the exercises so that you can exercise comfortably and safely."
+      Physio-led Pilates is suitable for most people, including those with injuries or those who suffer from back or other joint pain. As a physiotherapist, I can modify the exercises so that you can exercise comfortably and safely."
   - type: "testimonial"
     content: "I loved Chrissie's session tonight! &hellip; Chrissie has a very calming manner and made me feel very comfortable in the class."
     author: "S McLaren"
