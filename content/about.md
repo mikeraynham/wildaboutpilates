@@ -3,18 +3,21 @@ title: "About Me"
 description: "I passionately believe that everyone deserves to feel strong, confident, and empowered in their own body.  Investing time in yourself and your health today is how you build the best future for yourself—one where you can stay active, feel strong, and keep doing the things you enjoy."
 blocks:
   - type: "text"
-    body: "I passionately believe that everyone deserves to feel strong, confident, and empowered in their own body.  Investing time in yourself and your health today is how you build the best future for yourself—one where you can stay active, feel strong, and keep doing the things you enjoy.
-
-
-      Teaching Pilates is both a passion and a hobby of mine. I lead popular group classes and provide tailored 1-to-1 sessions.
-
-
-      Through a combination of physiotherapy, Pilates, strength training, and a focus on well-being, I take a holistic approach, emphasising long-term health and helping individuals live active, fulfilling lives well into the future."
+    body: "I passionately believe that everyone deserves to feel strong, confident, and empowered in their own body.  Investing time in yourself and your health today is how you build the best future for yourself—one where you can stay active, feel strong, and keep doing the things you enjoy."
   - type: "testimonial"
     content: "The sessions so far have been great, Chrissie is really professional and connects really well with the group. She is warm and welcoming and seems like she really knows her stuff."
     author: "D Mullineux"
   - type: "text"
-    body: "When I'm not teaching Pilates, I work as an Advanced Clinical Specialist Physiotherapist for the NHS.
+    body: "Teaching Pilates is both a passion and a hobby of mine. I lead popular group classes and provide tailored 1-to-1 sessions."
+  - type: "image"
+    file: "/images/profile pic.jpeg"
+    alt: "Photo of Chrissie Wild"
+    caption: "Chrissie Raynham-Wild BSc (Hons) Physiotherapy, PGDip Advanced Physiotherapy."
+  - type: "text"
+    body: "Through a combination of physiotherapy, Pilates, strength training, and a focus on well-being, I take a holistic approach, emphasising long-term health and helping individuals live active, fulfilling lives well into the future.
+
+
+      When I'm not teaching Pilates, I work as an Advanced Clinical Specialist Physiotherapist for the NHS.
 
 
       My NHS clinical work focuses on helping people who often feel stuck or overwhelmed by complex conditions. My specialist areas include, but are not limited to:
@@ -29,10 +32,9 @@ blocks:
       - Women's Health Recovery: Post-natal recovery and post-operative breast cancer care.
 
       - Patients with Persistent Musculoskeletal Pain: Within my NHS role, I work with individuals who have already tried other physiotherapy treatments or medical interventions without getting the results they hoped for. Because of my specialist expertise in managing complex presentations, I receive referrals directly from GPs, First Contact Practitioners, and fellow physiotherapists within the organisation to help their most challenging cases find a path forward."
-  - type: "image"
-    file: "/images/profile pic.jpeg"
-    alt: "Photo of Chrissie Wild"
-    caption: "Chrissie Raynham-Wild BSc (Hons) Physiotherapy, PGDip Advanced Physiotherapy."
+  - type: "testimonial"
+    content: "Chrissie is an amazing teacher. She is knowledgeable and very helpful at adapting postures for your needs &hellip; I have loved her classes and would definitely recommend her classes to anyone."
+    author: "K Anderton"
   - type: "text"
     body: "Clinical Expertise & Background
 
@@ -44,12 +46,10 @@ blocks:
 
       - First Contact Practitioner (FCP): Completed a secondment working as a musculoskeletal specialist within a GP practice.
 
-      - Lifelong Learning: I am always studying and have completed a Postgraduate Diploma in Advanced Physiotherapy."
-  - type: "testimonial"
-    content: "Chrissie is an amazing teacher. She is knowledgeable and very helpful at adapting postures for your needs &hellip; I have loved her classes and would definitely recommend her classes to anyone."
-    author: "K Anderton"
-  - type: "text"
-    body: "## Qualifications
+      - Lifelong Learning: I am always studying and have completed a Postgraduate Diploma in Advanced Physiotherapy.
+
+
+      ## Qualifications
 
 
       ### Pilates Qualifications
