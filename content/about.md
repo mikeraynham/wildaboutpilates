@@ -13,7 +13,7 @@ blocks:
   - type: "text"
     body: "Beyond Pilates, I am an Advanced Clinical Specialist Physiotherapist with a strong background in musculoskeletal care and rehabilitation. With 15 years of NHS experience, I have developed expertise in complex patient assessment, treatment planning, and therapeutic techniques. I provide high-level clinical care, guiding both patients and junior staff in achieving optimal health outcomes."
   - type: "image"
-    file: "/images/chrissie-raynham-wild.jpg"
+    file: "/images/profile pic.jpeg"
     alt: "Photo of Chrissie Wild"
     caption: "Chrissie Raynham-Wild"
   - type: "text"
