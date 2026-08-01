@@ -12,7 +12,7 @@ blocks:
       Unlike traditional classes, I offer physiotherapy-led Pilates combining the targeted movement of clinical rehab with the full-body strengthening and mobility exercises of Pilates.
 
 
-      Why Choose Physio-Led Pilates?
+      **Why Choose Physio-Led Pilates?**
 
 
       My background as an Advanced Clinical Specialist with a Postgraduate Diploma in Advanced Physiotherapy shapes everything we do in class. I bring an evidence-based approach and years of clinical experience to every session, having worked with people facing a wide range of physical challenges—from managing back pain to recovering from injury.
