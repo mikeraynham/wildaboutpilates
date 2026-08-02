@@ -1,4 +1,11 @@
 figure.photo, figure.video {
+    // The photo's display width (mirrors the <img> `sizes` breakpoints in
+    // layouts/partials/blocks/image.html). Used for both the image and the
+    // figure width below, so the caption wraps within the photo's width.
+    --photo-width: 200px;
+    @media (min-width: 43.75em) { --photo-width: 300px; }
+    @media (min-width: 56.25em) { --photo-width: 400px; }
+
     display: table;
     border: 10px solid white;
     box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.2);
@@ -6,15 +13,8 @@ figure.photo, figure.video {
 
     img, video {
         margin: 0 auto;
-        width: 200px;
+        width: var(--photo-width);
         display: block;
-
-        @media (min-width: 43.75em) {
-            width: 300px;
-        }
-        @media (min-width: 56.25em) {
-            width: 400px;
-        }
     }
 
     video {
@@ -23,7 +23,16 @@ figure.photo, figure.video {
     }
 
     figcaption {
-        display: table-row;
+        margin-top: 1rem;
         text-align: center;
+        overflow-wrap: break-word; // break a very long word rather than overflow
     }
+}
+
+// Constrain the figure to the photo's width so a long caption wraps within it.
+// `display: table` sizes to max-content, so without this a caption wider than the
+// photo would stretch the figure (and its box-shadow) past the image. Photos only:
+// videos keep their auto width (their size is driven by height/aspect ratio).
+figure.photo {
+    width: var(--photo-width);
 }
