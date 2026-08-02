@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+#
+# Start the local Hugo dev server (Dart Sass included) at http://localhost:1313/.
+# Edit content/ or assets/css/ and the browser live-reloads. Press Ctrl+C to stop.
+#
+# Requires Docker Desktop running. Uses compose.yaml in the repo root.
+set -euo pipefail
+
+# Run from the repo root regardless of where this is invoked from.
+cd "$(dirname "$0")/.."
+
+# Tidy up the container/network when you Ctrl+C, so nothing lingers.
+trap 'docker compose down --remove-orphans >/dev/null 2>&1 || true' EXIT
+
+echo "Hugo  -> http://localhost:1313/"
+echo "CMS   -> http://localhost:1313/admin/   (Chrome, Edge or Brave)"
+echo "Ctrl+C to stop."
+echo
+
+docker compose up

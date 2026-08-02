@@ -1,0 +1,23 @@
+# Local Hugo dev server for wildaboutpilates.
+#
+#   docker compose up      (or ./bin/serve)  ->  http://localhost:1313/
+#
+# Uses the *extended* Hugo image, which bundles Dart Sass. This site's SCSS
+# uses `@use` and the `dartsass` transpiler, so a plain (non-extended) Hugo
+# cannot compile it.
+services:
+  hugo:
+    image: hugomods/hugo:exts        # "exts" = extended: includes Dart Sass
+    container_name: wap-hugo
+    working_dir: /src
+    ports:
+      - "1313:1313"
+    volumes:
+      - .:/src                        # the repo root IS the Hugo project (not ./hugo)
+    command:
+      - hugo
+      - server
+      - --bind=0.0.0.0                # reachable from the host
+      - --baseURL=http://localhost:1313/
+      - --disableFastRender           # rebuild every page, not just the changed one
+      - --poll=700ms                  # reliable live-reload across the Docker mount on macOS
