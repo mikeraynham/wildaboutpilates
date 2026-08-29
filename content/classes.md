@@ -80,4 +80,40 @@ blocks:
       text: "View the refurbished hall on Google Maps"
   - type: "venue"
   - type: "map"
+  - type: "text"
+    body: "## Gawsworth Village Hub
+
+
+      Why not treat yourself to a drink or a bite to eat after Pilates at the Gawsworth Village Hub café and shop?
+
+
+      Located in the heart of Gawsworth, right next to the village hall, Gawsworth Village Hub is a friendly, volunteer-run space built around community, fresh food, and a warm welcome.
+
+
+      Whether you're catching up with friends after class, popping in for your weekly essentials, or looking for a thoughtful gift, it's a great place to visit.
+
+
+      ### What you'll find in the shop:
+
+
+      - **Fresh Deli & Bakery:** freshly made sandwiches, local pies, cheeses, and fresh local eggs.
+
+      - **Fresh fruit and veg**.
+
+      - **Gifts & Cards:** Browse their beautifully curated gift displays and greeting cards—they also stock garden plants for your convenience.
+
+      - **Pantry Essentials:** A great selection of wholesome nuts and seeds. Plus everyday essentials for your cupboards.
+
+      - **Local Craft Beers**
+
+      - **The Dog Deli:** Treat your pup to a special snack from the popular dog deli.
+
+
+      ###  Relax in The Café
+
+
+      Take a seat in the friendly café and enjoy delicious homemade meals or cakes, and hot drinks. It’s the perfect spot to relax, connect with friends, or refuel after a class."
+  - type: "image"
+    file: "/images/WhatsApp Image 2026-06-30 at 15.57.17.jpeg"
+    alt: "Gawsworth Village Hub"
 ---
