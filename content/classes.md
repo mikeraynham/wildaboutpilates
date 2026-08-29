@@ -87,7 +87,7 @@ blocks:
       Why not treat yourself to a drink or a bite to eat after Pilates at the Gawsworth Village Hub café and shop?
 
 
-      Located in the heart of Gawsworth, right next to the village hall, Gawsworth Village Hub is a friendly, volunteer-run space built around community, fresh food, and a warm welcome.
+      Located near the village hall, Gawsworth Village Hub is a friendly, volunteer-run space built around community, fresh food, and a warm welcome.
 
 
       Whether you're catching up with friends after class, popping in for your weekly essentials, or looking for a thoughtful gift, it's a great place to visit.
