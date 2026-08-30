@@ -72,6 +72,15 @@ manual resizing or format conversion is needed.
 
 ### Things to know
 
+- **Uploads get a tidier name.** The CMS renames a file as you upload it,
+  lowercasing it, turning spaces into hyphens, and dropping accents and
+  punctuation, so `WhatsApp Image 2026-06-30 at 15.57.17.jpeg` arrives as
+  `whatsapp-image-2026-06-30-at-15-57-17.jpeg`. Hugo builds the sized filenames
+  from that name, so it is also what appears in the page's image URLs, where an
+  awkward name has broken an image before. Photos already in
+  `assets/images/` keep the names they have, as does one you Replace with an
+  upload of the same name. The setting is `slugify_filename` in
+  `static/admin/config.yml`.
 - **Originals are committed to the repo.** The file in `assets/images/`
   is the source every build regenerates from, so it must be committed for the
   site to build (for example on Cloudflare). The repo therefore grows with
