@@ -26,6 +26,34 @@ backend:
 media_folder: assets/images
 public_folder: /images
 
+# Rename uploads to a clean, lowercase ASCII stem.
+#
+# An upload keeps whatever name the camera or messaging app gave it, and those
+# names often contain spaces.  A space survives in a `src`, which Hugo
+# percent-encodes, but it cannot survive in a `srcset`, where whitespace is
+# what separates a candidate URL from its width descriptor.  A file named
+# `WhatsApp Image 2026-06-30 at 15.57.17.jpeg` produced a `srcset` that Go's
+# html/template rejected outright, and the image did not render.  The block
+# partials no longer build those URLs by hand, so this is the second line of
+# defence rather than the fix, but a stem free of spaces, dots and accents is
+# also easier to search for in the media library.
+#
+# `slugify_filename` slugifies the stem and lowercases the extension.  It uses
+# the `slug` options below, which Sveltia also applies to new blog post
+# filenames; existing posts and existing images keep the names they have.
+# `encoding: ascii` keeps only letters, digits, `_`, `-` and `~`, and
+# `clean_accents` folds `é` to `e` first so an accented word survives as text
+# rather than being dropped.
+slug:
+  encoding: ascii
+  clean_accents: true
+  sanitize_replacement: "-"
+
+media_libraries:
+  default:
+    config:
+      slugify_filename: true
+
 # This block is what makes Sveltia safe to point at a Hugo site.
 #
 # quote: double
