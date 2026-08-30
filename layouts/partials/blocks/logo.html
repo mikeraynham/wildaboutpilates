@@ -1,18 +1,18 @@
 {{- $val := .b.file -}}
 {{- $file := path.BaseName $val -}}
 {{- $ext := or ($val | path.Ext | strings.TrimPrefix ".") .b.ext "png" -}}
-{{- partial "gen-image-variants.html" (dict "file" $file "ext" $ext) -}}
+{{- $img := partial "gen-image-variants.html" (dict "file" $file "ext" $ext) -}}
 <figure class="logo">
     <a href="{{ .b.url }}">
     <img srcset="
-            /images/{{ $file }}-200w.{{ $ext }} 200w,
-            /images/{{ $file }}-300w.{{ $ext }} 300w,
-            /images/{{ $file }}-400w.{{ $ext }} 400w"
+            {{ $img.w200 }} 200w,
+            {{ $img.w300 }} 300w,
+            {{ $img.w400 }} 400w"
          sizes="
             (min-width: 56.25em) 400px,
             (min-width: 43.75em) 300px,
             200px"
-         src="/images/{{ $file }}-400w.{{ $ext }}"
+         src="{{ $img.w400 }}"
          alt="{{ .b.alt }}">
     </a>
     {{- with .b.caption }}

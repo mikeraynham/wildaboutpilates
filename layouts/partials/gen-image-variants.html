@@ -1,12 +1,40 @@
+{{- /*
+  Generates the -200w, -300w, -400w and -clean variants of an image held in
+  assets/images/, and returns a dict of their URLs, keyed "w200", "w300",
+  "w400" and "clean".
+
+  Callers must use the URLs returned here rather than building their own from
+  the file stem.  Go's html/template treats "srcset" as a special context: it
+  splits each interpolated value at its first ASCII space, calls what precedes
+  it the URL, and requires what follows to be spaces and ASCII alphanumerics
+  only.  Anything else and it discards the value and writes the marker
+  "#ZgotmplZ" in its place, which silently breaks the image.  A file stem such
+  as "WhatsApp Image 2026-06-30 at 15.57.17" trips that, whilst "profile pic"
+  happens to survive.  Hugo's own .RelPermalink is already percent-encoded, so
+  it holds no spaces and passes through the filter untouched.
+*/ -}}
 {{- $file := .file -}}
 {{- $ext := .ext -}}
+{{- $widths := slice 200 300 400 -}}
+{{- $urls := dict -}}
 {{- with resources.Get (printf "images/%s.%s" $file $ext) -}}
   {{- $o := .Filter images.AutoOrient -}}
-  {{- range slice 200 300 400 -}}
+  {{- range $widths -}}
     {{- $r := $o.Resize (printf "%dx q85" .) -}}
     {{- $named := resources.Copy (printf "/images/%s-%dw.%s" $file . $ext) $r -}}
     {{- $named.Publish -}}
+    {{- $urls = merge $urls (dict (printf "w%d" .) $named.RelPermalink) -}}
   {{- end -}}
   {{- $clean := resources.Copy (printf "/images/%s-clean.%s" $file $ext) $o -}}
   {{- $clean.Publish -}}
+  {{- $urls = merge $urls (dict "clean" $clean.RelPermalink) -}}
+{{- else -}}
+  {{- /* No original under assets/images/, so there is nothing to generate or
+         to encode.  Fall back to the literal path, which is what this partial's
+         callers used to build for themselves. */ -}}
+  {{- range $widths -}}
+    {{- $urls = merge $urls (dict (printf "w%d" .) (printf "/images/%s-%dw.%s" $file . $ext)) -}}
+  {{- end -}}
+  {{- $urls = merge $urls (dict "clean" (printf "/images/%s-clean.%s" $file $ext)) -}}
 {{- end -}}
+{{- return $urls -}}
