@@ -113,4 +113,7 @@ blocks:
 
 
       Take a seat in the friendly café and enjoy delicious homemade meals or cakes, and hot drinks. It’s the perfect spot to relax, connect with friends, or refuel after a class."
+  - type: "image"
+    file: "/images/WhatsApp Image 2026-06-30 at 15.57.17.jpeg"
+    alt: "Gawsworth Village Hub"
 ---
