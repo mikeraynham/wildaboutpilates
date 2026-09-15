@@ -364,7 +364,15 @@ collections:
     slug: '{{slug}}'
     fields:
       - { label: Title, name: title, widget: string }
-      - { label: Date, name: date, widget: datetime }
+      - label: Date
+        name: date
+        widget: datetime
+        # Store dates in the same shape as the existing posts, e.g.
+        # "2024-11-02 06:00:00Z".  Without an explicit format, Sveltia saves
+        # the raw picker value ("2026-09-14T14:26"), which Hugo cannot parse,
+        # and the whole site build fails.
+        format: 'YYYY-MM-DD HH:mm:ss[Z]'
+        picker_utc: true
       - { label: Description, name: description, widget: text }
       - { label: Slug (optional), name: slug, widget: string, required: false, hint: 'Overrides the URL slug derived from the filename.' }
       - { label: OG image, name: og_image, widget: image, required: false }
