@@ -1,6 +1,6 @@
 ---
 title: "Gawsworth Village Hub"
-date: "2026-09-14T14:26"
+date: "2026-09-14 14:26:00Z"
 description: "Gawsworth Village Hub"
 og_image: "/images/WhatsApp Image 2026-06-30 at 15.57.17.jpeg"
 blocks:
