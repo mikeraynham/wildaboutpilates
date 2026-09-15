@@ -140,5 +140,11 @@ blocks:
       * Active IQ Level 2 Certificate in Gym Instructing
 
 
-      [1]: https://www.bbta.org.uk/"
+      [1]: https://www.bbta.org.uk/
+
+
+      Outside of my professional life, I'm always on the move.  Netball has been a lifelong passion, and I've played at club and county level. I like a challenge and try new ways to stay active, including recently completing HYROX and Deadly Dozen events. I’m happiest outdoors and enjoy mountain biking, paddle boarding, or canoeing.
+
+
+      ###"
 ---
