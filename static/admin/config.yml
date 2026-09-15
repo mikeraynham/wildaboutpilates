@@ -375,9 +375,13 @@ collections:
         picker_utc: true
       - { label: Description, name: description, widget: text }
       - { label: Slug (optional), name: slug, widget: string, required: false, hint: 'Overrides the URL slug derived from the filename.' }
-      - { label: OG image, name: og_image, widget: image, required: false }
-      - { label: OG image width, name: og_image_width, widget: string, required: false }
-      - { label: OG image height, name: og_image_height, widget: string, required: false }
+      - label: Social sharing image
+        name: og_image
+        widget: image
+        required: false
+        hint: The preview image shown when this post is shared on Facebook, WhatsApp, or other social media. It does not appear on the page itself; to show a picture in the post, add an Image block under Blocks.
+      - { label: Social sharing image width, name: og_image_width, widget: string, required: false }
+      - { label: Social sharing image height, name: og_image_height, widget: string, required: false }
       - label: Blocks
         name: blocks
         widget: list
