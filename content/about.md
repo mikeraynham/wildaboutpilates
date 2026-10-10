@@ -1,6 +1,6 @@
 ---
 title: "About Me"
-description: "I passionately believe that everyone deserves to feel strong, confident, and empowered in their own body.  Investing time in yourself and your health today is how you build the best future for yourself—one where you can stay active, feel strong, and keep doing the things you enjoy."
+description: "I passionately believe that everyone deserves to feel strong, confident, and empowered in their own body.  Investing time in yourself and your health today is how you build the best future for yourself, one where you can stay active, feel strong, and keep doing the things you enjoy."
 blocks:
   - type: "text"
     body: "I passionately believe that everyone deserves to feel strong, confident, and empowered in their own body.  Investing time in yourself and your health today is how you build the best future for yourself—one where you can stay active, feel strong, and keep doing the things you enjoy."
